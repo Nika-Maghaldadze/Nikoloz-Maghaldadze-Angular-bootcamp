@@ -16,37 +16,37 @@
     <hr />
     <h2>Contents</h2>
     <ul>
-      <li><a href="#">Introduction</a></li>
-      <li><a href="#">Math & Chemistry</a></li>
-      <li><a href="#">Quotes</a></li>
-      <li><a href="#">Lists</a></li>
-      <li><a href="#">Links (opens new tab)</a></li>
-      <li><a href="#">Jump to #p5</a></li>
+      <li><a href="#Introduction">Introduction</a></li>
+      <li><a href="#Math">Math & Chemistry</a></li>
+      <li><a href="#Quotes">Quotes</a></li>
+      <li><a href="#Lists">Lists</a></li>
+      <li><a href="#Links" target="_blank">Links (opens new tab)</a></li>
+      <li><a href="#p5" id="specialp5">Jump to #p5</a></li>
     </ul>
-    <h3>Introduction</h3>
+    <h3 id="Introduction">Introduction</h3>
     <p>
       This is a short demo of inline and block elements. For example, an inline
       quotation: <q>HTML is about meaning, not looks.</q> You can also force a
       line break <br />
       like this.
     </p>
-    <h4>Math & Chemistry</h4>
+    <h4 id="Math">Math & Chemistry</h4>
     <p>
       Albert said: E = mc<sup>2</sup>. Water is H<sub>2</sub>O. Inline emphasis
       can be combined with <b>importance</b> and even
       <small>smaller hints.</small>
     </p>
-    <h5>Quotations</h5>
+    <h5 id="Quotes">Quotations</h5>
     <blockquote>
       <q>Good design is as little design as possible.</q> - Dieter Rams. As a
       reminder, <q>less is more</q> also applies to markup.
     </blockquote>
-    <h6>Lists Overview</h6>
+    <h6 id="Lists">Lists Overview</h6>
     <h3>Ordered steps:</h3>
     <ol>
       <li>Read the headings (from <b>H1</b> to <b>H6</b>).</li>
       <li>Skim the <q>Quotes</q> section.</li>
-      <li>Visit the <a href="#">Links</a> section.</li>
+      <li>Visit the <a href="#Links">Links</a> section.</li>
     </ol>
     <h3>Unordered notes:</h3>
     <ul>
@@ -64,18 +64,18 @@
       </dd>
     </dl>
     <hr />
-    <h3>Useful Links</h3>
-    <p>TEXT LINK: <a href="#">Visit Example.org</a> (opens in new tab)</p>
-    <p>Address: <a href="#">https://github.com</a></p>
-    <p>File: <a href="#">file:/img/logo.png</a></p>
-    <p>Email: <a href="#">rmnbnd@gmail.com</a></p>
+    <h3 id="Links">Useful Links</h3>
+    <p>TEXT LINK: <a href="https://example.org/" target="_blank">Visit Example.org</a> (opens in new tab)</p>
+    <p>Address: <a href="https://github.com">https://github.com</a></p>
+    <p>File: <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVw6ETx1gt4YI28v61u7IeQ5dENnHdLR-rRw&s" target="_blank">file:/img/logo.png</a></p>
+    <p>Email: <a href="mailto:nikamaghaldadze13@gmail.com">rmnbnd@gmail.com</a></p>
     <hr />
-    <h2>Deep Anchor Demo</h2>
-    <p>Click here to jump to the special anchor: <a href="#">#p5.</a></p>
+    <h2 id="p5">Deep Anchor Demo</h2>
+    <p>Click here to jump to the special anchor: <a href="#specialp5">#p5.</a></p>
     <h3>Section P5</h3>
     <p>
       You've reached the <b>#p5</b> anchor. From here you can go back to the
-      <a href="#">Introduction</a> or continue exploring via the <a href="#">Links.</a>
+      <a href="#Introduction">Introduction</a> or continue exploring via the <a href="#Links">Links.</a>
     </p>
     <hr />
     <h3>Final Notes</h3>
