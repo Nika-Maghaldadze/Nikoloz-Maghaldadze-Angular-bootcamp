@@ -1,11 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h1>Tell us about your project</h1>
+    <p>
+      Fill this brief. We'll get back to you with ideas, timing, and a ballpark
+      estimate.
+    </p>
+    <form
+      action="/submit-here"
+      method="post"
+      accept-charset="UTF-8"
+      autocomplete="on"
+      target="_self"
+    >
+      <fieldset>
+        <legend>Who are you?</legend>
+
+        <!-- First name -->
+        <label for="first">First name *</label>
+        <input
+          id="first"
+          name="first_name"
+          required
+          placeholder="Alex"
+          autocomplete="given-name"
+        />
+        <br />
+        <!-- Last name -->
+        <label for="last">Last name *</label>
+        <input
+          id="last"
+          name="last_name"
+          required
+          placeholder="Rivera"
+          autocomplete="given-last-name"
+        />
+        <br />
+        <!-- Email -->
+        <label for="email">Email *</label>
+        <input
+          id="email"
+          name="email"
+          required
+          placeholder="you@domain.com"
+          autocomplete="email"
+        />
+        <!-- phone -->
+        <br />
+        <label for="phone">Phone</label>
+        <input
+          id="phone"
+          name="phone"
+          placeholder="(555) 555-1212"
+          autocomplete="phone"
+        />
+        <br />
+        <p>Optional - but helpful if we need a quick question answered.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Project basics</legend>
+        <!-- URL -->
+        <label for="site">Current website or domain</label>
+        <input
+          id="site"
+          name="website"
+          type="url"
+          placeholder="https://example.com"
+          autocomplete="url"
+        />
+        <br />
+        <!-- Address -->
+        <label for="address">Address</label>
+        <input
+          id="address"
+          name="address"
+          type="text"
+          placeholder="1234 Maple St."
+          autocomplete="street-address"
+        />
+        <br />
+        <!-- City -->
+        <label for="city">City</label>
+        <input
+          id="city"
+          name="city"
+          type="text"
+          placeholder="City"
+          autocomplete="address-level2"
+        />
+        <br />
+        <!-- State -->
+        <label for="state">State / Region</label>
+        <select id="state" name="state" required>
+          <option value="" selected>Please choose...</option>
+          <optgroup label="Georgia">
+            <option value="Tbilisir">Tbilisi</option>
+            <option value="Batumi">Batumi</option>
+          </optgroup>
+          <optgroup label="arvici">
+            <option value="arvici1">arvici1</option>
+            <option value="arvici2">arvici2</option>
+          </optgroup>
+        </select>
+        <br />
+        <!-- Zip -->
+        <label for="zip">Zip / Postal Code</label>
+        <input
+          id="zip"
+          name="zip"
+          type="text"
+          placeholder="12345"
+          autocomplete="postal-code"
+        />
+        <br />
+        <!-- date -->
+        <label for="date">Ideal launch date</label>
+        <input id="date" name="date" type="date" autocomplete="bday" />
+      </fieldset>
+      <fieldset>
+        <legend>Preferences</legend>
+        <!-- Range -->
+        <label for="satisfaction">Estimated budget (move the slider)</label
+        ><br />
+        <input
+          id="satisfaction"
+          name="satisfaction"
+          type="range"
+          min="0"
+          max="10"
+          step="1"
+          value="2"
+        />
+        <br />
+        <!-- Radio -->
+        <p>Do you already have hosting? *</p>
+        <input
+          type="radio"
+          id="hosting-yes"
+          name="hosting"
+          value="yes"
+          required
+        />
+        <label for="hosting-yes">Yes</label>
+        <input
+          type="radio"
+          id="hosting-no"
+          name="hosting"
+          value="no"
+          required
+        />
+        <label for="hosting-no">No</label>
+        <input
+          type="radio"
+          id="hosting-maybe"
+          name="hosting"
+          value="maybe"
+          required
+        />
+        <label for="hosting-maybe">Not sure</label>
+        <br />
+        <!-- radio 2 -->
+        <p>preferred contact method *</p>
+        <input
+          type="radio"
+          id="contact-email"
+          name="contact"
+          value="email"
+          required
+        />
+        <label for="contact-email">Email</label>
+        <input
+          type="radio"
+          id="contact-phone"
+          name="contact"
+          value="phone"
+          required
+        />
+        <label for="contact-phone">Phone</label>
+        <input
+          type="radio"
+          id="video-call"
+          name="contact"
+          value="video-call"
+          required
+        />
+        <label for="video-call">Video call</label>
+        <br />
+      </fieldset>
+      <fieldset>
+        <legend>Project description</legend>
+        <label for="description">Describe your project *</label>
+        <textarea
+          id="description"
+          name="description"
+          dirname="description.dir"
+          rows="2"
+          placeholder="Tell us what you're building, who it's"
+        ></textarea>
+        <br />
+        <p>Good prompts: goals, audience, 3-5 features, inspiration links.</p>
+      </fieldset>
+      <input type="checkbox" id="subscribe" name="subscribe" value="yes" />
+      <label for="subscribe"
+        >I agree to be contacted about this inquiry *</label
+      >
+      <br />
+      <button type="reset">Reset</button>
+      <button type="submit">Send request</button>
+    </form>
+  </body>
 </html>
