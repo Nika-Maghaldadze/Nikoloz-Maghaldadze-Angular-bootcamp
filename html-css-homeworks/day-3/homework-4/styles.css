@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  margin: 0;
+}
+
+#profile-btn {
+  border: 1px solid #333;
+  background-color: #ddd;
+  color: #000;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.post-preview {
+  border: 1px solid #aaa;
+  padding: 8px;
+  margin: 10px;
+  background-color: #fff;
+}
+
+
+header nav a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+
+header nav > ul > li {
+  display: inline;
+  margin-right: 10px;
+}
+
+
+.post-preview h3 + iframe {
+  border: 1px solid #444;
+}
+
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.posts article:first-child {
+  border: 2px solid #0044cc;
+}
+
+.posts article:nth-child(even) {
+  background-color: #f0f0f0;
+}
