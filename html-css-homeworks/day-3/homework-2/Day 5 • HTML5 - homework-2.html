@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Blog - Home</title>
+  </head>
+  <body>
+    <header role="banner" aria-label="Main header">
+      <nav role="navigation" aria-label="Primary navigation">
+        <a href="./Day 5 • HTML5 - homework-2.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Archive</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+      </nav>
+    </header>
+
+    <main aria-labelledby="home-heading">
+      <h1 id="home-heading">Welcome to My Blog</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
+        necessitatibus expedita saepe voluptatem unde asperiores quod optio
+        eaque eligendi veritatis rem quisquam, temporibus officia totam quia?
+        Eius laudantium id nisi!
+      </p>
+
+      <section aria-label="Blog previews">
+        <h2>Latest posts</h2>
+
+        <article aria-label="Post preview 1">
+          <h3>Post 1 — My Learning Journey</h3>
+          <iframe
+            src="/html-css-homeworks/day-3/homework-2/blog/blog-1.html"
+            title="Blog post: My Learning Journey"
+            width="600"
+            height="300"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+        </article>
+
+        <article aria-label="Post preview 2">
+          <h3>Post 2 — Coding for Fun</h3>
+          <iframe
+            src="/html-css-homeworks/day-3/homework-2/blog/blog-2.html"
+            title="Blog post: Coding for Fun"
+            width="600"
+            height="300"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+        </article>
+
+        <article aria-label="Post preview 3">
+          <h3>Post 3 — Travel Notes</h3>
+          <iframe
+            src="/html-css-homeworks/day-3/homework-2/blog/blog-3.html"
+            title="Blog post: Travel Notes"
+            width="600"
+            height="300"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+        </article>
+
+        <article aria-label="Post preview 4">
+          <h3>Post 4 — Design Thoughts</h3>
+          <iframe
+            src="/html-css-homeworks/day-3/homework-2/blog/blog-4.html"
+            title="Blog post: Design Thoughts"
+            width="600"
+            height="300"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+        </article>
+
+        <article aria-label="Post preview 5">
+          <h3>Post 5 — Books & Reading</h3>
+          <iframe
+            src="/html-css-homeworks/day-3/homework-2/blog/blog-5.html"
+            title="Blog post: Books & Reading"
+            width="600"
+            height="300"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+        </article>
+
+        <article aria-label="Post preview 6">
+          <h3>Post 6 — Hobbies At Home</h3>
+          <iframe
+            src="/html-css-homeworks/day-3/homework-2/blog/blog-6.html"
+            title="Blog post: Hobbies At Home"
+            width="600"
+            height="300"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+        </article>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; <time datetime="2025-09-25">2025</time> — My Blog</p>
+    </footer>
+  </body>
 </html>
