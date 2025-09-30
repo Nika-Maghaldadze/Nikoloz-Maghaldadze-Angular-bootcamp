@@ -1,19 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 1 Document Object Model</title>
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main class="main-container">
+      <section class="checklist">
+        <h2 id="checklistHeader">Checklist</h2>
+        <div class="checkbox-wrapper">
+          <!-- for checkboxes -->
+            <div class="checkboxes">
+                <div class="checkbox"></div>
+                <div class="checkbox"></div>
+                <div class="checkbox"></div>
+                <div class="checkbox"></div>
+            </div>
+          <!-- for texts -->
+            <div class="checkbox-texts">
+                <p class="text">Initialize repo</p><span id="git">(git init)</span>
+                <p class="text">Set up CI</p>
+                <p class="text">Write unit tests</p>
+                <p class="text">Deploy preview environment</p>
+            </div>
+        </div>
+      </section>
+
+      <section class="stepper">
+        <h2>Stepper</h2>
+        <div>
+          <div class="stepper-container">
+            <div class="green-box"></div>
+            <div class="green-box-text">
+              <h4>Create ticket</h4>
+              <p>Describe scope and acceptance criteria.</p>
+            </div>
+          </div>
+          <div class="stepper-container">
+            <div class="orange-box"></div>
+            <div class="orange-box-text">
+              <h4>Implement feature</h4>
+              <p>Waiting on API schema.</p>
+            </div>
+          </div>
+          <div class="stepper-container">
+            <div class="blue-box"></div>
+            <div class="blue-box-text">
+              <h4>Write tests</h4>
+              <p>Aim for 90%+ coverage.</p>
+            </div>
+          </div>
+          <div class="stepper-container">
+            <div class="red-box"></div>
+            <div class="red-box-text">
+              <h4>Ship</h4>
+              <p>Blocked by release freeze.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="menu">
+        <h2>Menu List</h2>
+        <div class="main-menu">
+            <div class="profile-wrapper">
+                <h3>Profile</h3>
+            </div>
+            <div class="menu-item">
+                <h4 class="menu-header">Account</h4>
+                <p class="menu-text">Change email, password</p>
+            </div>
+            <div class="menu-item">
+                <h4 class="menu-header">Notifications</h4>
+                <p class="menu-text">Email, in-app</p>
+            </div>
+            <div class="menu-item">
+                <h4 class="menu-header">Security</h4>
+                <p class="menu-text">2FA, devices</p>
+            </div>
+            <div class="workspace-wrapper">
+                <h3>Workspace</h3>
+            </div>
+            <div class="menu-item">
+                <h4 class="menu-header">Members</h4>
+                <p class="menu-text">Invite, roles</p>
+            </div>
+            <div class="menu-item">
+                <h4 class="menu-header">Billing</h4>
+                <p class="menu-text">Plan, invoices</p>
+            </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
