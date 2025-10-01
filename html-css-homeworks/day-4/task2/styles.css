@@ -96,9 +96,10 @@ main{
 /* ======================== */
 
 .table-section{
+    padding: 15px 0;
     margin: 16px 16px 0 16px;
     background: #E8F5E9;
-    border-spacing: 20.5px;
+    border-spacing: 21px 9px;
     border: solid 2px #43A047;
 }
 .container{
@@ -110,6 +111,7 @@ main{
     height: 122px;
     text-align: center;
     vertical-align: middle;
+    margin-top: 2px;
     background: #FFFFFF;
     border: solid 1px #CCCCCC;
     border-radius: 8px;
