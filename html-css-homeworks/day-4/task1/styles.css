@@ -12,25 +12,27 @@
   background: #ffffff;
   border: solid 1px #e5e7eb;
   border-radius: 14px;
-  padding: 21px 21px 33px 21px;
+  padding: 21px 21px 23px 21px;
 }
 
 #checklistHeader {
   height: 33px;
   font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  margin-top: 3px;
   font-family: "Roboto", sans-serif;
   color: #2563eb;
 }
 .checkboxes {
   display: inline-block;
-  margin-top: 4px;
+  margin-bottom: 3px;
+  margin-top: -1px;
 }
 .checkbox {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 21.4px;
+  height: 21.8px;
   border-radius: 4.8px;
 }
 
@@ -50,15 +52,16 @@
 }
 
 .checkbox:nth-child(4) {
-  margin-top: 4.8px;
+  margin-top: 5px;
   border: solid 2px #94a3b8;
 }
 
 .checkbox-texts {
   display: inline-block;
-  margin-left: 12px;
+  margin-left: 7px;
   font-size: 16px;
   vertical-align: top;
+  margin-top: -5.1px;
 }
 
 .checkbox-texts .text {
@@ -79,6 +82,7 @@
   color: #475569;
   vertical-align: bottom;
   margin-left: 4px;
+  letter-spacing: -0.12px;
 }
 
 /* Stepper Section */
@@ -88,8 +92,8 @@
   background: #ffffff;
   border: solid 1px #e5e7eb;
   border-radius: 14px;
-  padding: 21px 21px 33px 21px;
-  margin-top: 16px;
+  padding: 21px 21px 26px 21px;
+  margin-top: 11px;
 }
 
 .stepper h2 {
@@ -99,6 +103,7 @@
   margin-bottom: 19px;
   font-family: "Roboto", sans-serif;
   color: #2563eb;
+  margin-top: 6px;
 }
 .stepper-container {
   height: 60px;
@@ -110,10 +115,12 @@
 .stepper .green-box {
   width: 22px;
   height: 22px;
-  border-radius: 4.8px;
+  border-radius: 4.9px;
   background: #22C55E;
   display: inline-block;
-  margin-top: 5.6px;
+  margin-top: -2.8px;
+  scale: 1.3;
+  margin-left: 3px;
 }
 
 .stepper .green-box-text {
@@ -121,7 +128,15 @@
   margin-left: 12px;
   font-size: 16px;
   vertical-align: top;
-  margin-top: 3.6px;
+  margin-top: -3.5px;
+}
+
+.green-box-text p{
+  font-size: 14px;
+  margin-top: 4px;
+  letter-spacing: 0.935px;
+  margin-left: 1px;
+  font-weight: 400;
 }
 
 .stepper .orange-box {
@@ -130,7 +145,9 @@
   border-radius: 4.8px;
   background: #F59E0B;
   display: inline-block;
-  margin-top: 5.6px;
+  margin-top: -2.8px;
+  scale: 1.3;
+  margin-left: 3px;
 }
 
 .stepper .orange-box-text {
@@ -138,16 +155,25 @@
   margin-left: 12px;
   font-size: 16px;
   vertical-align: top;
-  margin-top: 5.6px;
+  margin-top: -3.5px;
 }
 
+.orange-box-text p{
+  font-size: 14px;
+  margin-top: 4px;
+  letter-spacing: 0.935px;
+  margin-left: 1px;
+  font-weight: 400;
+}
 .stepper .blue-box {
   width: 22px;
   height: 22px;
   border-radius: 4.8px;
   background: #2563EB;
   display: inline-block;
-  margin-top: 5.6px;
+  margin-top: -2.8px;
+  scale: 1.3;
+  margin-left: 3px;
 }
 
 .stepper .blue-box-text {
@@ -155,25 +181,40 @@
   margin-left: 12px;
   font-size: 16px;
   vertical-align: top;
-  margin-top: 5.6px;
+  margin-top: -3.5px;
 }
-
+.blue-box-text p{
+  font-size: 14px;
+  margin-top: 4px;
+  letter-spacing: 0.935px;
+  margin-left: 1px;
+  font-weight: 400;
+}
 .stepper .red-box {
   width: 22px;
   height: 22px;
   border-radius: 4.8px;
   background: #EF4444;
   display: inline-block;
-  margin-top: 5.6px;
+  margin-top: -2.8px;
+  scale: 1.3;
+  margin-left: 3px;
 }
 .stepper .red-box-text {
   display: inline-block;
   margin-left: 12px;
   font-size: 16px;
   vertical-align: top;
-  margin-top: 5.6px;
+  margin-top: -3.5px;
 }
 
+.red-box-text p{
+  font-size: 14px;
+  margin-top: 4px;
+  letter-spacing: 0.935px;
+  margin-left: 1px;
+  font-weight: 400;
+}
 div>h4{
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -204,7 +245,7 @@ div>h4{
     border: solid 1px #E5E7EB;
     background: #F8FAFC;
     border-radius: 8px;
-    margin-top: 12px;
+    margin-top: 17px;
 }
 
 .menu > h2{
@@ -212,6 +253,7 @@ div>h4{
     font-size: 24px;
     font-weight: 700;
     color: #2563EB;
+    margin-top: 2.5px;
 }
 
 .menu > .main-menu > .menu-item {
@@ -226,7 +268,7 @@ div>h4{
     font-size: 15px;
     font-weight: 400;
     color: #0F172A;
-    
+    letter-spacing: 0.1px;
 }
 
 .menu > .main-menu > .profile-wrapper{
@@ -241,6 +283,7 @@ div>h4{
     font-weight: 700;
     color: #475569;
     margin-left: 12px;
+    margin-top:3.5px;
 }
 
 .menu-text{
@@ -248,7 +291,8 @@ div>h4{
     font-size: 14px;
     font-weight: 400;
     color: #64748B;
-    margin-top: 3px;
+    margin-top: 7px;
+    letter-spacing: 0.15px;
 }
 
 .main-menu > .workspace-wrapper{
@@ -263,4 +307,5 @@ div>h4{
     font-weight: 700;
     color: #475569;
     margin-left: 12px;
+    margin-top: 3px;
 }
