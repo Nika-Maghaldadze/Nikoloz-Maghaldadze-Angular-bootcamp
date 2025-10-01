@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notifications</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Toast Notifications</h1>
+
+        <div class="toast-grid">
+            <!-- Success Toasts Column -->
+            <div class="toast-column">
+                <div class="toast-card">
+                    <h2>Success Toast</h2>
+                    <div class="toast success-light">
+                        <div class="toast-content">
+                            <p class="toast-title">Success</p>
+                            <p class="toast-message">Your changes have been saved successfully.</p>
+                        </div>
+                    </div>
+                    <div class="toast success-medium">
+                        <div class="toast-content">
+                            <p class="toast-title">Operation Completed</p>
+                            <p class="toast-message">File uploaded successfully to your account.</p>
+                        </div>
+                    </div>
+                    <div class="toast success-dark">
+                        <div class="toast-content">
+                             <p class="toast-title">Payment Processed</p>
+                             <p class="toast-message">Your payment of $29.99 was successful.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Toasts Column -->
+            <div class="toast-column">
+                <div class="toast-card">
+                    <h2>Error Toast</h2>
+                    <div class="toast error-light">
+                        <div class="toast-content">
+                            <p class="toast-title">Error</p>
+                            <p class="toast-message">Failed to save changes. Please try again.</p>
+                        </div>
+                    </div>
+                    <div class="toast error-medium">
+                        <div class="toast-content">
+                            <p class="toast-title">Connection Failed</p>
+                            <p class="toast-message">Unable to connect to server. Check your internet connection.</p>
+                        </div>
+                    </div>
+                    <div class="toast error-dark">
+                        <div class="toast-content">
+                             <p class="toast-title">Authentication Error</p>
+                             <p class="toast-message">Your session has expired. Please log in again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warning Toasts Column -->
+            <div class="toast-column">
+                <div class="toast-card">
+                    <h2>Warning Toast</h2>
+                    <div class="toast warning-light">
+                        <div class="toast-content">
+                            <p class="toast-title">Warning</p>
+                            <p class="toast-message">You have unsaved changes that will be lost.</p>
+                        </div>
+                    </div>
+                    <div class="toast warning-medium">
+                        <div class="toast-content">
+                            <p class="toast-title">Storage Almost Full</p>
+                            <p class="toast-message">You're using 95% of your storage space.</p>
+                        </div>
+                    </div>
+                    <div class="toast warning-dark">
+                        <div class="toast-content">
+                             <p class="toast-title">Subscription Expiring</p>
+                             <p class="toast-message">Your subscription expires in 3 days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Toasts Column -->
+            <div class="toast-column">
+                <div class="toast-card">
+                    <h2>Info Toast</h2>
+                    <div class="toast info-light">
+                        <div class="toast-content">
+                            <p class="toast-title">Information</p>
+                            <p class="toast-message">New features are now available in your dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="toast info-medium">
+                        <div class="toast-content">
+                            <p class="toast-title">System Update</p>
+                            <p class="toast-message">Scheduled maintenance will occur tonight at 2:00 AM.</p>
+                        </div>
+                    </div>
+                    <div class="toast info-dark">
+                        <div class="toast-content">
+                             <p class="toast-title">New Message</p>
+                             <p class="toast-message">You have 3 new messages in your inbox.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
