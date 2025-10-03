@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastering CSS Positions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h3 class="header-text">POSITIONING LAB</h3>
+      <nav class="navigation">
+        <ul class="nav-ul">
+          <li class="list-item">Home</li>
+          <li class="list-item">
+            <svg
+              width="11"
+              height="9"
+              viewBox="0 0 11 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.87074 9L5.10511 8.24432L8.2571 5.09233H0.09375V3.99858H8.2571L5.10511 0.856534L5.87074 0.0909092L10.3253 4.54545L5.87074 9Z"
+                fill="#9CA3AF"
+              />
+            </svg>
+          </li>
+          <li class="list-item">Week 3</li>
+          <li class="list-item">
+            <svg
+              width="11"
+              height="9"
+              viewBox="0 0 11 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.87074 9L5.10511 8.24432L8.2571 5.09233H0.09375V3.99858H8.2571L5.10511 0.856534L5.87074 0.0909092L10.3253 4.54545L5.87074 9Z"
+                fill="#9CA3AF"
+              />
+            </svg>
+          </li>
+          <li class="list-item">Hero Layout</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-container">
+      <div class="ribbon">
+        <p class="ribbon-text"><span>SPORT ·</span> STRENGTH</p>
+      </div>
+      <h1 class="main-heading">
+        Mastering
+        <span
+          style="
+            display: inline-block;
+            letter-spacing: 1.1px;
+            font-size: 98px;
+            margin-left: 14px;
+            margin-right: 10px;
+          "
+          >CSS</span
+        >
+        Positions
+      </h1>
+      <p class="main-paragraph">
+        Recreate this hero exactly: layered overlay, corner ribbon, floating
+        stats, centered CTA, and arrow controls.
+      </p>
+      <button class="cta-button">ENTER WORKOUTS</button>
+      <div class="left-arrow">
+        <svg
+          width="10"
+          height="16"
+          viewBox="0 0 10 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M10 16H0V0H10V16Z" stroke="#E5E7EB" />
+          <path
+            d="M0.293751 7.29374C-0.0968742 7.68437 -0.0968742 8.31874 0.293751 8.70937L6.29375 14.7094C6.68438 15.1 7.31875 15.1 7.70938 14.7094C8.1 14.3187 8.1 13.6844 7.70938 13.2937L2.41563 7.99999L7.70625 2.70624C8.09688 2.31562 8.09688 1.68124 7.70625 1.29062C7.31563 0.899994 6.68125 0.899994 6.29063 1.29062L0.290626 7.29062L0.293751 7.29374Z"
+            fill="#0A0B0F"
+          />
+        </svg>
+      </div>
+      <div class="right-arrow">
+        <svg
+          width="10"
+          height="24"
+          viewBox="0 0 10 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M10 24H0V0H10V24Z" stroke="#E5E7EB" />
+          <path d="M10 20H0V4H10V20Z" stroke="#E5E7EB" />
+          <path
+            d="M9.70627 11.2937C10.0969 11.6844 10.0969 12.3187 9.70627 12.7094L3.70627 18.7094C3.31565 19.1 2.68127 19.1 2.29065 18.7094C1.90002 18.3187 1.90002 17.6844 2.29065 17.2937L7.5844 12L2.29377 6.70624C1.90315 6.31562 1.90315 5.68124 2.29377 5.29062C2.6844 4.89999 3.31877 4.89999 3.7094 5.29062L9.7094 11.2906L9.70627 11.2937Z"
+            fill="#0A0B0F"
+          />
+        </svg>
+      </div>
+    </main>
+    <section class="information-wrapper">
+      <div class="sticky-div">
+        <h4 class="sticky-div-header">Your task:</h4>
+        <p class="sticky-div-p">Make this box sticky</p>
+      </div>
+      <div class="information-div">
+        <h3 class="info-header">Why this matters</h3>
+        <p class="details">
+          Positioning is the backbone of complex UI. This brief forces you to
+          combine multiple techniques: a fixed header that persists on scroll,
+          an absolute hero overlay layered via z-index, arrows vertically
+          centered with transform, a horizontally centered CTA, a rotated corner
+          ribbon, and several floating stat cards. Below, we add enough content
+          to make scrolling meaningful so you can compare <b>fixed vs sticky</b>
+          behavior.
+        </p>
+        <p class="details">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          pretium sodales libero, sit amet congue mauris pretium et. Integer
+          vestibulum eleifend hendrerit. Curabitur volutpat est orci, at rutrum
+          felis tincidunt in. Donec id gravida lorem. In aliquet pulvinar mi,
+          non pulvinar turpis pretium sed. Suspendisse lobortis augue varius,
+          gravida ipsum non, malesuada dolor. Vestibulum mattis risus tellus,
+          nec aliquet mauris varius id. Sed volutpat efficitur massa. Integer
+          vitae consequat tortor.
+        </p>
+        <p class="details">
+          Scroll further to observe the sticky note behavior relative to the
+          fixed header.
+        </p>
+        <p class="details">
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+          ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+          egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+          eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        </p>
+        <p class="details">
+          Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
+          wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum
+          rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
+          turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus
+          faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
+          Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
+          facilisis luctus, metus.
+        </p>
+        <p class="details">
+          Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec
+          consectetuer ligula vulputate sem tristique cursus. Nam nulla quam,
+          gravida non, commodo a, sodales sit amet, nisi. Pellentesque fermentum
+          dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum
+          vulputate, nunc.
+        </p>
+        <p class="details">
+          Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis
+          vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo
+          ullamcorper magna.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
