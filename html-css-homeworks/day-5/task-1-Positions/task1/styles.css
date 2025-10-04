@@ -195,7 +195,7 @@ body {
 
 .information-wrapper {
   width: 1440px;
-  height: 910px;
+  height: 930px;
   background: #000;
   position: relative;
   top: -22px;
@@ -222,8 +222,10 @@ body {
 .details {
   font-family: "Inter", sans-serif;
   color: #9CA3AF;
-  margin-top: 27px;
-  line-height: 26px;
+  margin-top: 34px;
+  line-height: 27px;
+  letter-spacing: 1px;
+  font-size: 13.5px;
 }
 
 .sticky-div {
@@ -233,7 +235,7 @@ body {
   border-radius: 8px;
   position: sticky;
   top: -27px;
-  left: 219px;
+  left: 345px;
   padding:27px 24px 24px 24px;
   box-sizing: border-box;
   border: solid 1px #1F2937;
@@ -260,5 +262,6 @@ body {
   color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 30px;
-  letter-spacing: 1.65px;
+  letter-spacing: 1.7px;
+  margin-top: 2px;
 }
