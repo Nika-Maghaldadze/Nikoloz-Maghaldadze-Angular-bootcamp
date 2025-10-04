@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.wrapper {
+  max-width: 564px;
+  margin: 50px auto;
+  border: 2px solid black;
+}
+
+.cell {
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+
+.border-right {
+  border-right: 2px solid black;
+}
+
+.border-top {
+  border-top: 2px solid black;
+}
+
+.new-row {
+  clear: both;
+}
+
+.bg-yellow {
+  background-color: rgba(245, 211, 94);
+}
+
+.bg-skyblue {
+  background-color: rgba(139, 211, 221);
+}
+
+.bg-green {
+  background-color: rgba(73, 120, 86);
+}
+
+.bg-orange {
+  background-color: rgba(238, 150, 74);
+}

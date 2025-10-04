@@ -14,32 +14,339 @@
     />
   </head>
   <body>
-    <header class="header-container">
-      <div class="left-header">
-        <h2 class="header-heading">FLEXBOARD</h2>
-        <div class="category">View:</div>
-        <nav class="navigation">
-          <ul class="navigation-ul">
-            <li class="list-item">Board</li>
-            <li class="list-item">List</li>
-            <li class="list-item">Timeline</li>
-          </ul>
+    <header class="topbar">
+      <div class="left">
+        <div class="brand">FLEXBOARD</div>
+        <nav class="view-switch" aria-label="view">
+          <button class="active">Board</button>
+          <button>List</button>
+          <button>Timeline</button>
         </nav>
       </div>
-      <div class="right-header">
-        <div class="right-category">Group by:</div>
-        <nav class="right-navigation">
-            <ul class="right-navigation-ul">
-                <li class="right-list">Status</li>
-                <li class="right-list">Owner</li>
-                <li class="right-list">Priority</li>
-            </ul>
-        </nav>
-        <button class="invite-button">Invite</button>
-        <button>New Board</button>
+
+      <div class="right">
+        <div class="group-by">
+          Group by:
+          <select aria-label="group-by">
+            <option>Status</option>
+            <option>Owner</option>
+            <option>Priority</option>
+          </select>
+        </div>
+
+        <div class="controls">
+          <button class="ghost">Invite</button>
+          <button class="primary">New Board</button>
+        </div>
       </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <div class="container">
+      <aside class="sidebar" aria-label="sidebar">
+        <div class="navpanel">
+          <h4 class="nav-title">Navigation</h4>
+          <ul class="navlist">
+            <li class="nav-item active">
+              <svg
+                width="10"
+                height="15"
+                viewBox="0 0 10 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1_283)">
+                  <path
+                    d="M1.71875 10.375H3.03125C3.63555 10.375 4.125 10.8645 4.125 11.4688V12.7812C4.125 13.3855 3.63555 13.875 3.03125 13.875H1.71875C1.11445 13.875 0.625 13.3855 0.625 12.7812V11.4688C0.625 10.8645 1.11445 10.375 1.71875 10.375ZM6.96875 10.375H8.28125C8.88555 10.375 9.375 10.8645 9.375 11.4688V12.7812C9.375 13.3855 8.88555 13.875 8.28125 13.875H6.96875C6.36445 13.875 5.875 13.3855 5.875 12.7812V11.4688C5.875 10.8645 6.36445 10.375 6.96875 10.375ZM1.71875 9.5C1.11445 9.5 0.625 9.01055 0.625 8.40625V7.09375C0.625 6.48945 1.11445 6 1.71875 6H3.03125C3.63555 6 4.125 6.48945 4.125 7.09375V8.40625C4.125 9.01055 3.63555 9.5 3.03125 9.5H1.71875ZM6.96875 6H8.28125C8.88555 6 9.375 6.48945 9.375 7.09375V8.40625C9.375 9.01055 8.88555 9.5 8.28125 9.5H6.96875C6.36445 9.5 5.875 9.01055 5.875 8.40625V7.09375C5.875 6.48945 6.36445 6 6.96875 6ZM1.71875 5.125C1.11445 5.125 0.625 4.63555 0.625 4.03125V2.71875C0.625 2.11445 1.11445 1.625 1.71875 1.625H3.03125C3.63555 1.625 4.125 2.11445 4.125 2.71875V4.03125C4.125 4.63555 3.63555 5.125 3.03125 5.125H1.71875ZM6.96875 1.625H8.28125C8.88555 1.625 9.375 2.11445 9.375 2.71875V4.03125C9.375 4.63555 8.88555 5.125 8.28125 5.125H6.96875C6.36445 5.125 5.875 4.63555 5.875 4.03125V2.71875C5.875 2.11445 6.36445 1.625 6.96875 1.625Z"
+                    fill="#E6EDF3"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_283">
+                    <path
+                      d="M0.625 0.75H9.375V14.75H0.625V0.75Z"
+                      fill="white"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              Dashboard
+            </li>
+            <li class="nav-item">
+              <svg
+                width="14"
+                height="13"
+                viewBox="0 0 14 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 2.375C0 1.40977 0.784766 0.625 1.75 0.625H12.25C13.2152 0.625 14 1.40977 14 2.375V11.125C14 12.0902 13.2152 12.875 12.25 12.875H1.75C0.784766 12.875 0 12.0902 0 11.125V2.375ZM1.75 4.125V11.125H6.125V4.125H1.75ZM12.25 4.125H7.875V11.125H12.25V4.125Z"
+                  fill="#848D97"
+                />
+              </svg>
+              Board
+            </li>
+            <li class="nav-item">
+              <svg
+                width="16"
+                height="15"
+                viewBox="0 0 16 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1_193)">
+                  <path
+                    d="M7.35742 0.892191C7.76484 0.703519 8.23516 0.703519 8.64258 0.892191L14.6199 3.65391C14.8523 3.76055 15 3.99297 15 4.25C15 4.50703 14.8523 4.73946 14.6199 4.8461L8.64258 7.60782C8.23516 7.79649 7.76484 7.79649 7.35742 7.60782L1.38008 4.8461C1.14766 4.73672 1 4.5043 1 4.25C1 3.99571 1.14766 3.76055 1.38008 3.65391L7.35742 0.892191ZM13.1652 6.48125L14.6199 7.15391C14.8523 7.26055 15 7.49297 15 7.75C15 8.00703 14.8523 8.23946 14.6199 8.3461L8.64258 11.1078C8.23516 11.2965 7.76484 11.2965 7.35742 11.1078L1.38008 8.3461C1.14766 8.23672 1 8.0043 1 7.75C1 7.49571 1.14766 7.26055 1.38008 7.15391L2.83477 6.48125L6.99102 8.40078C7.63086 8.6961 8.36914 8.6961 9.00898 8.40078L13.1652 6.48125ZM9.00898 11.9008L13.1652 9.98125L14.6199 10.6539C14.8523 10.7606 15 10.993 15 11.25C15 11.507 14.8523 11.7395 14.6199 11.8461L8.64258 14.6078C8.23516 14.7965 7.76484 14.7965 7.35742 14.6078L1.38008 11.8461C1.14766 11.7367 1 11.5043 1 11.25C1 10.9957 1.14766 10.7606 1.38008 10.6539L2.83477 9.98125L6.99102 11.9008C7.63086 12.1961 8.36914 12.1961 9.00898 11.9008Z"
+                    fill="#848D97"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_193">
+                    <path
+                      d="M0.125 0.75H15.875V14.75H0.125V0.75Z"
+                      fill="white"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              Backlog
+            </li>
+            <li class="nav-item">
+              <svg
+                width="14"
+                height="15"
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1_197)">
+                  <path d="M14 14.75H0V0.75H14V14.75Z" stroke="#E5E7EB" />
+                  <path
+                    d="M3.90742 4.65743C5.6082 2.95665 8.35625 2.94845 10.068 4.63009L8.94141 5.75392C8.75273 5.94259 8.69805 6.22423 8.79922 6.47032C8.90039 6.71642 9.14102 6.87501 9.40625 6.87501H12.6738H12.9062C13.2699 6.87501 13.5625 6.58243 13.5625 6.21876V2.71876C13.5625 2.45353 13.4039 2.2129 13.1578 2.11173C12.9117 2.01056 12.6301 2.06525 12.4414 2.25392L11.3039 3.39142C8.90859 1.02618 5.05039 1.03439 2.66875 3.41876C2.00156 4.08595 1.52031 4.87072 1.225 5.71017C1.06367 6.16681 1.3043 6.66447 1.7582 6.82579C2.21211 6.98712 2.7125 6.7465 2.87383 6.29259C3.08437 5.6965 3.42617 5.13595 3.90742 4.65743ZM0.4375 9.28126V9.48908V9.50822V12.7813C0.4375 13.0465 0.596094 13.2871 0.842187 13.3883C1.08828 13.4895 1.36992 13.4348 1.55859 13.2461L2.69609 12.1086C5.09141 14.4738 8.94961 14.4656 11.3313 12.0813C11.9984 11.4141 12.4824 10.6293 12.7777 9.79259C12.9391 9.33595 12.6984 8.83829 12.2445 8.67697C11.7906 8.51564 11.2902 8.75626 11.1289 9.21017C10.9184 9.80626 10.5766 10.3668 10.0953 10.8453C8.39453 12.5461 5.64648 12.5543 3.93477 10.8727L5.05859 9.74611C5.24727 9.55744 5.30195 9.27579 5.20078 9.0297C5.09961 8.78361 4.85898 8.62501 4.59375 8.62501H1.32344H1.3043H1.09375C0.730078 8.62501 0.4375 8.91759 0.4375 9.28126Z"
+                    fill="#848D97"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_197">
+                    <rect
+                      width="14"
+                      height="14"
+                      fill="white"
+                      transform="translate(0 0.75)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              Sprints
+            </li>
+            <li class="nav-item">
+              <svg
+                width="16"
+                height="15"
+                viewBox="0 0 16 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1_203)">
+                  <path
+                    d="M8.4375 7.3125V1.20391C8.4375 0.957813 8.62891 0.75 8.875 0.75C12.2574 0.75 15 3.49258 15 6.875C15 7.12109 14.7922 7.3125 14.5461 7.3125H8.4375ZM1 8.1875C1 4.8707 3.46367 2.12539 6.66016 1.68789C6.91172 1.65234 7.125 1.85469 7.125 2.10898V8.625L11.4043 12.9043C11.5875 13.0875 11.5738 13.3883 11.3633 13.5359C10.2914 14.3016 8.97891 14.75 7.5625 14.75C3.93945 14.75 1 11.8133 1 8.1875ZM15.3938 8.625C15.648 8.625 15.8477 8.83828 15.8148 9.08984C15.6043 10.6184 14.8687 11.9773 13.7941 12.9809C13.6301 13.134 13.373 13.123 13.2145 12.9617L8.875 8.625H15.3938Z"
+                    fill="#848D97"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_203">
+                    <path
+                      d="M0.125 0.75H15.875V14.75H0.125V0.75Z"
+                      fill="white"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              Reports
+            </li>
+            <li class="nav-item">
+              <svg
+                width="14"
+                height="15"
+                viewBox="0 0 14 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1_208)">
+                  <path
+                    d="M13.5598 5.30547C13.6473 5.54336 13.5734 5.80859 13.3848 5.97813L12.2008 7.05547C12.2309 7.28242 12.2473 7.51484 12.2473 7.75C12.2473 7.98516 12.2309 8.21758 12.2008 8.44453L13.3848 9.52187C13.5734 9.69141 13.6473 9.95664 13.5598 10.1945C13.4395 10.5199 13.2945 10.8316 13.1277 11.1324L12.9992 11.3539C12.8188 11.6547 12.6164 11.9391 12.3949 12.207C12.2336 12.4039 11.9656 12.4695 11.725 12.393L10.202 11.909C9.83555 12.1906 9.43086 12.4258 8.99883 12.6035L8.65703 14.1648C8.60234 14.4137 8.41094 14.6105 8.15938 14.6516C7.78203 14.7145 7.39375 14.7473 6.99727 14.7473C6.60078 14.7473 6.2125 14.7145 5.83516 14.6516C5.58359 14.6105 5.39219 14.4137 5.3375 14.1648L4.9957 12.6035C4.56367 12.4258 4.15898 12.1906 3.79258 11.909L2.27227 12.3957C2.03164 12.4723 1.76367 12.4039 1.60234 12.2098C1.38086 11.9418 1.17852 11.6574 0.998047 11.3566L0.869531 11.1352C0.702735 10.8344 0.557813 10.5227 0.4375 10.1973C0.35 9.95938 0.423828 9.69414 0.6125 9.52461L1.79648 8.44727C1.76641 8.21758 1.75 7.98516 1.75 7.75C1.75 7.51484 1.76641 7.28242 1.79648 7.05547L0.6125 5.97813C0.423828 5.80859 0.35 5.54336 0.4375 5.30547C0.557813 4.98008 0.702735 4.66836 0.869531 4.36758L0.998047 4.14609C1.17852 3.84531 1.38086 3.56094 1.60234 3.29297C1.76367 3.09609 2.03164 3.03047 2.27227 3.10703L3.79531 3.59102C4.16172 3.30938 4.56641 3.07422 4.99844 2.89648L5.34023 1.33516C5.39492 1.08633 5.58633 0.889453 5.83789 0.848437C6.21523 0.782812 6.60352 0.75 7 0.75C7.39648 0.75 7.78477 0.782813 8.16211 0.845703C8.41367 0.886719 8.60508 1.08359 8.65977 1.33242L9.00156 2.89375C9.43359 3.07148 9.83828 3.30664 10.2047 3.58828L11.7277 3.1043C11.9684 3.02773 12.2363 3.09609 12.3977 3.29023C12.6191 3.5582 12.8215 3.84258 13.002 4.14336L13.1305 4.36484C13.2973 4.66562 13.4422 4.97734 13.5625 5.30273L13.5598 5.30547ZM7 9.9375C7.58016 9.9375 8.13656 9.70703 8.5468 9.2968C8.95703 8.88656 9.1875 8.33016 9.1875 7.75C9.1875 7.16984 8.95703 6.61344 8.5468 6.2032C8.13656 5.79297 7.58016 5.5625 7 5.5625C6.41984 5.5625 5.86344 5.79297 5.4532 6.2032C5.04297 6.61344 4.8125 7.16984 4.8125 7.75C4.8125 8.33016 5.04297 8.88656 5.4532 9.2968C5.86344 9.70703 6.41984 9.9375 7 9.9375Z"
+                    fill="#848D97"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_208">
+                    <path d="M0 0.75H14V14.75H0V0.75Z" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              Settings
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="main" role="main">
+        <section class="projects">
+          <header class="projects-head">
+            <h2>Projects</h2>
+            <div class="filters">
+              <input
+                class="search"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search projects"
+              />
+              <div class="assignee">Assignee ▾</div>
+              <div class="filter-buttons">
+                <button class="filter">All</button>
+                <button class="filter">Active</button>
+                <button class="filter">Done</button>
+                <button class="export">Export</button>
+              </div>
+            </div>
+          </header>
+
+          <div class="cards">
+            <article class="card">
+              <div class="media"></div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Alpha <span class="card-meta">12 tasks</span>
+                </h3>
+                <p class="card-desc">
+                  Description of the project that may be longer than the card
+                  width.
+                </p>
+                <div class="card-tags">
+                  <span class="tag">Frontend</span>
+                  <span class="tag muted">Priority: High</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="media"></div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Beta <span class="card-meta">7 tasks</span>
+                </h3>
+                <p class="card-desc">Short note about Beta.</p>
+                <div class="card-tags">
+                  <span class="tag">Backend</span><span class="tag">Infra</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="media"></div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Gamma <span class="card-meta">23 tasks</span>
+                </h3>
+                <p class="card-desc">Exploratory work and research.</p>
+                <div class="card-tags"><span class="tag">Research</span></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="media"></div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Delta <span class="card-meta">4 tasks</span>
+                </h3>
+                <p class="card-desc">
+                  A brief blurb with more context on scope and risks.
+                </p>
+                <div class="card-tags">
+                  <span class="tag">Mobile</span><span class="tag">iOS</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="list-section">
+            <div class="list-row">
+              <div class="list-icon">🎥</div>
+              <div class="list-content">
+                <div class="list-title">Weekly Standup Recording</div>
+                <div class="list-sub">
+                  Notes: refactor auth flow, roll out A/B test to 10% of
+                  traffic, monitor error spikes…
+                </div>
+              </div>
+              <div class="list-action">
+                <button class="small ghost">Open</button>
+              </div>
+            </div>
+
+            <div class="list-row">
+              <div class="list-icon">🎨</div>
+              <div class="list-content">
+                <div class="list-title">Design Review</div>
+                <div class="list-sub">
+                  Action items: icon pass, empty states, progressive disclosure
+                  on settings panel.
+                </div>
+              </div>
+              <div class="list-action">
+                <button class="small ghost">Open</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="rightbar" aria-label="insights">
+        <div class="insights">
+          <div class="insights-head">
+            <h4>Insights</h4>
+            <div class="timespan">This week ▾</div>
+          </div>
+
+          <div class="panel quick">
+            <h5>Quick Filters</h5>
+            <div class="chips">
+              <button class="chip">Mine</button>
+              <button class="chip">Unassigned</button>
+              <button class="chip">Overdue</button>
+              <button class="chip">Blocked</button>
+              <button class="chip">Recently Updated</button>
+            </div>
+          </div>
+
+          <div class="panel team">
+            <h5>Team</h5>
+            <div class="member">
+              <span class="avatar" style="background: #ff7f6b"></span>
+              <div class="member-info">
+                <div class="member-name">Alex</div>
+                <div class="member-sub">3 items due today</div>
+              </div>
+              <button class="ping">Ping</button>
+            </div>
+
+            <div class="member">
+              <span class="avatar" style="background: #3bd36b"></span>
+              <div class="member-info">
+                <div class="member-name">Jordan</div>
+                <div class="member-sub">Out of office</div>
+              </div>
+              <button class="ping">Ping</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="page-foot">
+      <div>© 2025 Flexboard Inc.</div>
+      <div class="made">Made with pure Flexbox</div>
+    </footer>
   </body>
 </html>

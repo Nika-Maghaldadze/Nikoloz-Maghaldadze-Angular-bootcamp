@@ -3,94 +3,170 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Positioning-Based Layout</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-            padding: 40px;
-        }
-        #container {
-            width: 289px;
-            height: 577px;
-            margin: 0 auto;
-            border-top: 1px solid #333;
-            border-left: 1px solid #333;
-            position: relative;
-        }
-        .box {
-            position: absolute;
-            box-sizing: border-box;
-            border-right: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-    </style>
+    <title>homework-Float</title>
+    
 </head>
 <body>
+    <div class="wrapper clearfix">
+        <!-- Row 1 -->
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange"></div>
 
-    <div id="container">
-        <div class="box" style="width: 108px; height: 216px; top: 0px;   left: 0px;   background-color: #f4d35e;"></div>
-        <div class="box" style="width: 108px; height: 252px; top: 0px;   left: 108px; background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px;  height: 216px; top: 0px;   left: 216px; background-color: #f4d35e;"></div>
-        <div class="box" style="width: 36px;  height: 36px;  top: 0px;   left: 252px; background-color: #ee964b;"></div>
+        <!-- Row 2 -->
+        <div class="cell bg-yellow new-row"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-green border-top"></div>
 
-        <!-- Row 2-->
-        <div class="box" style="width: 36px; height: 36px; top: 36px; left: 252px; background-color: #4a7856;"></div>
+        <!-- Row 3 -->
+        <div class="cell bg-yellow new-row"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 3-6 -->
-        <div class="box" style="width: 36px; height: 36px; top: 72px;  left: 252px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 108px; left: 252px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 144px; left: 252px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 180px; left: 252px; background-color: #ee964b;"></div>
+        <!-- Row 4 -->
+        <div class="cell bg-yellow new-row"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 7  -->
-        <div class="box" style="width: 72px;  height: 144px; top: 216px; left: 0px;   background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px;  height: 36px;  top: 216px; left: 72px;  background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px;  height: 144px; top: 216px; left: 216px; background-color: #f4d35e;"></div>
-        <div class="box" style="width: 36px;  height: 36px;  top: 216px; left: 252px; background-color: #ee964b;"></div>
-        
-        <!-- Row 8  -->
-        <div class="box" style="width: 144px; height: 108px; top: 252px; left: 72px; background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px;  height: 36px;  top: 252px; left: 252px; background-color: #f4d35e;"></div>
+        <!-- Row 5 -->
+        <div class="cell bg-yellow new-row"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 9  -->
-        <div class="box" style="width: 36px;  height: 36px;  top: 288px; left: 252px; background-color: #ee964b;"></div>
+        <!-- Row 6 -->
+        <div class="cell bg-yellow new-row"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 10  -->
-        <div class="box" style="width: 36px; height: 36px; top: 324px; left: 252px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 324px; left: 216px; background-color: #4a7856;"></div>
+        <!-- Row 7 -->
+        <div class="cell bg-skyblue new-row border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right border-top"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 11  -->
-        <div class="box" style="width: 144px; height: 72px;  top: 360px; left: 0px;   background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px;  height: 72px;  top: 360px; left: 144px; background-color: #f4d35e;"></div>
-        <div class="box" style="width: 72px;  height: 108px; top: 360px; left: 180px; background-color: #f4d35e;"></div>
-        <div class="box" style="width: 36px;  height: 36px;  top: 360px; left: 252px; background-color: #ee964b;"></div>
+        <!-- Row 8 -->
+        <div class="cell bg-skyblue new-row"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-skyblue border-top"></div>
+        <div class="cell bg-skyblue border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-yellow border-right border-top"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 12  -->
-        <div class="box" style="width: 36px; height: 36px; top: 396px; left: 252px; background-color: #4a7856;"></div>
+        <!-- Row 9 -->
+        <div class="cell bg-skyblue new-row"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right border-top"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
 
-        <!-- Row 13  -->
-        <div class="box" style="width: 144px; height: 108px; top: 432px; left: 0px;   background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px;  height: 144px; top: 432px; left: 144px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px;  height: 36px;  top: 432px; left: 252px; background-color: #ee964b;"></div>
+        <!-- Row 10 -->
+        <div class="cell bg-skyblue new-row"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-orange border-right border-top"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-green border-top"></div>
 
-        <!-- Row 14  -->
-        <div class="box" style="width: 36px; height: 108px; top: 468px; left: 180px; background-color: #f4d35e;"></div>
-        <div class="box" style="width: 36px; height: 36px;  top: 468px; left: 216px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px; height: 36px;  top: 468px; left: 252px; background-color: #ee964b;"></div>
+        <!-- Row 11 -->
+        <div class="cell bg-skyblue new-row border-top"></div>
+        <div class="cell bg-skyblue border-top"></div>
+        <div class="cell bg-skyblue border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-yellow border-right border-top"></div>
+        <div class="cell bg-yellow border-top"></div>
+        <div class="cell bg-yellow border-right border-top"></div>
+        <div class="cell bg-orange"></div>
+
+        <!-- Row 12 -->
+        <div class="cell bg-skyblue new-row"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-green border-top"></div>
+
+        <!-- Row 13 -->
+        <div class="cell bg-skyblue new-row border-top"></div>
+        <div class="cell bg-skyblue border-top"></div>
+        <div class="cell bg-skyblue border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-orange border-right border-top"></div>
+        <div class="cell bg-yellow"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-top"></div>
+
+        <!-- Row 14 -->
+        <div class="cell bg-skyblue new-row"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-orange border-right"></div>
+        <div class="cell bg-yellow border-right border-top"></div>
+        <div class="cell bg-orange border-right border-top"></div>
+        <div class="cell bg-orange border-top"></div>
 
         <!-- Row 15 -->
-        <div class="box" style="width: 36px; height: 72px; top: 504px; left: 216px; background-color: #ee964b;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 504px; left: 252px; background-color: #ee964b;"></div>
+        <div class="cell bg-skyblue new-row"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue"></div>
+        <div class="cell bg-skyblue border-right"></div>
+        <div class="cell bg-orange border-right"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-right border-top"></div>
+        <div class="cell bg-orange border-top"></div>
 
         <!-- Row 16 -->
-        <div class="box" style="width: 36px; height: 36px; top: 540px; left: 0px;   background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 540px; left: 36px;  background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 540px; left: 72px;  background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 540px; left: 108px; background-color: #8bd3dd;"></div>
-        <div class="box" style="width: 36px; height: 36px; top: 540px; left: 252px; background-color: #ee964b;"></div>
+        <div class="cell bg-skyblue new-row border-right border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-skyblue border-right border-top"></div>
+        <div class="cell bg-orange border-right border-top"></div>
+        <div class="cell bg-yellow border-right"></div>
+        <div class="cell bg-orange border-right border-top"></div>
+        <div class="cell bg-orange border-top"></div>
     </div>
-
 </body>
 </html>
-
