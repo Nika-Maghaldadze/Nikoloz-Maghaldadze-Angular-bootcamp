@@ -189,7 +189,7 @@
   background: linear-gradient(90deg, #164e63 0%, #22d3ee 100%);
 }
  
-.footer {
+footer {
   grid-column: 1/-1;
   grid-row: 18/19;
   background: linear-gradient(90deg, #064e3b 0%, #34d399 100%);
