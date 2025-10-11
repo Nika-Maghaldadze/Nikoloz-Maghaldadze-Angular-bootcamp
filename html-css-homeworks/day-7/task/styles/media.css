@@ -1,0 +1,12 @@
+@media(max-width: 1300px){
+    .main-header{
+        padding: 16px 24px ;
+    }
+}
+
+
+@media(max-width: 660px){
+    .header-navigation{
+        display: none;
+    }
+}
