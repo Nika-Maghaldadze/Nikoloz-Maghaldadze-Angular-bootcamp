@@ -11,9 +11,10 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="stylesheet" href="./styles/components.css" />
         <link rel="stylesheet" href="./styles/styles.css" />
         <link rel="stylesheet" href="./styles/media.css" />
-        <link rel="stylesheet" href="./styles/animations.css">
+        <link rel="stylesheet" href="./styles/animations.css" />
     </head>
     <body>
         <!--! main header -->
@@ -52,11 +53,95 @@
                     <button class="explore-btn">Explore Magic</button>
                 </div>
             </section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section class="amazing-features__container">
+                <h2 class="amazing-features__header">AMAZING FEATURES</h2>
+                <div class="feature-cards__wrapper">
+                    <div class="feature-card lt-blue">
+                        <img
+                            class="feature-card__img"
+                            src="./assets/icons/blue-palitra.svg"
+                            alt="blue palitra svg"
+                        />
+                        <h3 class="feature-card__header">Vibrant Colors</h3>
+                        <p class="feature-card__paragraph">
+                            Experience a rainbow of possibilities with our
+                            dynamic color schemes that bring life to every
+                            pixel.
+                        </p>
+                    </div>
+                    <div class="feature-card pink">
+                        <img
+                            class="feature-card__img"
+                            src="./assets/icons/pink-stick.svg"
+                            alt="pink magic stick svg"
+                        />
+                        <h3 class="feature-card__header">Magic Effects</h3>
+                        <p class="feature-card__paragraph">
+                            Stunning animations and hover effects that create an
+                            immersive and interactive experience.
+                        </p>
+                    </div>
+                    <div class="feature-card yellow">
+                        <img
+                            class="feature-card__img"
+                            src="./assets/icons/rocket.svg"
+                            alt="yellow rocket svg"
+                        />
+                        <h3 class="feature-card__header">Performance</h3>
+                        <p class="feature-card__paragraph">
+                            Lightning-fast animations and smooth transitions
+                            that never compromise on performance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery-wrapper">
+                <h2 class="gallery-header">VISUAL GALLERY</h2>
+                <div class="image-gallery">
+                    <div class="image-container"></div>
+                    <div class="image-container"></div>
+                    <div class="image-container"></div>
+                    <div class="image-container"></div>
+                </div>
+            </section>
+            <section class="ratings-section">
+                <div class="ratigs-card__wrapper">
+                    <div class="rating-card blue-border">
+                        <h3 class="stats-count">1000+</h3>
+                        <h5 class="stats-header">Projects</h5>
+                    </div>
+                    <div class="rating-card pink-border">
+                        <h3 class="stats-count">500+</h3>
+                        <h5 class="stats-header">Clients</h5>
+                    </div>
+                    <div class="rating-card yellow-border">
+                        <h3 class="stats-count">50+</h3>
+                        <h5 class="stats-header">Awards</h5>
+                    </div>
+                    <div class="rating-card green-border">
+                        <h3 class="stats-count">10+</h3>
+                        <h5 class="stats-header">Years</h5>
+                    </div>
+                </div>
+            </section>
         </main>
         <!--! footer -->
-        <footer></footer>
+        <footer class="main-footer">
+            <div class="footer-content__wrapper">
+                <h3 class="footer-header">
+                    <span class="footer-header-1">VIBRANT</span>
+                    <span class="footer-header-2">STUDIO</span>
+                </h3>
+                <div class="logos">
+                    <img src="./assets/icons/variant=5.svg" alt="facebook logo" />
+                    <img src="./assets/icons/variant=7.svg" alt="instagram logo" />
+                    <img src="./assets/icons/variant=9.svg" alt="twitter logo"/>
+                    <img src="./assets/icons/variant=11.svg" alt="linkedin logo" />
+                </div>
+                <p class="copyright">
+                    © 2024 Vibrant Studio. All rights reserved.
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

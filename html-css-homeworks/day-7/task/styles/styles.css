@@ -72,16 +72,16 @@ body {
     font-weight: 400;
     letter-spacing: 0.1px;
 }
-.nav-ul > li:nth-child(1){
+.nav-ul > li:nth-child(1) {
     margin-right: -4px;
 }
-.nav-ul > li:nth-child(2){
+.nav-ul > li:nth-child(2) {
     margin-right: -3px;
 }
-.nav-ul > li:nth-child(3){
+.nav-ul > li:nth-child(3) {
     margin-right: -4px;
 }
-.nav-ul > li:nth-child(4){
+.nav-ul > li:nth-child(4) {
     margin-right: 4px;
 }
 .nav-ul > li:hover {
@@ -234,12 +234,141 @@ body {
     padding-top: 8px;
 }
 
-.explore-btn:hover{
-     transition:scale ease .5s;
-     background: linear-gradient(
+.explore-btn:hover {
+    transition: scale ease 0.5s;
+    background: linear-gradient(
         90deg,
         rgba(139, 92, 246, 1) 0%,
         rgba(236, 72, 153, 1) 100%
     );
-     scale: 1.1;
+    scale: 1.1;
+}
+
+.amazing-features__container {
+    max-width: 1920px;
+    width: 100%;
+    height: 571.52px;
+    background: linear-gradient(
+        90deg,
+        rgba(224, 231, 255, 1) 0%,
+        rgba(250, 245, 255, 1) 50%,
+        rgba(252, 231, 243, 1) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.amazing-features__header {
+    width: 717px;
+    height: 60px;
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(90deg, #9333ea 0%, #db2777 100%);
+    background-clip: text;
+    /* ამის გარდა არაფერმა იმუშავა sorry :) */
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-cards__wrapper {
+    display: flex;
+    gap: 32px;
+}
+
+.gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 192px;
+    height: 540px;
+    gap: 64px;
+    background: linear-gradient(90deg, #581c87 0%, #1e3a8a 50%, #312e81 100%);
+}
+
+.gallery-header {
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 60px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #ffffff, 0px 0px 20px #ffffff,
+        0px 0px 30px #ffffff;
+}
+
+.image-gallery {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+}
+
+.ratings-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 216px;
+    height: 340px;
+    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 50%, #e0e7ff 100%);
+}
+
+.ratigs-card__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 32px;
+}
+
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 192px;
+    height: 290px;
+    background: linear-gradient(90deg, #111827 0%, #581c87 50%, #4c1d95 100%);
+}
+
+.footer-header {
+    font-family: "Orbitron";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    color: #22d3ee;
+    text-shadow: 0px 0px 10px #22d3ee, 0px 0px 20px #22d3ee,
+        0px 0px 30px #22d3ee;
+}
+.footer-content__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 31.25px;
+}
+.logos {
+    display: flex;
+    gap: 32px;
+}
+.footer-header-2 {
+    color: #f472b6;
+}
+
+.copyright {
+    font-family: "Dancing Script";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
 }
