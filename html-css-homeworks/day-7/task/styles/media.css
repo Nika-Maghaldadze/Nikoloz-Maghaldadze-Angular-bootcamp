@@ -1,12 +1,86 @@
-@media(max-width: 1300px){
-    .main-header{
-        padding: 16px 24px ;
+@media (max-width: 1440px) {
+    .main-header {
+        padding: 16px 91px;
+    }
+    .nav-ul {
+        max-width: 320px;
+        gap: 34px;
+    }
+
+    .nav-ul > li {
+        font-weight: 600;
+        letter-spacing: 0.1px;
+    }
+    .nav-ul > li:nth-child(4) {
+        margin-right: 15px;
+    }
+    .nav-ul > li:hover {
+        transition: transform 0.5s ease;
+        color: #22d3ee;
+        transform: scale(1.2);
+    }
+    .info-wrapper {
+        top: 44.5%;
+        left: 49.5%;
+    }
+    .header-wrapper {
+        padding-top: 4px;
+    }
+    .slogan {
+        letter-spacing: 0.16px;
+        margin-top: -1px;
+        margin-left: -3px;
+    }
+    .explore-btn {
+        margin-top: 12px;
+        padding-left: 0px;
+        padding-top: 0px;
+        letter-spacing: 0.19px;
+    }
+    .red-circle {
+        position: absolute;
+        width: 96px;
+        height: 96px;
+        right: 130px;
+        bottom: 128px;
+        background: rgba(244, 114, 182, 0.5);
+        filter: blur(8px);
+        border-radius: 9999px;
+        z-index: 10;
+    }
+
+    .yellow-circle {
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        left: 60px;
+        top: 11px;
+        background: rgba(250, 204, 21, 0.5);
+        filter: blur(12px);
+        border-radius: 9999px;
+        z-index: 10;
+    }
+    .blue-circle {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        left: 20px;
+        top: 330px;
+        background: rgba(34, 211, 238, 0.5);
+        filter: blur(6px);
+        border-radius: 9999px;
+        z-index: 10;
     }
 }
 
+@media (max-width: 1300px) {
+    .main-header {
+        padding: 16px 24px;
+    }
+}
 
-@media(max-width: 660px){
-    .header-navigation{
+@media (max-width: 660px) {
+    .header-navigation {
         display: none;
     }
 }

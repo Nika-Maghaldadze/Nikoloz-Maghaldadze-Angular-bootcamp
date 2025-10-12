@@ -41,6 +41,7 @@ body {
 }
 
 .logo-text {
+    margin-left: -4px;
     font-size: 3rem;
     font-family: "Orbitron", sans-serif;
     font-weight: 700;
@@ -55,9 +56,11 @@ body {
     transform: scale(1.15);
 }
 .nav-ul {
+    max-width: 320px;
+    width: 100%;
     display: flex;
-    gap: 32px;
-    align-items: centerS;
+    gap: 34px;
+    align-items: center;
 }
 
 .nav-ul > li {
@@ -66,6 +69,20 @@ body {
     color: #fff;
     line-height: 24px;
     cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+}
+.nav-ul > li:nth-child(1){
+    margin-right: -4px;
+}
+.nav-ul > li:nth-child(2){
+    margin-right: -3px;
+}
+.nav-ul > li:nth-child(3){
+    margin-right: -4px;
+}
+.nav-ul > li:nth-child(4){
+    margin-right: 4px;
 }
 .nav-ul > li:hover {
     transition: transform 0.5s ease;
@@ -104,11 +121,12 @@ body {
     position: absolute;
     width: 96px;
     height: 96px;
-    right: 128px;
+    right: 130px;
     bottom: 128px;
     background: rgba(244, 114, 182, 0.5);
     filter: blur(8px);
     border-radius: 9999px;
+    z-index: 10;
 }
 
 .yellow-circle {
@@ -120,32 +138,34 @@ body {
     background: rgba(250, 204, 21, 0.5);
     filter: blur(12px);
     border-radius: 9999px;
+    z-index: 10;
 }
 .blue-circle {
     position: absolute;
     width: 64px;
     height: 64px;
-    left: 40px;
-    top: calc(50% - 64px / 2 + 32px);
+    left: 36px;
+    top: 330px;
     background: rgba(34, 211, 238, 0.5);
     filter: blur(6px);
     border-radius: 9999px;
+    z-index: 10;
 }
 
 .info-wrapper {
     max-width: 642px;
     width: 100%;
     display: flex;
-    gap: 24px;
+    gap: 19px;
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 44.2%;
+    left: 49.8%;
     z-index: 10;
     transform-origin: center;
     animation: bounceIn 1.4s ease forwards;
+    padding-top: 4px;
 }
 
 .main-section__header {
@@ -157,6 +177,7 @@ body {
     align-items: center;
     flex-direction: column;
     line-height: 96px;
+    margin-top: 5px;
 }
 
 .main-section__header > span {
@@ -189,12 +210,14 @@ body {
     opacity: 0.9;
     padding: 0 20px;
     text-align: center;
+    letter-spacing: 0.1px;
+    padding-top: 8px;
 }
 
 .explore-btn {
     max-width: 231px;
     width: 100%;
-    height: 60px;
+    height: 63px;
     background: linear-gradient(
         90deg,
         rgba(236, 72, 153, 1) 0%,
@@ -205,8 +228,10 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 1.95rem;
     line-height: 28px;
-    font-weight: 800;
+    font-weight: 600;
     cursor: pointer;
+    margin-top: 7px;
+    padding-top: 8px;
 }
 
 .explore-btn:hover{
