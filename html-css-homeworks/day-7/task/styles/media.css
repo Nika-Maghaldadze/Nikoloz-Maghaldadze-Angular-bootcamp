@@ -95,14 +95,17 @@
         top: 330px;
     }
 }
+@media(max-width:680px){
+    .info-wrapper {
+        max-width: 600px;
+    }
+}
 
 @media (max-width: 660px) {
     .header-navigation {
         display: none;
     }
-    .info-wrapper {
-        max-width: 600px;
-    }
+    
 }
 
 @media (max-width: 640px) {
@@ -123,7 +126,11 @@
     }
     
 }
-
+@media (max-width: 610px){
+    .info-wrapper {
+        max-width: 400px;
+    }
+}
 @media (max-width: 600px) {
     .amazing-features__container {
         padding: 32px 16px;
@@ -141,9 +148,6 @@
     }
     .gallery-wrapper {
         padding: 80px 42px;
-    }
-    .info-wrapper {
-        max-width: 400px;
     }
 }
 @media (max-width: 500px) {
