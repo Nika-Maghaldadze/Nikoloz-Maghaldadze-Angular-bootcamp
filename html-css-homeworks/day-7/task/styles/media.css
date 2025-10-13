@@ -46,6 +46,10 @@
         left: 20px;
         top: 330px;
     }
+
+    .ratings-section {
+        padding: 80px 116px;
+    }
 }
 
 @media (max-width: 1300px) {
@@ -96,11 +100,63 @@
     .header-navigation {
         display: none;
     }
+    .info-wrapper {
+        max-width: 600px;
+    }
 }
 
+@media (max-width: 640px) {
+    .ratings-section {
+        padding: 40px 16px;
+    }
+    .ratigs-card__wrapper {
+        gap: 12px;
+        grid-template-columns: 1fr;
+    }
+    .rating-card {
+        max-width: none;
+        padding: 18px;
+        min-height: auto;
+    }
+    .rating-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+}
 
-@media(max-width:380px){
-    .info-wrapper{
-        left:53%
+@media (max-width: 600px) {
+    .amazing-features__container {
+        padding: 32px 16px;
+        gap: 28px;
+    }
+    .feature-cards__wrapper {
+        gap: 16px;
+    }
+    .feature-card {
+        padding: 16px;
+        min-height: auto;
+    }
+    .amazing-features__header {
+        font-size: clamp(22px, 8vw, 40px);
+    }
+    .gallery-wrapper {
+        padding: 80px 42px;
+    }
+    .info-wrapper {
+        max-width: 400px;
+    }
+}
+@media (max-width: 500px) {
+    .info-wrapper {
+        max-width: 360px;
+    }
+    .main-footer {
+    padding: 64px 142px;
+}
+}
+
+@media (max-width: 380px) {
+    .info-wrapper {
+        left: 53%;
     }
 }
