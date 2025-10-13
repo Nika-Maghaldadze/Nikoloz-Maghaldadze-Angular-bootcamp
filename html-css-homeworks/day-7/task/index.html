@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day7 Responsive</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="stylesheet" href="./styles/components.css" />
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <link rel="stylesheet" href="./styles/media.css" />
+        <link rel="stylesheet" href="./styles/animations.css" />
+    </head>
+    <body>
+        <!--! main header -->
+        <header class="main-header">
+            <!-- ! ანიმაციები ყველაფერს -->
+            <div class="header-container">
+                <h2 class="logo-text">VIBRANTSTUDIO</h2>
+                <nav class="header-navigation">
+                    <ul class="nav-ul">
+                        <li class="list-item">Home</li>
+                        <li class="list-item">About</li>
+                        <li class="list-item">Services</li>
+                        <li class="list-item">Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--! main section -->
+        <main class="main-section">
+            <section class="hero-section">
+                <div class="red-circle"></div>
+                <div class="blue-circle"></div>
+                <div class="yellow-circle"></div>
+                <div class="info-wrapper">
+                    <!--! ამ სექციას ედება ანიმაცია -->
+                    <div class="header-wrapper">
+                        <!--! აქ მეტი იდეა არ მქონდა როგორ გამესტილა ორი სიტყვა განსხვავებულად -->
+                        <h1 class="main-section__header">
+                            <span class="lb-header"> CREATIVE </span>
+                            <span class="p-header"> EXPLOSION </span>
+                        </h1>
+                    </div>
+                    <p class="slogan">
+                        Where colors dance and imagination comes alive
+                    </p>
+                    <button class="explore-btn">Explore Magic</button>
+                </div>
+            </section>
+            <section class="amazing-features__container">
+                <h2 class="amazing-features__header">AMAZING FEATURES</h2>
+                <div class="feature-cards__wrapper">
+                    <div class="feature-card lt-blue">
+                        <img
+                            class="feature-card__img"
+                            src="./assets/icons/blue-palitra.svg"
+                            alt="blue palitra svg"
+                        />
+                        <h3 class="feature-card__header">Vibrant Colors</h3>
+                        <p class="feature-card__paragraph">
+                            Experience a rainbow of possibilities with our
+                            dynamic color schemes that bring life to every
+                            pixel.
+                        </p>
+                    </div>
+                    <div class="feature-card pink">
+                        <img
+                            class="feature-card__img"
+                            src="./assets/icons/pink-stick.svg"
+                            alt="pink magic stick svg"
+                        />
+                        <h3 class="feature-card__header">Magic Effects</h3>
+                        <p class="feature-card__paragraph">
+                            Stunning animations and hover effects that create an
+                            immersive and interactive experience.
+                        </p>
+                    </div>
+                    <div class="feature-card yellow">
+                        <img
+                            class="feature-card__img"
+                            src="./assets/icons/rocket.svg"
+                            alt="yellow rocket svg"
+                        />
+                        <h3 class="feature-card__header">Performance</h3>
+                        <p class="feature-card__paragraph">
+                            Lightning-fast animations and smooth transitions
+                            that never compromise on performance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery-wrapper">
+                <h2 class="gallery-header">VISUAL GALLERY</h2>
+                <div class="image-gallery">
+                    <div class="image-container"></div>
+                    <div class="image-container"></div>
+                    <div class="image-container"></div>
+                    <div class="image-container"></div>
+                </div>
+            </section>
+            <section class="ratings-section">
+                <div class="ratigs-card__wrapper">
+                    <div class="rating-card blue-border">
+                        <h3 class="stats-count">1000+</h3>
+                        <h5 class="stats-header">Projects</h5>
+                    </div>
+                    <div class="rating-card pink-border">
+                        <h3 class="stats-count">500+</h3>
+                        <h5 class="stats-header">Clients</h5>
+                    </div>
+                    <div class="rating-card yellow-border">
+                        <h3 class="stats-count">50+</h3>
+                        <h5 class="stats-header">Awards</h5>
+                    </div>
+                    <div class="rating-card green-border">
+                        <h3 class="stats-count">10+</h3>
+                        <h5 class="stats-header">Years</h5>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--! footer -->
+        <footer class="main-footer">
+            <div class="footer-content__wrapper">
+                <h3 class="footer-header">
+                    <span class="footer-header-1">VIBRANT</span>
+                    <span class="footer-header-2">STUDIO</span>
+                </h3>
+                <div class="logos">
+                    <img src="./assets/icons/variant=5.svg" alt="facebook logo" />
+                    <img src="./assets/icons/variant=7.svg" alt="instagram logo" />
+                    <img src="./assets/icons/variant=9.svg" alt="twitter logo"/>
+                    <img src="./assets/icons/variant=11.svg" alt="linkedin logo" />
+                </div>
+                <p class="copyright">
+                    © 2024 Vibrant Studio. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
