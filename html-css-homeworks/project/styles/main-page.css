@@ -10,6 +10,8 @@ body {
     margin: 0 auto;
     display: flex;
     padding-top: 12px;
+    justify-content: space-between;
+    /* gap: 193px; */
 }
 
 .main-header .main-header__logo {
@@ -52,7 +54,6 @@ body {
 .main-header__navigation {
     display: flex;
     align-items: center;
-    margin-left: 193px;
 }
 
 .main-header__navigation .navigation-ul {
@@ -84,7 +85,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 208px;
+    margin-left: 15px;
     gap: 15px;
 }
 .logos-wrap {
