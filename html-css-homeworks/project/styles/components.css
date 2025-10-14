@@ -9,7 +9,6 @@
     display: flex;
     padding: 12px 0;
     justify-content: space-between;
-    
 }
 
 .main-header .main-header__logo {
@@ -52,6 +51,7 @@
 .main-header__navigation {
     display: flex;
     align-items: center;
+    margin-top: -1.5px;
 }
 
 .main-header__navigation .navigation-ul {
@@ -100,13 +100,13 @@
     height: 34px;
     padding-left: 10px;
     border-radius: 9999px;
-    
+
     cursor: pointer;
 }
-.magnifying-glass:hover{
+.magnifying-glass:hover {
     background: #eef2ff;
 }
-.magnifying-glass:hover img{
+.magnifying-glass:hover img {
     filter: brightness(0) saturate(100%) invert(27%) sepia(72%) saturate(5714%)
         hue-rotate(241deg) brightness(94%) contrast(91%);
 }
@@ -122,11 +122,11 @@
 }
 .heart:hover {
     cursor: pointer;
-    background-color:#FEF2F2 ;
+    background-color: #fef2f2;
 }
 
-.heart:hover img{
-filter: brightness(0) saturate(100%) invert(40%) sepia(24%) saturate(2518%)
+.heart:hover img {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(24%) saturate(2518%)
         hue-rotate(324deg) brightness(100%) contrast(99%);
 }
 
