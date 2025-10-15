@@ -34,9 +34,9 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./styles/reset.css" />
-        <link rel="stylesheet" href="./styles/components.css" />
         <link rel="stylesheet" href="./styles/main-page.css" />
         <link rel="stylesheet" href="./styles/media.css" />
+        <link rel="stylesheet" href="./styles/components.css" />
     </head>
     <body>
         <div class="shadow"></div>
@@ -92,14 +92,14 @@
                             with our advanced search technology.
                         </p>
                         <div class="hero-section__buttons">
-                            <button>
+                            <button class="hero-section__button purple">
                                 <img
                                     src="./assets/logos/variant=12.svg"
                                     alt="white magnifying glass"
                                 />
                                 Browse Cars
                             </button>
-                            <button>
+                            <button class="hero-section__button white">
                                 <img
                                     src="./assets/logos/variant=14.svg"
                                     alt="grey dollar logo"
@@ -109,13 +109,117 @@
                         </div>
                     </div>
                     <div class="right-content">
-                        <div class="hero-section__car-image">
+                        <figure class="image-container">
                             <img
                                 src="./assets/images/luxury sports car on modern showroom floor with dramatic lighting.png"
-                                alt="luxury sports car on modern showroom floor with dramatic lighting"
+                                alt="Luxury sports car on a modern showroom floor"
+                                loading="lazy"
                             />
-                        </div>
+                        </figure>
                     </div>
+                </div>
+            </section>
+            <section class="search-card-wrapper" aria-label="Search cars">
+                <div class="search-card">
+                    <div class="search-card__header">
+                        <span class="search-card__icon" aria-hidden="true">
+                            <img src="./assets/logos/Component6.svg" alt="filter icon">
+                        </span>
+
+                        <h2 class="search-card__title">Search Cars</h2>
+                    </div>
+
+                    <form
+                        class="search-form"
+                        role="search"
+                        aria-label="Car search form"
+                        action="/search"
+                        method="GET"
+                    >
+                        <div class="search-form__grid">
+                            <div class="field">
+                                <label for="make">Make</label>
+                                <select
+                                    id="make"
+                                    name="make"
+                                    class="input"
+                                    aria-label="Select car make"
+                                >
+                                    <option value="">All Makes</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="mercedes">Mercedes</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="model">Model</label>
+                                <select
+                                    id="model"
+                                    name="model"
+                                    class="input"
+                                    aria-label="Select car model"
+                                >
+                                    <option value="">All Models</option>
+                                    <option value="series-3">Series 3</option>
+                                    <option value="c-class">C-Class</option>
+                                    <option value="corolla">Corolla</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="price">Price Range</label>
+                                <select
+                                    id="price"
+                                    name="price"
+                                    class="input"
+                                    aria-label="Select price range"
+                                >
+                                    <option value="">Any Price</option>
+                                    <option value="0-20000">$0–$20k</option>
+                                    <option value="20000-50000">
+                                        $20k–$50k
+                                    </option>
+                                    <option value="50000+">$50k+</option>
+                                </select>
+                            </div>
+
+                            <div class="field field--button">
+                                <button
+                                    type="submit"
+                                    class="btn-search"
+                                    aria-label="Search"
+                                >
+                                    <svg
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M21 21l-4.35-4.35"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <circle
+                                            cx="11"
+                                            cy="11"
+                                            r="6"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                    <span class="btn-search__text">Search</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>

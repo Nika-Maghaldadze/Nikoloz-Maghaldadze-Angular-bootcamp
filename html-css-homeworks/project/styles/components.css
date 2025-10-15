@@ -9,6 +9,7 @@
     display: flex;
     padding: 12px 0;
     justify-content: space-between;
+    z-index: 5;
 }
 
 .main-header .main-header__logo {
