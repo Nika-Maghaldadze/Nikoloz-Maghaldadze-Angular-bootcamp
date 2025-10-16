@@ -410,24 +410,130 @@ body {
     margin-top: 17px;
 }
 
-.green > div{
+.grid-block.green > div{
     background: linear-gradient(-90deg,rgba(34, 197, 94, 1) 0%, rgba(5, 150, 105, 1) 100%);
 }
-.green > div > img{
+.grid-block.green > div > img{
     width: 40px;
     height: 40px;
 }
 
-.green > span{
+.grid-block.green > span{
     background: #DCFCE7;
     color: #166534;
 }
 
-.orange > div{
+.grid-block.orange > div{
     background: linear-gradient(-90deg,rgba(234, 179, 8, 1) 0%, rgba(234, 88, 12, 1) 100%);
 }
 
-.orange > span{
+.grid-block.orange > span{
     background: #FEF9C3;
     color: #854D0E;
+}
+
+
+
+.featured-vehicles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: columns;
+    padding: 80px 0;
+}
+
+.header-container > h3 {
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+}
+.header-container > p {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4b5563;
+    line-height: 24px;
+    text-align: center;
+}
+
+.vehicles-cards__wrapper{
+    position: relative;
+    max-width: 1216px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    
+}
+.card-details__wrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 10%), 0px 4px 6px -4px rgba(0, 0, 0, 10%);
+}
+.top-left__label{
+    position: absolute;
+    top: 13px;
+    left: 16px;
+    padding: 4.5px 12px;
+    background: #22C55E;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 9999px;
+    line-height: 20px;
+}
+.top-right-heart{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.mileage-stats{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+.details-container{
+    padding:24px ;
+}
+.details-container__name{
+    font-size: 20px;
+    font-weight: 700;
+}
+.mileage-stats > div{
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.price-container{
+    height: 60px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price{
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.grey-details{
+    max-width:114px ;
+    width: 100%;
+    height: 28px;
+    padding: 4px 12px;
+    background: #F3F4F6;
+    border-radius: 9999px;
+    color: #6B7280;
+    display: grid;
+    place-items: center ;
+    font-size: 14px;
 }
