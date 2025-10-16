@@ -133,3 +133,9 @@ h1,h2,h3,h4,h5,p,a{
 *{
     box-sizing: border-box;
 }
+
+select{
+    appearance: none;
+    background: none;
+    background-image: none;
+}
