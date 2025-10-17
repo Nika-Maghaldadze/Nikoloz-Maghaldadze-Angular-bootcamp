@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Buy, sell, and trade luxury and everyday cars. My personal project connects buyers and sellers with secure listings and best-price deals."
+        />
+        <meta
+            name="keywords"
+            content="car, luxury, buy, sell, low-price, best-quality, used cars, car marketplace"
+        />
+        <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta property="og:site_name" content="Personal project" />
+        <meta property="og:title" content="Buy & Sell Luxury Cars" />
+        <meta
+            property="og:description"
+            content="Secure car marketplace for buying and selling luxury & used cars — verified listings, competitive prices, and trusted sellers."
+        />
+        <meta
+            property="og:image:alt"
+            content="Luxury car for sale at Personal project"
+        />
+        <title>Personal Project</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/components.css" />
+        <link rel="stylesheet" href="../styles/inventory.css" />
+        <link rel="stylesheet" href="../styles/media.css" />
+    </head>
+    <body>
+        <div class="shadow"></div>
+        <header class="main-header">
+            <div class="main-header__logo">
+                <div class="main-header__img black">
+                    <img
+                        src="../assets/logos/variant=1.svg"
+                        alt="white car svg"
+                    />
+                </div>
+                <div class="main-header__header">
+                    <h2 class="autodealer-text">AutoDealer</h2>
+                </div>
+            </div>
+            <nav class="main-header__navigation">
+                <ul class="navigation-ul">
+                    <li class="navigation-list__item">Home</li>
+                    <li class="navigation-list__item">Inventory</li>
+                    <li class="navigation-list__item">Finance</li>
+                    <li class="navigation-list__item">About</li>
+                    <li class="navigation-list__item">Contact</li>
+                </ul>
+            </nav>
+            <div class="buttons-wrapper">
+                <div class="logos-wrap">
+                    <div class="magnifying-glass">
+                        <img
+                            src="../assets/logos/variant=3.svg"
+                            alt="magnifying glass icon"
+                        />
+                    </div>
+                    <div class="heart">
+                        <img src="../assets/logos/variant=5.svg" alt="" />
+                    </div>
+                </div>
+                <button class="sign-in__button" type="button">Sign In</button>
+            </div>
+        </header>
+        <main class="mian-container">
+            <section class="car-inventory__wrapper">
+                <div class="content-wrapper">
+                    <div class="texts">
+                        <h1 class="car-inventory__header">Car Inventory</h1>
+                        <p class="car-inventory__description">
+                            Browse our complete selection of premium vehicles
+                        </p>
+                    </div>
+                    <div class="buttons">
+                        <button class="toggle-btn active" aria-pressed="true">
+                            <img class="icon-grid" src="../assets/logos/inventory logos/variant=6.svg">Grid
+                        </button>
+                        <button class="toggle-btn" aria-pressed="false">
+                            <img class="icon-list" src="../assets/logos/inventory logos/variant=8.svg">List
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
