@@ -130,6 +130,7 @@ body {
     font-size: 18px;
     color: #374151;
     border: solid 1px #d1d5db;
+    background: #fff;
 }
 .white:hover {
     padding: 18px 33px;
@@ -245,7 +246,7 @@ body {
 .search-form__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 33px;
+    gap: 25px;
     align-items: center;
 }
 
@@ -261,7 +262,7 @@ body {
 }
 
 .input {
-    max-width: 270px;
+    max-width: 280px;
     width: 100%;
     border: 1px solid var(--input-border);
     background: var(--input-bg);
@@ -326,6 +327,7 @@ body {
     flex-direction: column;
     gap: 64px;
     padding: 70px 0;
+    margin-top: 2px;
 }
 
 .browse-card__header {
@@ -349,14 +351,17 @@ body {
 }
 
 .grid-card {
+    margin-left: 30px;
+    margin-top: 2px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-    gap: 16px;
-    /* margin-left: 30px; */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
 }
 
 .grid-block {
-    padding: 33px 15px;
+    max-width: 384px;
+    width: 100%;
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -378,6 +383,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 16px;
+    margin-top: 2px;
 }
 
 .grid-block > div > img {
@@ -386,7 +392,7 @@ body {
 }
 
 .grid-block > h3 {
-    margin-top: 24px;
+    margin-top: 26px;
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -398,6 +404,8 @@ body {
     color: #4b5563;
     line-height: 24px;
     text-align: center;
+    letter-spacing: 0.08px;
+    padding: 0 8px;
 }
 
 .grid-block__stats {
@@ -500,14 +508,14 @@ body {
 }
 .top-right-heart {
     position: absolute;
-    right: 18px;
-    top: 20px;
+    right: 23px;
+    top: 25px;
 }
 
 .mileage-stats {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 9px;
     margin-top: 8px;
 }
 .details-container {
@@ -516,6 +524,8 @@ body {
 .details-container__name {
     font-size: 20px;
     font-weight: 700;
+    letter-spacing: 0.18px;
+    margin-top: 2px;
 }
 .mileage-stats > div {
     margin-top: 8px;
@@ -535,6 +545,7 @@ body {
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
+    letter-spacing: 0.65px;
 }
 
 .grey-details {
@@ -564,7 +575,7 @@ body {
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 .blue-label .top-left__label {
@@ -587,6 +598,7 @@ body {
     margin: 0 auto;
     display: grid;
     gap: 64px;
+    
 }
 
 .special-deals__container .header-elements {
@@ -616,6 +628,7 @@ body {
     gap: 32px;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-left: 30px;
 }
 
 .special-deals__cards .left-card__deal{
@@ -650,26 +663,30 @@ body {
     font-size: 30px;
     color: #fff;
     font-weight: 700;
+    letter-spacing: 0.6px;
 }
 
 .deal-text{
     font-size: 18px;
     line-height: 29.3px;
     color: #D1D5DB;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.1px;
 }
 
 .learn-more{
     max-width: 178px;
+    width: 100%;
     height: 48px;
     padding: 12px 32px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
     border-radius: 12px;
     font-size: 16px;
     color: #111827;
     line-height: 24px;
+    margin-top: 9px;
+    letter-spacing: 0.25px;
 }
 .right-card__deal{
     max-width: 592px;
@@ -680,7 +697,7 @@ body {
     border-radius: 16px;
     display: flex;
     box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 10%), 0px 8px 10px -6px rgba(0, 0, 0, 10%);
-    gap: 24px;
+    gap: 20px;
 }
 
 .right-card__deal > div{
@@ -700,4 +717,5 @@ body {
     font-weight: 700;
     text-align: center;
     padding-top: 14px;
+    letter-spacing: 0.55px;
 }
