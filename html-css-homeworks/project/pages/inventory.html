@@ -87,11 +87,206 @@
                     </div>
                     <div class="buttons">
                         <button class="toggle-btn active" aria-pressed="true">
-                            <img class="icon-grid" src="../assets/logos/inventory logos/variant=6.svg">Grid
+                            <img
+                                class="icon-grid"
+                                src="../assets/logos/inventory logos/variant=6.svg"
+                            />Grid
                         </button>
                         <button class="toggle-btn" aria-pressed="false">
-                            <img class="icon-list" src="../assets/logos/inventory logos/variant=8.svg">List
+                            <img
+                                class="icon-list"
+                                src="../assets/logos/inventory logos/variant=8.svg"
+                            />List
                         </button>
+                    </div>
+                </div>
+            </section>
+            <section class="filters-form">
+                <div class="filters-wrapper">
+                    <div
+                        class="filters"
+                        role="region"
+                        aria-label="Search filters"
+                    >
+                        <form
+                            class="filters-row"
+                            action="#"
+                            method="get"
+                            aria-labelledby="filters-heading"
+                        >
+                            <div class="control">
+                                <label class="control__label" for="make-select"
+                                    >Make:</label
+                                >
+                                <span class="select" aria-hidden="true">
+                                    <select
+                                        id="make-select"
+                                        name="make"
+                                        aria-label="Make"
+                                    >
+                                        <option>All Makes</option>
+                                        <option>Toyota</option>
+                                        <option>BMW</option>
+                                    </select>
+                                </span>
+                            </div>
+
+                            <div class="control">
+                                <label class="control__label" for="model-select"
+                                    >Model:</label
+                                >
+                                <span class="select" aria-hidden="true">
+                                    <select
+                                        id="model-select"
+                                        name="model"
+                                        aria-label="Model"
+                                    >
+                                        <option>All Models</option>
+                                        <option>3 Series</option>
+                                        <option>Corolla</option>
+                                    </select>
+                                </span>
+                            </div>
+
+                            <div class="control">
+                                <label class="control__label" for="price-select"
+                                    >Price:</label
+                                >
+                                <span class="select" aria-hidden="true">
+                                    <select
+                                        id="price-select"
+                                        name="price"
+                                        aria-label="Price"
+                                    >
+                                        <option>Any Price</option>
+                                        <option><$10k</option>
+                                        <option>$10k-$20k</option>
+                                    </select>
+                                </span>
+                            </div>
+
+                            <div class="control">
+                                <label class="control__label" for="year-select"
+                                    >Year:</label
+                                >
+                                <span class="select" aria-hidden="true">
+                                    <select
+                                        id="year-select"
+                                        name="year"
+                                        aria-label="Year"
+                                    >
+                                        <option>Any Year</option>
+                                        <option>2025</option>
+                                        <option>2024</option>
+                                    </select>
+                                </span>
+                            </div>
+
+                            <div class="actions" aria-hidden="false">
+                                <button
+                                    type="submit"
+                                    class="btn-apply"
+                                    aria-label="Apply filters"
+                                >
+                                    Apply Filters
+                                </button>
+                                <a
+                                    href="#"
+                                    class="clear"
+                                    role="button"
+                                    aria-label="Clear all filters"
+                                    >Clear All</a
+                                >
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="cars-list">
+                <div class="cars-list__container">
+                    <div class="cars-list__header-container">
+                        <p class="showing-cars__stats">
+                            Showing 1-12 of 247 vehicles
+                        </p>
+                        <div class="select-wrapper">
+                            <label class="control__label" for="sort"
+                                >Sort by:</label
+                            >
+                            <select
+                                class="sort-by"
+                                name="sort"
+                                id="sort"
+                                aria-label="sort by"
+                            >
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Name: A-Z</option>
+                                <option>Name: Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-cars">
+                    <div class="grid-container">
+                        <div class="car-picture">
+                            <div class="heart-icon-top">
+                                <img
+                                    src="../assets/logos/inventory logos/variant=10.svg"
+                                    alt="heart icon"
+                                />
+                            </div>
+                            <div class="bottom-label">CERTIFIED</div>
+                            <img
+                                class="car-image"
+                                src="../assets/images/inventory images/2024 Toyota Camry sedan luxury car showroom photography.png"
+                                alt="toyota camry"
+                            />
+                        </div>
+                        <div class="grid-container__stats">
+                            <h3 class="grid-container__stats-name">2024 Toyota Camry LE</h3>
+                            <p class="grid-container__stats-paragraph">25,000 miles • Automatic • FWD</p>
+                            <div class="grid-container__stats-price">
+                                <h2>$24,995</h2>
+                                <p>Est. $399/mo</p>
+                            </div>
+                            <div class="view-details-container">
+                                <button class="details-button__grey">View Details</button>
+                                <button class="button-phone">
+                                    <img src="../assets/logos/inventory logos/variant=11.svg" alt="phone icon">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-container">
+                        <div class="car-picture">
+                            <div class="heart-icon-top">
+                                <img
+                                    src="../assets/logos/inventory logos/variant=10.svg"
+                                    alt="heart icon"
+                                />
+                            </div>
+                            <div class="bottom-label">CERTIFIED</div>
+                            <img
+                                class="car-image"
+                                src="../assets/images/inventory images/2023 Honda CR-V SUV modern automotive photography.png"
+                                alt="2023 Honda CR-V"
+                            />
+                        </div>
+                        <div class="grid-container__stats">
+                            <h3 class="grid-container__stats-name">2024 Toyota Camry LE</h3>
+                            <p class="grid-container__stats-paragraph">25,000 miles • Automatic • FWD</p>
+                            <div class="grid-container__stats-price">
+                                <h2>$24,995</h2>
+                                <p>Est. $399/mo</p>
+                            </div>
+                            <div class="view-details-container">
+                                <button class="details-button__grey">View Details</button>
+                                <button class="button-phone">
+                                    <img src="../assets/logos/inventory logos/variant=11.svg" alt="phone icon">
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
