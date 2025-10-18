@@ -266,6 +266,12 @@ main {
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 5%);
     border: solid 1px #E5E7EB;
     border-radius: 12px;
+    cursor: pointer;
+}
+
+.grid-container:hover{
+    transition: box-shadow ease 0.3s;
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 10%), 0px 8px 10px -6px rgba(0, 0, 0, 10%);
 }
 
 .car-picture {
@@ -273,7 +279,10 @@ main {
 }
 .car-picture .car-image {
     width: 100%;
+    max-height: 267px;
+    height: 100%;
     border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
 }
 .bottom-label {
     position: absolute;
@@ -288,6 +297,27 @@ main {
     border-radius: 9999px;
 }
 
+.bottom-label.green{
+    background:#16A34A ;
+}
+
+.bottom-label.drkgreen{
+    background: #059669;
+}
+.bottom-label.pink{
+    background: #9333EA;
+}
+.bottom-label.orange{
+    background: #EA580C;
+}
+.bottom-label.purple{
+    background: #4F46E5;
+}
+
+
+
+
+
 .heart-icon-top {
     position: absolute;
     top: 16px;
@@ -299,7 +329,9 @@ main {
     display: grid;
     place-items: center;
 }
-
+.heart-icon-top:hover img{
+    filter: brightness(0) saturate(100%) invert(52%) sepia(85%) saturate(4375%) hue-rotate(333deg) brightness(93%) contrast(101%);
+}
 .grid-container__stats {
     display: flex;
     flex-direction: column;
