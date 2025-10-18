@@ -204,7 +204,7 @@ main {
     border-radius: 6px;
 }
 .clear:hover {
-    background: var(--muted-hover);
+    color: #000;
 }
 
 .cars-list__container {

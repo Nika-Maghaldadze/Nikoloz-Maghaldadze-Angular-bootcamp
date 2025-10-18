@@ -52,10 +52,6 @@ body {
     );
 }
 
-.main-header__img.black{
-    background: linear-gradient(-45deg,rgba(31, 41, 55, 1) 0%, rgba(55, 65, 81, 1) 100%);
-}
-
 .main-header__logo > .main-header__header > .autodealer-text {
     font-family: "Inter", sans-serif;
     font-size: 24px;
