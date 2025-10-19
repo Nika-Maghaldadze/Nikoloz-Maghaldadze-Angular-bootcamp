@@ -91,6 +91,11 @@
 
 .images-flex img {
     border-radius: 12px;
+    cursor: pointer;
+}
+
+.images-flex img:hover {
+    outline: solid 2px #3b82f6;
 }
 
 .right-container {
@@ -226,9 +231,27 @@
     );
 }
 
+.btn.black:hover {
+    font-size: 18.9px;
+}
+
+.btn.black:hover img {
+    transform: scale(1.1);
+}
+
 .btn.transparent {
     border: solid 2px #3b82f6;
     color: #3b82f6;
+}
+
+.btn.transparent:hover {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.btn.transparent:hover img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7435%)
+        hue-rotate(198deg) brightness(113%) contrast(110%);
 }
 
 .btn-transparent {
@@ -240,10 +263,26 @@
     border: 1px solid #e5e7eb;
     border-radius: 12px;
     background: #fff;
+    cursor: pointer;
 }
 
 .btn-transparent > img {
     margin-right: 12px;
+}
+
+.btn-transparent.heart-svg:hover {
+    border: solid 1px #fca5a5;
+    background: #f9fafb;
+}
+
+.btn-transparent.heart-svg:hover img {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(76%) saturate(4996%)
+        hue-rotate(341deg) brightness(105%) contrast(84%);
+}
+
+.btn-transparent.share:hover {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
 }
 
 .contact-dealer {
@@ -279,6 +318,11 @@
     align-items: center;
     padding: 12px;
     gap: 12px;
+    border-radius: 12px;
+}
+
+.contact-dealer div div:hover{
+    background: #fff;
 }
 
 .contact-dealer div div p {
@@ -395,7 +439,7 @@
     line-height: 36px;
     color: #111827;
 }
-.feature-grid-block{
+.feature-grid-block {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 48px;
@@ -419,11 +463,11 @@
     background: #fee2e2;
     border-radius: 8px;
 }
-.features-content__header .blue{
-    background: #DBEAFE;
+.features-content__header .blue {
+    background: #dbeafe;
 }
-.features-content__header .orange{
-    background: #FFEDD5;
+.features-content__header .orange {
+    background: #ffedd5;
 }
 .features-content__header h3 {
     font-weight: 700;
