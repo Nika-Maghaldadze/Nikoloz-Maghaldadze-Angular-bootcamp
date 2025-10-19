@@ -404,6 +404,10 @@ main {
     );
 }
 
+.details-button__grey a{
+    color: #ffffff;
+}
+
 .button-phone{
     width: 48px;
     height: 44px;

@@ -91,6 +91,10 @@ body {
     letter-spacing: -1px;
 }
 
+.navigation-ul > .navigation-list__item > a{
+    color:#4b5563;
+}
+
 .navigation-ul > .navigation-list__item:hover {
     background: #eef2ff;
     color: #4f46e5;
