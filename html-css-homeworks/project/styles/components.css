@@ -172,3 +172,32 @@ body {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 10%),
         0px 4px 6px -4px rgba(0, 0, 0, 10%);
 }
+
+.breadcrumb-section__wrapper {
+    max-width: 1216px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav-ul {
+    display: flex;
+    gap: 12px;
+}
+
+.breadcrumb-navigation__item {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+}
+
+.breadcrumb-navigation__item > img {
+    margin-left: 12px;
+}
+
+.breadcrumb-navigation__item.active {
+    color: #1a1a1a;
+    font-weight: 600;
+}
