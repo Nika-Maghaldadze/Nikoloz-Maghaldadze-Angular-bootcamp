@@ -153,6 +153,8 @@
 
 .image-container::before {
     content: "";
+    max-width: 498px;
+    width: 100%;
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -164,6 +166,7 @@
     transform: scale(1.06);
     z-index: 0;
     opacity: 0.2;
+    margin-right: 10px;
 }
 
 .image-container > img {
@@ -437,7 +440,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: columns;
+    flex-direction: column;
     padding: 80px 0;
 }
 
@@ -465,11 +468,13 @@
     max-width: 1216px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: auto auto auto;
     gap: 32px;
     margin-top: 64px;
 }
 .card-details__wrapper {
+    max-width: 384px;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -478,6 +483,10 @@
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 10%),
         0px 4px 6px -4px rgba(0, 0, 0, 10%);
     border: solid 1px #f3f4f6;
+}
+.vehicle-img img{
+    max-width: 384px;
+    width: 100%;
 }
 .top-left__label {
     position: absolute;
@@ -611,7 +620,6 @@
     display: flex;
     gap: 32px;
     align-items: flex-start;
-    flex-wrap: wrap;
     margin-left: 30px;
 }
 

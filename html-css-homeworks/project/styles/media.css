@@ -1,0 +1,174 @@
+@media (max-width: 1080px) {
+    .image-container::before {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-header {
+        max-width: 960px;
+    }
+    .content-wrapper {
+        max-width: 960px;
+    }
+    .search-card-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-card-wrapper > div {
+        max-width: 960px;
+        width: 100%;
+    }
+
+    .grid-block {
+        max-width: 299px;
+    }
+    .vehicle-img {
+        max-width: 298px;
+        width: 100%;
+    }
+
+    .vehicle-img img {
+        max-width: 298px;
+        width: 100%;
+    }
+
+    .mileage-stats > div > p {
+        font-size: 16px;
+    }
+
+    .special-deals__cards {
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 980px) {
+    .content-wrapper {
+        flex-wrap: wrap;
+    }
+    .left-content {
+        max-width: 752px;
+        width: 90%;
+    }
+    .left-content > h1 {
+        width: 100%;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 60px;
+        color: #111827;
+    }
+    .right-content {
+        margin: 0;
+        margin-top: 30px;
+    }
+    .image-container img {
+        max-width: 752px;
+        height: 384px;
+    }
+    .vehicles-cards__wrapper {
+        grid-template-columns: auto auto;
+    }
+    /* .vehicles-cards__wrapper {
+        grid-template-columns: auto;
+        place-items: center;
+    } */
+}
+
+@media (max-width: 800px) {
+    .search-card-wrapper {
+        max-width: 752px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 34px 0 33px 0;
+    }
+    .grid-block {
+        max-width: 229.33px;
+    }
+    .special-deals__cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .special-deals__cards .left-card__deal {
+        max-width: 752px;
+    }
+    .special-deals__cards .right-card__deal {
+        max-width: 752px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 798px) {
+    .main-header {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .main-header nav {
+        display: none;
+    }
+    .search-form__grid {
+        grid-template-columns: auto;
+    }
+    .field {
+        width: 100%;
+    }
+    .input {
+        max-width: 100%;
+    }
+    .image-container img {
+        height: auto;
+    }
+}
+
+@media (max-width: 625px) {
+    .grid-card {
+        grid-template-columns: auto auto;
+        place-items: center;
+    }
+    .vehicles-cards__wrapper {
+        grid-template-columns: auto;
+        place-items: center;
+    }
+    .main-header {
+        width: 97%;
+        margin: 0 auto;
+    }
+    .buttons-wrapper {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 455px) {
+    .grid-card {
+        grid-template-columns: auto;
+    }
+    .browse-card__paragraph {
+        text-align: center;
+    }
+    .main-header__header {
+    }
+    .hero-section__buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-section__buttons button{
+        max-width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .purple-header{
+        display: none;
+    }
+    .mileage-stats > div > p {
+        font-size: 10px;
+    }
+}
+
+@media(max-width:390px){
+    .buttons-wrapper {
+        display: none;
+    }
+}
