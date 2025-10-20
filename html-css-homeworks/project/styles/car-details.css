@@ -11,7 +11,7 @@
 
 .product-details__section {
     width: 100%;
-    padding: 48px 0;
+    padding: 70px 0;
     display: grid;
 }
 
@@ -324,7 +324,7 @@
 
 .vehicle-specs {
     width: 100%;
-    padding: 64px 0;
+    padding: 44px 0;
     background: #f9fafb;
 }
 
@@ -401,7 +401,7 @@
 
 .standart-features {
     width: 100%;
-    padding: 64px 0;
+    padding: 75px 0;
 }
 
 .standart-features__wrapper {
