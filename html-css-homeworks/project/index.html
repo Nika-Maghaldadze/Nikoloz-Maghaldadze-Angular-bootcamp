@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Buy, sell, and trade luxury and everyday cars. My personal project connects buyers and sellers with secure listings and best-price deals."
+        />
+        <meta
+            name="keywords"
+            content="car, luxury, buy, sell, low-price, best-quality, used cars, car marketplace"
+        />
+        <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta property="og:site_name" content="Personal project" />
+        <meta property="og:title" content="Buy & Sell Luxury Cars" />
+        <meta
+            property="og:description"
+            content="Secure car marketplace for buying and selling luxury & used cars — verified listings, competitive prices, and trusted sellers."
+        />
+        <meta
+            property="og:image:alt"
+            content="Luxury car for sale at Personal project"
+        />
+        <title>Personal Project</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="stylesheet" href="./styles/components.css" />
+        <link rel="stylesheet" href="./styles/main-page.css" />
+        <link rel="stylesheet" href="./styles/media.css" />
+        
+    </head>
+    <body>
+        <div class="shadow"></div>
+        <header class="main-header">
+            <div class="main-header__logo">
+                <div class="main-header__img">
+                    <img
+                        src="./assets/logos/variant=1.svg"
+                        alt="white car svg"
+                    />
+                </div>
+                <div class="main-header__header">
+                    <h2 class="autodealer-text">AutoDealer</h2>
+                </div>
+            </div>
+            <nav class="main-header__navigation">
+                <ul class="navigation-ul">
+                    <li class="navigation-list__item">Home</li>
+                    <li class="navigation-list__item"><a href="./pages/inventory.html">Inventory</a></li>
+                    <li class="navigation-list__item">Finance</li>
+                    <li class="navigation-list__item">About</li>
+                    <li class="navigation-list__item">Contact</li>
+                </ul>
+            </nav>
+            <div class="buttons-wrapper">
+                <div class="logos-wrap">
+                    <div class="magnifying-glass">
+                        <img
+                            src="./assets/logos/variant=3.svg"
+                            alt="magnifying glass icon"
+                        />
+                    </div>
+                    <div class="heart">
+                        <img src="./assets/logos/variant=5.svg" alt="" />
+                    </div>
+                </div>
+                <button class="sign-in__button" type="button">Sign In</button>
+            </div>
+        </header>
+        <main class="main-container">
+            <section class="hero-section">
+                <div class="content-wrapper">
+                    <div class="left-content">
+                        <h1 class="hero-section__header">
+                            Find Your <span class="purple-header">Perfect</span> Car
+                            
+                            Today
+                        </h1>
+                        <p class="hero-section__description">
+                            Browse thousands of quality vehicles from trusted
+                            dealers. Get the best deals on new and used cars
+                            with our advanced search technology.
+                        </p>
+                        <div class="hero-section__buttons">
+                            <button class="hero-section__button purple">
+                                <img
+                                    src="./assets/logos/variant=12.svg"
+                                    alt="white magnifying glass"
+                                />
+                                Browse Cars
+                            </button>
+                            <button class="hero-section__button white">
+                                <img
+                                    src="./assets/logos/variant=14.svg"
+                                    alt="grey dollar logo"
+                                />
+                                Sell Your Car
+                            </button>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <figure class="image-container">
+                            <img
+                                src="./assets/images/luxury sports car on modern showroom floor with dramatic lighting.png"
+                                alt="Luxury sports car on a modern showroom floor"
+                                loading="lazy"
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section class="search-card-wrapper" aria-label="Search cars">
+                <div class="search-card">
+                    <div class="search-card__header">
+                        <span class="search-card__icon" aria-hidden="true">
+                            <img
+                                src="./assets/logos/Component6.svg"
+                                alt="filter icon"
+                            />
+                        </span>
+
+                        <h2 class="search-card__title">Search Cars</h2>
+                    </div>
+
+                    <form
+                        class="search-form"
+                        role="search"
+                        aria-label="Car search form"
+                        action="#"
+                        method="GET"
+                    >
+                        <div class="search-form__grid">
+                            <div class="field">
+                                <label for="make">Make</label>
+                                <select
+                                    id="make"
+                                    name="make"
+                                    class="input"
+                                    aria-label="Select car make"
+                                >
+                                    <option value="">All Makes</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="mercedes">Mercedes</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="model">Model</label>
+                                <select
+                                    id="model"
+                                    name="model"
+                                    class="input"
+                                    aria-label="Select car model"
+                                >
+                                    <option value="">All Models</option>
+                                    <option value="series-3">Series 3</option>
+                                    <option value="c-class">C-Class</option>
+                                    <option value="corolla">Corolla</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="price">Price Range</label>
+                                <select
+                                    id="price"
+                                    name="price"
+                                    class="input"
+                                    aria-label="Select price range"
+                                >
+                                    <option value="">Any Price</option>
+                                    <option value="0-20000">$0–$20k</option>
+                                    <option value="20000-50000">
+                                        $20k–$50k
+                                    </option>
+                                    <option value="50000+">$50k+</option>
+                                </select>
+                            </div>
+
+                            <div class="field field--button">
+                                <button
+                                    type="submit"
+                                    class="btn-search"
+                                    aria-label="Search"
+                                >
+                                    <img
+                                        src="./assets/logos/variant=12.svg"
+                                        alt="magnifying glass"
+                                    />
+                                    <span class="btn-search__text">Search</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="browse-categories">
+                <div class="browse-card">
+                    <div class="browse-card__header-container">
+                        <h3 class="browse-card__header">Browse by Category</h3>
+                        <p class="browse-card__paragraph">
+                            Find the perfect vehicle type for your lifestyle
+                        </p>
+                    </div>
+                    <div class="browse-card-grid">
+                        <div class="grid-card">
+                            <div class="grid-block">
+                                <div>
+                                    <img
+                                        class="logo-img"
+                                        src="./assets/logos/variant=6.svg"
+                                        alt="white vehicle logo"
+                                    />
+                                </div>
+                                <h3 class="grid-block__header">Sedans</h3>
+                                <p class="grid-block__paragraph">
+                                    Comfortable and fuel-efficient vehicles
+                                    perfect for daily commuting
+                                </p>
+                                <span class="grid-block__stats"
+                                    >1,234 vehicles</span
+                                >
+                            </div>
+
+                            <div class="grid-block green">
+                                <div>
+                                    <img
+                                        class="logo-img"
+                                        src="./assets/logos/variant=7.svg"
+                                        alt="white vehicle logo"
+                                    />
+                                </div>
+                                <h3 class="grid-block__header">SUVs</h3>
+                                <p class="grid-block__paragraph">
+                                    Spacious and versatile family vehicles for
+                                    all adventures
+                                </p>
+                                <span class="grid-block__stats"
+                                    >856 vehicles</span
+                                >
+                            </div>
+
+                            <div class="grid-block orange">
+                                <div>
+                                    <img
+                                        class="logo-img"
+                                        src="./assets/logos/variant=8.svg"
+                                        alt="white vehicle logo"
+                                    />
+                                </div>
+                                <h3 class="grid-block__header">Electric</h3>
+                                <p class="grid-block__paragraph">
+                                    Eco-friendly and modern vehicles for
+                                    sustainable driving
+                                </p>
+                                <span class="grid-block__stats"
+                                    >342 vehicles</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="featured-vehicles">
+                <div class="featured-vehicles__wrapper">
+                    <div class="header-container">
+                        <h3>Featured Vehicles</h3>
+                        <p>
+                            Hand-picked cars with exceptional value and quality
+                        </p>
+                    </div>
+                    <div class="vehicles-cards__wrapper">
+                        <div class="card-details__wrapper">
+                            <span class="top-left__label">Featured</span>
+                            <div class="top-right-heart">
+                                <img
+                                    src="./assets/logos/variant=5.svg"
+                                    alt="grey heart image"
+                                />
+                            </div>
+                            <div class="vehicle-img">
+                                <img
+                                    src="./assets/images/2024 Toyota Camry sedan in silver color on white background.png"
+                                    alt="vehicle image"
+                                />
+                            </div>
+                            <div class="details-container">
+                                <h3 class="details-container__name">
+                                    2024 Toyota Camry LE
+                                </h3>
+                                <div class="mileage-stats">
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=19.svg"
+                                            alt="road svg image"
+                                        />
+                                        <p>25,000 miles •</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=20.svg"
+                                            alt="gear image"
+                                        />
+                                        <p>Automatic •</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=21.svg"
+                                            alt="vehicle purple svg image"
+                                        />
+                                        <p>FWD</p>
+                                    </div>
+                                </div>
+                                <div class="price-container">
+                                    <h2 class="price">$24,995</h2>
+                                    <span class="grey-details"
+                                        >Est. $399/mo</span
+                                    >
+                                </div>
+                                <button class="view-details__button">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-details__wrapper blue-label">
+                            <span class="top-left__label">Popular</span>
+                            <div class="top-right-heart">
+                                <img
+                                    src="./assets/logos/variant=5.svg"
+                                    alt="grey heart image"
+                                />
+                            </div>
+                            <div class="vehicle-img">
+                                <img
+                                    src="./assets/images/2023 Honda CR-V SUV in dark blue color on white background.png"
+                                    alt="vehicle image"
+                                />
+                            </div>
+                            <div class="details-container">
+                                <h3 class="details-container__name">
+                                    2023 Honda CR-V EX
+                                </h3>
+                                <div class="mileage-stats">
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=19.svg"
+                                            alt="road svg image"
+                                        />
+                                        <p>18,500 miles •</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=20.svg"
+                                            alt="gear image"
+                                        />
+                                        <p>CVT •</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=21.svg"
+                                            alt="vehicle purple svg image"
+                                        />
+                                        <p>AWD</p>
+                                    </div>
+                                </div>
+                                <div class="price-container">
+                                    <h2 class="price">$28,750</h2>
+                                    <span class="grey-details"
+                                        >Est. $459/mo</span
+                                    >
+                                </div>
+                                <button class="view-details__button">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-details__wrapper yellow-label">
+                            <span class="top-left__label">Electric</span>
+                            <div class="top-right-heart">
+                                <img
+                                    src="./assets/logos/variant=5.svg"
+                                    alt="grey heart image"
+                                />
+                            </div>
+                            <div class="vehicle-img">
+                                <img
+                                    src="./assets/images/2024 Tesla Model 3 electric car in white color on white background.png"
+                                    alt="vehicle image"
+                                />
+                            </div>
+                            <div class="details-container">
+                                <h3 class="details-container__name">
+                                    2024 Tesla Model 3
+                                </h3>
+                                <div class="mileage-stats">
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=19.svg"
+                                            alt="road svg image"
+                                        />
+                                        <p>12,000 miles •</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=22.svg"
+                                            alt="gear image"
+                                        />
+                                        <p>Electric •</p>
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="./assets/logos/variant=21.svg"
+                                            alt="vehicle purple svg image"
+                                        />
+                                        <p>RWD</p>
+                                    </div>
+                                </div>
+                                <div class="price-container">
+                                    <h2 class="price">$42,990</h2>
+                                    <span class="grey-details"
+                                        >Est. $689/mo</span
+                                    >
+                                </div>
+                                <button class="view-details__button">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="special-deals__section">
+                <div class="special-deals__container">
+                    <div class="header-elements">
+                        <h2 class="header-elements__header">Special Deals</h2>
+                        <p class="header-elements__paragraph">
+                            Limited time offers you don't want to miss
+                        </p>
+                    </div>
+                    <div class="special-deals__cards">
+                        <div class="left-card__deal">
+                            <div class="top-section__container">
+                                <div>
+                                    <img
+                                        src="./assets/logos/variant=9.svg"
+                                        alt="percentage logo"
+                                    />
+                                </div>
+                                <h2>0% APR Financing</h2>
+                            </div>
+                            <div class="middle-paragraph__container">
+                                <p class="deal-text">
+                                    Get 0% APR financing for qualified buyers on
+                                    select new vehicles. Limited time offer with
+                                    approved credit.
+                                </p>
+                            </div>
+                            <div class="learn-more__button">
+                                <button class="learn-more">
+                                    <img src="./assets/logos/arrow.svg" alt="arrow pointing right">
+                                     Learn More
+                                </button>
+                            </div>
+                        </div>
+                        <div class="right-card__deal">
+                            <div>
+                                <img
+                                    src="./assets/logos/variant=11.svg"
+                                    alt="white gift logo"
+                                />
+                            </div>
+                            <h3>Trade-In Bonus</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
