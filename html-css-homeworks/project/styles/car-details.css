@@ -32,13 +32,15 @@
     gap: 24px;
 }
 
-.left-container .image-container {
+.left-container .image-container1 {
     max-width: 576px;
     width: 100%;
     border-radius: 16px;
     position: relative;
 }
-.image-container img {
+.image-container1 img {
+    max-width: 576px;
+    width: 100%;
     border-radius: 12px;
 }
 
