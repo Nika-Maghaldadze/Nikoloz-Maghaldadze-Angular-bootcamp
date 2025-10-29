@@ -1,5 +1,5 @@
 //hero section styles
-.main-content__wrapper {
+.hero-section__wrapper {
     margin-top: 64px;
     @include flex(center, center);
     height: 600px;
@@ -68,6 +68,74 @@
             img {
                 border-radius: 8px;
                 box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}
+
+.our-categories__wrapper {
+    @include flex(center, center);
+    padding: 64px 0;
+    .our-categories__container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        .our-categories__header-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-direction: column;
+            .our-categories__h3 {
+                font-family: $font-fairy;
+                @include font-style(normal, 700, 36px, 40px);
+                color: $brown;
+            }
+            .our-categories__p {
+                font-family: $font-inter;
+                @include font-style(normal, 400, 20px, 28px);
+                color: $grey;
+            }
+        }
+
+        .categories-grid__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 32px;
+
+            .grid-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .grid-image {
+                    max-width: 280px;
+                    width: 100%;
+                    height: 256px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                    &:hover {
+                        background-size: 120%;
+                        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+                    }
+                }
+
+                .grid-header {
+                    font-family: $font-fairy;
+                    @include font-style(normal, 600, 20px, 28px);
+                    color: $brown;
+                    margin-top: 16px;
+                }
+
+                .grid-p {
+                    font-family: $font-inter;
+                    @include font-style(normal, 400, 16px, 24px);
+                    color: $grey;
+                    margin-top: 8px;
+                }
             }
         }
     }
