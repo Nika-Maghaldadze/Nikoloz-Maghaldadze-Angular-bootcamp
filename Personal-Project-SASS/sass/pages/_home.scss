@@ -113,9 +113,7 @@
                     height: 256px;
                     border-radius: 8px;
                     box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
+                    @include background-image(cover, center, no-repeat);
                     cursor: pointer;
                     &:hover {
                         background-size: 120%;
@@ -136,6 +134,55 @@
                     color: $grey;
                     margin-top: 8px;
                 }
+            }
+        }
+    }
+}
+
+.special-offer__wrapper {
+    width: 100%;
+    padding: 64px 0;
+    @include flex(center, center);
+    background: linear-gradient(
+        0deg,
+        rgba(212, 175, 55, 1) 0%,
+        rgba(250, 204, 21, 1) 100%
+    );
+    .special-offer__container {
+        max-width: 1215px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 48px;
+        border-radius: 8px;
+        @include flex(center, center);
+        flex-direction: column;
+        box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+        gap: 16px;
+        .special-offer__header {
+            font-family: $font-fairy;
+            @include font-style(normal, 700, 36px, 40px);
+            color: $brown;
+        }
+        .special-offer__h4 {
+            font-family: $font-inter;
+            @include font-style(normal, 400, 24px, 32px);
+            color: $grey;
+        }
+        .special-offer__p {
+            font-family: $font-inter;
+            @include font-style(normal, 400, 18px, 28px);
+            color: $grey;
+        }
+        .special-offer__claim-button {
+            @include flex(center, center);
+            padding: 16px 32px;
+            background: $brown;
+            border-radius: 6px;
+            font-family: $font-inter;
+            @include font-style(normal, 600, 18px, 28px);
+            color: $white;
+            &:hover {
+                opacity: 0.9;
             }
         }
     }

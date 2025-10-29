@@ -476,4 +476,73 @@ iframe {
   color: #374151;
   margin-top: 8px;
 }
+
+.special-offer__wrapper {
+  width: 100%;
+  padding: 64px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #d4af37 0%, #facc15 100%);
+}
+
+.special-offer__wrapper .special-offer__container {
+  max-width: 1215px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 48px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+  gap: 16px;
+}
+
+.special-offer__wrapper .special-offer__container .special-offer__header {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: #8B4513;
+}
+
+.special-offer__wrapper .special-offer__container .special-offer__h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #374151;
+}
+
+.special-offer__wrapper .special-offer__container .special-offer__p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #374151;
+}
+
+.special-offer__wrapper .special-offer__container .special-offer__claim-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  background: #8B4513;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #fff;
+}
+
+.special-offer__wrapper .special-offer__container .special-offer__claim-button:hover {
+  opacity: 0.9;
+}
 /*# sourceMappingURL=main.css.map */

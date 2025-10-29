@@ -1,12 +1,18 @@
 @mixin flex($justify, $align) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
 }
 
-@mixin font-style($style,$weight,$size,$line-height){
+@mixin font-style($style, $weight, $size, $line-height) {
     font-style: $style;
     font-weight: $weight;
     font-size: $size;
     line-height: $line-height;
+}
+
+@mixin background-image($size, $position, $repeat) {
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
 }
