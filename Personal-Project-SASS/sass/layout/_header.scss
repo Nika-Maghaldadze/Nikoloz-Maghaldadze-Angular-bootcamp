@@ -1,0 +1,98 @@
+.site-header {
+    width: 100%;
+    height: 64px;
+    padding: 16px 112px;
+    .container {
+        @include flex(space-between, center);
+        .main-header-logo {
+            font-family: $font-fairy, sans-serif;
+            @include font-style(normal, 700, 24px, 32px);
+            color: $brown;
+            @include flex(center, center);
+        }
+        .main-header__navigation {
+            padding-left: 40px;
+            .nav-ul {
+                max-width: 480px;
+                display: flex;
+                align-items: center;
+                gap: 32px;
+                .list-item {
+                    font-family: $font-inter, sans-serif;
+                    @include font-style(normal, 500, 14px, 20px);
+                    color: $grey;
+                    cursor: pointer;
+                    &:hover {
+                        color: $brown;
+                    }
+                }
+                .list-item.active {
+                    color: $brown;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+
+        .buttons-wrapper {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            .magnifying-glass {
+                width: 18px;
+                height: 21px;
+                cursor: pointer;
+                &:hover {
+                    filter: brightness(0) saturate(100%) invert(31%) sepia(13%)
+                        saturate(4438%) hue-rotate(351deg) brightness(91%)
+                        contrast(91%);
+                }
+            }
+            .shopping-cart {
+                width: 20.25px;
+                height: 21px;
+                position: relative;
+                cursor: pointer;
+                &:hover {
+                    img {
+                        filter: brightness(0) saturate(100%) invert(31%)
+                            sepia(13%) saturate(4438%) hue-rotate(351deg)
+                            brightness(91%) contrast(91%);
+                    }
+                }
+                .count {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    right: -8px;
+                    top: -6.75px;
+                    @include flex(center, center);
+                    padding: 1.5px 0px 2.5px;
+                    background: $yellow;
+                    border-radius: 9999px;
+                    z-index: 1;
+                    color: $white;
+                    font-family: $font-inter;
+                    @include font-style(normal, 400, 12px, 16px);
+                }
+            }
+            .order-button {
+                max-width: 105px;
+                width: 100%;
+                height: 36px;
+                @include flex(center, center);
+                flex-direction: column;
+                padding: 8px 16px;
+                background: $brown;
+                border-radius: 6px;
+                color: $white;
+                font-family: $font-inter;
+                @include font-style(normal, 500, 14px, 20px);
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
