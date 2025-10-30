@@ -1,0 +1,74 @@
+.footer-wrapper {
+    background: $brown;
+    padding: 48px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        gap: 32px;
+        padding: 0 32px;
+        .footer-container__item {
+            max-width: 280px;
+            width: 100%;
+            height: 164px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .footer-header-h2 {
+                font-family: $font-fairy;
+                line-height: 32px;
+                @include font-style(normal, 600, 24px, 32px);
+                color: $white;
+            }
+            .footer-p {
+                max-width: 280px;
+                width: 100%;
+                font-family: $font-inter;
+                @include font-style(normal, 400, 16px, 24px);
+                color: $lt-grey;
+            }
+            .socials {
+                display: flex;
+                gap: 16px;
+                img {
+                    cursor: pointer;
+                    &:hover {
+                        filter: brightness(0) saturate(100%) invert(98%)
+                            sepia(27%) saturate(7479%) hue-rotate(321deg)
+                            brightness(83%) contrast(100%);
+                    }
+                }
+            }
+            .footer-h3 {
+                font-family: $font-inter;
+                @include font-style(normal, 600, 18px, 28px);
+                color: $white;
+            }
+            .footer-ul {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                .ul-li {
+                    font-family: $font-inter;
+                    @include font-style(normal, 400, 16px, 24px);
+                    color: $lt-grey;
+                }
+                .ul-li.img {
+                    display: flex;
+                    gap: 8px;
+                }
+            }
+        }
+    }
+    .copyright {
+        padding-top: 33px;
+        @include flex(center,center);
+        font-family: $font-inter;
+        @include font-style(normal,400,16px,24px);
+        color: $lt-grey;
+        border-top: solid 1px $border-grey;
+    }
+}

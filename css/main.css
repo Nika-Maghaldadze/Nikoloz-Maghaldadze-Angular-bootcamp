@@ -150,13 +150,20 @@ button {
   box-sizing: border-box;
 }
 
-iframe {
+.iframe-header {
   background: #fff;
   width: 100%;
   height: 64px;
   border: none;
   position: fixed;
   top: 0;
+  z-index: 10;
+}
+
+.iframe-footer {
+  width: 100%;
+  height: 349px;
+  border: none;
   z-index: 10;
 }
 
@@ -178,7 +185,7 @@ iframe {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  color: #8B4513;
+  color: #8b4513;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,11 +213,11 @@ iframe {
 }
 
 .site-header .container .main-header__navigation .nav-ul .list-item:hover {
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .site-header .container .main-header__navigation .nav-ul .list-item.active {
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .site-header .container .main-header__navigation .nav-ul .list-item.active:hover {
@@ -274,7 +281,7 @@ iframe {
   align-items: center;
   flex-direction: column;
   padding: 8px 16px;
-  background: #8B4513;
+  background: #8b4513;
   border-radius: 6px;
   color: #fff;
   font-family: "Inter";
@@ -286,6 +293,108 @@ iframe {
 
 .site-header .container .buttons-wrapper .order-button:hover {
   opacity: 0.9;
+}
+
+.footer-wrapper {
+  background: #8b4513;
+  padding: 48px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-wrapper .footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 0 32px;
+}
+
+.footer-wrapper .footer-container .footer-container__item {
+  max-width: 280px;
+  width: 100%;
+  height: 164px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-wrapper .footer-container .footer-container__item .footer-header-h2 {
+  font-family: "Playfair Display";
+  line-height: 32px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #fff;
+}
+
+.footer-wrapper .footer-container .footer-container__item .footer-p {
+  max-width: 280px;
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d1d5db;
+}
+
+.footer-wrapper .footer-container .footer-container__item .socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-wrapper .footer-container .footer-container__item .socials img {
+  cursor: pointer;
+}
+
+.footer-wrapper .footer-container .footer-container__item .socials img:hover {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(27%) saturate(7479%) hue-rotate(321deg) brightness(83%) contrast(100%);
+}
+
+.footer-wrapper .footer-container .footer-container__item .footer-h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #fff;
+}
+
+.footer-wrapper .footer-container .footer-container__item .footer-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-wrapper .footer-container .footer-container__item .footer-ul .ul-li {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d1d5db;
+}
+
+.footer-wrapper .footer-container .footer-container__item .footer-ul .ul-li.img {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-wrapper .copyright {
+  padding-top: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d1d5db;
+  border-top: solid 1px #4b5563;
 }
 
 .hero-section__wrapper {
@@ -302,7 +411,7 @@ iframe {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 48px;
+  justify-content: space-between;
 }
 
 .hero-section__wrapper .hero-section__container .hero-section__left-container {
@@ -319,7 +428,7 @@ iframe {
   font-weight: 700;
   font-size: 60px;
   line-height: 60px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .hero-section__wrapper .hero-section__container .hero-section__left-container .hero-section__description {
@@ -348,7 +457,7 @@ iframe {
   line-height: 24px;
   flex-direction: column;
   padding: 14px 32px;
-  background: #8B4513;
+  background: #8b4513;
   color: #fff;
   border-radius: 6px;
   font-family: "Inter";
@@ -370,12 +479,12 @@ iframe {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #8B4513;
+  color: #8b4513;
   background: none;
 }
 
 .hero-section__wrapper .hero-section__container .hero-section__left-container .shop__now-view__menu .view-menu__button:hover {
-  background: #8B4513;
+  background: #8b4513;
   color: #fff;
 }
 
@@ -416,7 +525,7 @@ iframe {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .our-categories__wrapper .our-categories__container .our-categories__header-content .our-categories__p {
@@ -463,7 +572,7 @@ iframe {
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  color: #8B4513;
+  color: #8b4513;
   margin-top: 16px;
 }
 
@@ -506,7 +615,7 @@ iframe {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .special-offer__wrapper .special-offer__container .special-offer__h4 {
@@ -532,7 +641,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
-  background: #8B4513;
+  background: #8b4513;
   border-radius: 6px;
   font-family: "Inter";
   font-style: normal;
@@ -576,7 +685,7 @@ iframe {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .featured-pastries__wrapper .featured-pastries__container .header-component .header-component__p {
@@ -621,7 +730,7 @@ iframe {
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .featured-pastries__wrapper .featured-pastries__container .featured-pastries__grid .featured-pastries__grid-item .label-tag .featured-pastries__grid-item-p {
@@ -650,12 +759,12 @@ iframe {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .featured-pastries__wrapper .featured-pastries__container .featured-pastries__grid .featured-pastries__grid-item .label-tag .price-container .price-container__add-btn {
   padding: 8px 16px;
-  background: #8B4513;
+  background: #8b4513;
   border-radius: 6px;
   font-family: "Inter";
   font-style: normal;
@@ -670,7 +779,7 @@ iframe {
 }
 
 .customers-feedback__wrapper {
-  background: #FFF8F0;
+  background: #fff8f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -691,7 +800,7 @@ iframe {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid {
@@ -728,7 +837,7 @@ iframe {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #8B4513;
+  color: #8b4513;
 }
 
 .customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid .customers-feedback__grid-item .customer-feedback {
