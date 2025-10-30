@@ -394,7 +394,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 64px 0;
+  padding: 64px 80px;
 }
 
 .our-categories__wrapper .our-categories__container {
@@ -479,7 +479,7 @@ iframe {
 
 .special-offer__wrapper {
   width: 100%;
-  padding: 64px 0;
+  padding: 64px 112px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -667,5 +667,77 @@ iframe {
 
 .featured-pastries__wrapper .featured-pastries__container .featured-pastries__grid .featured-pastries__grid-item .label-tag .price-container .price-container__add-btn:hover {
   opacity: 0.9;
+}
+
+.customers-feedback__wrapper {
+  background: #FFF8F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 80px;
+}
+
+.customers-feedback__wrapper .customers-feedback__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__header {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: #8B4513;
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid .customers-feedback__grid-item {
+  max-width: 384px;
+  width: 100%;
+  background: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid .customers-feedback__grid-item .user-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid .customers-feedback__grid-item .user-wrapper .user-photo {
+  border-radius: 9999px;
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid .customers-feedback__grid-item .user-wrapper .name-rating .customer-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8B4513;
+}
+
+.customers-feedback__wrapper .customers-feedback__container .customers-feedback__grid .customers-feedback__grid-item .customer-feedback {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #374151;
+  letter-spacing: 0.3px;
 }
 /*# sourceMappingURL=main.css.map */

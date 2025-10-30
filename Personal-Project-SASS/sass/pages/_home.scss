@@ -75,7 +75,7 @@
 
 .our-categories__wrapper {
     @include flex(center, center);
-    padding: 64px 0;
+    padding: 64px 80px;
     .our-categories__container {
         display: flex;
         flex-direction: column;
@@ -141,7 +141,7 @@
 
 .special-offer__wrapper {
     width: 100%;
-    padding: 64px 0;
+    padding: 64px 112px;
     @include flex(center, center);
     background: linear-gradient(
         0deg,
@@ -269,6 +269,59 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+.customers-feedback__wrapper {
+    background: $lt-brown;
+    @include flex(center, center);
+    padding: 64px 80px;
+    .customers-feedback__container {
+        @include flex(center, center);
+        flex-direction: column;
+        gap: 48px;
+        .customers-feedback__header {
+            font-family: $font-fairy;
+            @include font-style(normal, 700, 36px, 40px);
+            color: $brown;
+        }
+        .customers-feedback__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+            .customers-feedback__grid-item {
+                max-width: 384px;
+                width: 100%;
+                background: $white;
+                padding: 32px;
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+                .user-wrapper {
+                    display: flex;
+                    gap: 16px;
+                    align-items: center;
+                    .user-photo {
+                        border-radius: 9999px;
+                    }
+                    .name-rating {
+                        .customer-name {
+                            font-family: $font-inter;
+                            @include font-style(normal, 600, 16px, 24px);
+                            color: $brown;
+                        }
+                    }
+                }
+                .customer-feedback {
+                    font-family: $font-inter;
+                    @include font-style(normal, 400, 16px, 24px);
+                    color: $grey;
+                    letter-spacing: 0.3px;
                 }
             }
         }
