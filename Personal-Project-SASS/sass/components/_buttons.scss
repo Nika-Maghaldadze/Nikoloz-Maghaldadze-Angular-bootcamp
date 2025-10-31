@@ -1,0 +1,53 @@
+// + Add button on pastries page
+.details-container {
+    .price-details {
+        .add-button {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            gap: 8px;
+            background: $brown;
+            border-radius: 6px;
+            font-family: $font-inter;
+            @include font-style(normal, 400, 16px, 24px);
+            color: $white;
+        }
+    }
+}
+
+// pages styles
+.pages-buttons {
+    max-width: 233px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    margin-top: 48px;
+    .page {
+        border: solid 1px $brown;
+        border-radius: 6px;
+        @include flex(center, center);
+        font-family: $font-inter;
+        @include font-style(normal,400,16px,24px);
+        color: $brown;
+        &:nth-child(1) {
+            padding: 11px 13px;
+        }
+        &:nth-child(2) {
+            padding: 9px 16px;
+        }
+        &:nth-child(3) {
+            padding: 9px 17px;
+        }
+        &:nth-child(4) {
+            padding: 9px 17px;
+        }
+        &:nth-child(5) {
+            padding: 11px 13px;
+        }
+        &.active {
+            background: $brown;
+            color: $white;
+        }
+    }
+}

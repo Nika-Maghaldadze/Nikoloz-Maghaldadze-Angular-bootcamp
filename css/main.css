@@ -144,6 +144,23 @@ button {
   border: none;
 }
 
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -365,6 +382,138 @@ button {
   line-height: 24px;
   color: #d1d5db;
   border-top: solid 1px #4b5563;
+}
+
+.details-container .price-details .add-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  background: #8b4513;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.pages-buttons {
+  max-width: 233px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  margin-top: 48px;
+}
+.pages-buttons .page {
+  border: solid 1px #8b4513;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8b4513;
+}
+.pages-buttons .page:nth-child(1) {
+  padding: 11px 13px;
+}
+.pages-buttons .page:nth-child(2) {
+  padding: 9px 16px;
+}
+.pages-buttons .page:nth-child(3) {
+  padding: 9px 17px;
+}
+.pages-buttons .page:nth-child(4) {
+  padding: 9px 17px;
+}
+.pages-buttons .page:nth-child(5) {
+  padding: 11px 13px;
+}
+.pages-buttons .page.active {
+  background: #8b4513;
+  color: #fff;
+}
+
+.menu__grid-item {
+  position: relative;
+  max-width: 280px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.menu__grid-item .label-tag.popular {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #d4af37;
+  padding: 4px 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  border-radius: 6px;
+}
+.menu__grid-item img {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.menu__grid-item .details-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu__grid-item .details-container .dessert-name {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #8b4513;
+}
+.menu__grid-item .details-container .dessert-description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #374151;
+  letter-spacing: 0.2px;
+}
+.menu__grid-item .details-container .price-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__grid-item .details-container .price-details .price {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #8b4513;
+}
+.menu__grid-item .details-container .price-details .add-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  background: #8b4513;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
 }
 
 .hero-section__wrapper {
@@ -776,7 +925,7 @@ button {
 }
 .main-wrapper .our-pastries__wrapper {
   padding: 120px 0;
-  background: linear-gradient(0deg, rgb(255, 229, 212) 0%, rgb(255, 248, 240) 100%);
+  background: linear-gradient(90deg, rgb(255, 229, 212) 0%, rgb(255, 248, 240) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -810,12 +959,49 @@ button {
 }
 .main-wrapper .filters {
   padding: 32px 112px 33px 112px;
+  border-bottom: solid 1px #e5e7eb;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .main-wrapper .filters__group {
   display: flex;
+  align-items: center;
+}
+.main-wrapper .filters__group-buttons {
+  max-width: 444.83px;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+.main-wrapper .filters__group-buttons .filters__group {
+  gap: 8px;
+}
+.main-wrapper .filters__group-buttons .filters__group .filters__label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8b4513;
+  white-space: nowrap;
+}
+.main-wrapper .filters__group-buttons .filters__group .filter-select {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 9px 27px 9px 17px;
+  max-width: 108.33px;
+  width: 100%;
+  background: #efefef;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
 }
 .main-wrapper .filters__label {
   font-family: "Inter";
@@ -824,4 +1010,76 @@ button {
   font-size: 18px;
   line-height: 28px;
   color: #8b4513;
+}
+.main-wrapper .filters__buttons {
+  margin-left: 24px;
+  display: flex;
+  gap: 8px;
+}
+.main-wrapper .filters__buttons .filter-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: "Inter";
+  background: #f3f4f6;
+  color: #374151;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.main-wrapper .filters__buttons .filter-btn.active {
+  background: #8b4513;
+  color: #fff;
+}
+.main-wrapper .menu {
+  padding: 48px 80px;
+  background: #fff8f0;
+}
+.main-wrapper .menu__grid {
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.main-wrapper .special-offer {
+  padding: 48px 112px;
+}
+.main-wrapper .special-offer__container {
+  background: linear-gradient(-90deg, rgb(212, 175, 55) 0%, rgb(250, 204, 21) 100%);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  border-radius: 8px;
+}
+.main-wrapper .special-offer__container-header {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #8b4513;
+}
+.main-wrapper .special-offer__container-p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #374151;
+}
+.main-wrapper .special-offer__container .contact-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 32px;
+  background: #8b4513;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

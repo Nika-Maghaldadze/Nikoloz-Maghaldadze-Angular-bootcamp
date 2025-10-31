@@ -3,7 +3,7 @@
     .our-pastries__wrapper {
         padding: 120px 0;
         background: linear-gradient(
-            0deg,
+            90deg,
             rgba(255, 229, 212, 1) 0%,
             rgba(255, 248, 240, 1) 100%
         );
@@ -32,32 +32,115 @@
     }
     .filters {
         padding: 32px 112px 33px 112px;
+        border-bottom: solid 1px $border;
         @include flex(space-between, center);
         &__group {
             display: flex;
+            align-items: center;
+            &-buttons {
+                max-width: 444.83px;
+                width: 100%;
+                display: flex;
+                gap: 16px;
+                .filters__group {
+                    gap: 8px;
+                    .filters__label {
+                        font-family: $font-inter;
+                        @include font-style(normal, 500, 14px, 20px);
+                        color: $brown;
+                        white-space: nowrap;
+                    }
+
+                    .filter-select {
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding: 9px 27px 9px 17px;
+                        max-width: 108.33px;
+                        width: 100%;
+                        background: $select;
+                        border: 1px solid $lt-grey;
+                        border-radius: 6px;
+                        font-family: $font-inter;
+                        @include font-style(normal, 400, 14px, 17px);
+                        color: $black;
+                    }
+                }
+            }
         }
 
         &__label {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 28px;
+            font-family: $font-inter;
+            @include font-style(normal, 600, 18px, 28px);
             color: $brown;
         }
 
         &__buttons {
+            margin-left: 24px;
+            display: flex;
+            gap: 8px;
+            .filter-btn {
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-family: $font-inter;
+                background: $grey-btn;
+                color: $grey;
+                @include font-style(normal, 500, 14px, 20px);
+                &.active {
+                    background: $brown;
+                    color: $white;
+                }
+
+                &:hover {
+                }
+            }
         }
     }
 
-    .filter-btn {
-        &.active {
-        }
-
-        &:hover {
+    .menu {
+        padding: 48px 80px;
+        background: $menu-background;
+        &__grid {
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 32px;
         }
     }
 
-    .filter-select {
+    .special-offer {
+        padding: 48px 112px;
+        &__container {
+            background: linear-gradient(
+                -90deg,
+                rgba(212, 175, 55, 1) 0%,
+                rgba(250, 204, 21, 1) 100%
+            );
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            border-radius: 8px;
+            &-header {
+                font-family: $font-fairy;
+                @include font-style(normal, 700, 30px, 36px);
+                color: $brown;
+            }
+            &-p {
+                font-family: $font-inter;
+                @include font-style(normal, 400, 18px, 28px);
+                color: $grey;
+            }
+            .contact-button {
+                @include flex(center, center);
+                padding: 12px 32px;
+                background: $brown;
+                border-radius: 6px;
+                font-family: $font-inter;
+                @include font-style(normal, 600, 16px, 24px);
+                color: $white;
+            }
+        }
     }
 }
