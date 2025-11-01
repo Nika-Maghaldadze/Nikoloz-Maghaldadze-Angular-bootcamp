@@ -1,0 +1,251 @@
+.breadcrumbs {
+    margin-top: 64px;
+    padding: 16px 112px;
+    border-top: solid 1px $border;
+    border-bottom: solid 1px $border;
+    &__container {
+        max-width: 1216px;
+        width: 100%;
+        @include flex(flex-start, center);
+        &__navigation {
+            display: flex;
+            gap: 8px;
+            .breadcrumbs__item {
+                font-family: $font-inter;
+                @include font-style(normal, 500, 14px, 20px);
+                color: $grey;
+
+                &.active {
+                    color: $brown;
+                }
+            }
+        }
+    }
+}
+
+.product {
+    padding: 48px 112px;
+    @include flex(center, center);
+    &__container {
+        display: flex;
+        gap: 48px;
+        .container__left {
+            max-width: 584px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .image {
+                border-radius: 8px;
+                img {
+                    border-radius: 8px;
+                }
+            }
+            .images {
+                @include flex(space-between, center);
+                img {
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .container__right {
+            max-width: 584px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            justify-content: flex-start;
+            .product-name {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                &__header {
+                    font-family: $font-fairy;
+                    @include font-style(normal, 700, 36px, 40px);
+                    color: $brown;
+                }
+                &__rating {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    .review-count {
+                        font-family: $font-inter;
+                        @include font-style(normal, 400, 16px, 24px);
+                        color: $border-grey;
+                    }
+                }
+                &__price {
+                    font-family: $font-inter;
+                    @include font-style(normal, 700, 30px, 36px);
+                    color: $brown;
+                }
+            }
+
+            .product-description {
+                .description-text {
+                    font-family: $font-inter;
+                    @include font-style(normal, 400, 18px, 29px);
+                    color: $grey;
+                }
+            }
+
+            .quantity {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                .quantity__text {
+                    font-family: $font-inter;
+                    @include font-style(normal, 500, 18px, 28px);
+                    color: $brown;
+                }
+            }
+
+            .add-to-cart {
+                width: 100%;
+                display: flex;
+                gap: 16px;
+            }
+
+            .delivery-details {
+                padding-top: 24px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                .detail {
+                    display: flex;
+                    gap: 8px;
+                    p {
+                        font-family: $font-inter;
+                        @include font-style(normal, 400, 14px, 20px);
+                        color: $border-grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about {
+    background: $menu-background;
+    padding: 48px 112px;
+    .about__container {
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        .top-part {
+            border-bottom: solid 1px $lt-grey;
+            display: flex;
+            .li-item {
+                padding: 16px 32px;
+                font-family: $font-inter;
+                @include font-style(normal, 400, 16px, 24px);
+                color: $list-text-grey;
+                cursor: pointer;
+                &.active {
+                    border-bottom: solid 2px $brown;
+                    color: $brown;
+                }
+                &:hover {
+                    color: $brown;
+                }
+            }
+        }
+        .bottom-part {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .about-header {
+                font-family: $font-fairy;
+                @include font-style(normal, 600, 24px, 32px);
+                color: $brown;
+            }
+            .about-paragraph {
+                font-family: $font-inter;
+                @include font-style(normal, 400, 16px, 26px);
+                color: $grey;
+            }
+        }
+    }
+}
+.customer-reviews {
+    padding: 48px 80px;
+    .customer-reviews__contaioner {
+        padding: 0 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .contaioner-header {
+            font-family: $font-fairy;
+            @include font-style(normal, 700, 30px, 36px);
+            color: $brown;
+        }
+        .detailed-review {
+            display: flex;
+            gap: 32px;
+            .reviews-details {
+                max-width: 384px;
+                width: 100%;
+                max-height: 292px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 24px 0 24px 24px;
+                background: $menu-background;
+                .statistics {
+                    text-align: center;
+                    .total-rating {
+                        font-family: $font-inter;
+                        @include font-style(normal, 700, 36px, 40px);
+                        color: $brown;
+                    }
+                    .rating-count {
+                        font-family: "Inter";
+                        @include font-style(normal, 400, 16px, 24px);
+                        color: $border-grey;
+                    }
+                }
+                .star-stats {
+                    max-width: 345px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    .rating-row {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        &:nth-child(1) {
+                            gap: 8px;
+                        }
+                        .star-rating {
+                            font-family: $font-inter;
+                            @include font-style(normal, 400, 14px, 20px);
+                            color: $black;
+                        }
+                        .progress-bar {
+                            width: 100%;
+                            height: 8px;
+                            border-radius: 9999px;
+                            background: $border;
+                            .progress {
+                                width: 85%;
+                                height: 8px;
+                                background: $yellow;
+                                border-radius: 9999px;
+                            }
+                        }
+                        .count {
+                            font-family: $font-inter;
+                            @include font-style(normal, 400, 14px, 20px);
+                            color: #4b5563;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
