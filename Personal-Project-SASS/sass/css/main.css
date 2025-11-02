@@ -623,6 +623,18 @@ select {
   border-radius: 8px;
   box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 990px) {
+  .menu__grid-item {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .menu__grid-item img {
+    width: 100%;
+  }
+}
 .menu__grid-item .label-tag.popular {
   position: absolute;
   top: 12px;
@@ -1361,6 +1373,7 @@ select {
   font-size: 60px;
   line-height: 60px;
   color: #8b4513;
+  text-align: center;
 }
 .main-wrapper .our-pastries__wrapper .our-pastries__container .our-pastries__container-paragraph {
   font-family: "Inter";
@@ -1379,9 +1392,29 @@ select {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 1200px) {
+  .main-wrapper .filters {
+    padding: 32px 32px 33px 32px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main-wrapper .filters {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-wrapper .filters {
+    padding: 32px 16px 16px 32px;
+  }
+}
 .main-wrapper .filters__group {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 1400px) {
+  .main-wrapper .filters__group.wrap {
+    flex-wrap: wrap;
+  }
 }
 .main-wrapper .filters__group-buttons {
   max-width: 444.83px;
@@ -1389,8 +1422,28 @@ select {
   display: flex;
   gap: 16px;
 }
+@media screen and (max-width: 1400px) {
+  .main-wrapper .filters__group-buttons {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .main-wrapper .filters__group-buttons {
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main-wrapper .filters__group-buttons {
+    justify-content: flex-start;
+  }
+}
 .main-wrapper .filters__group-buttons .filters__group {
   gap: 8px;
+}
+@media screen and (max-width: 410px) {
+  .main-wrapper .filters__group-buttons .filters__group {
+    flex-wrap: wrap;
+  }
 }
 .main-wrapper .filters__group-buttons .filters__group .filters__label {
   font-family: "Inter";
@@ -1400,6 +1453,11 @@ select {
   line-height: 20px;
   color: #8b4513;
   white-space: nowrap;
+}
+@media screen and (max-width: 445px) {
+  .main-wrapper .filters__group-buttons .filters__group .filters__label.short {
+    white-space: break-spaces;
+  }
 }
 .main-wrapper .filters__group-buttons .filters__group .filter-select {
   display: flex;
@@ -1431,6 +1489,12 @@ select {
   display: flex;
   gap: 8px;
 }
+@media screen and (max-width: 780px) {
+  .main-wrapper .filters__buttons {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+}
 .main-wrapper .filters__buttons .filter-btn {
   padding: 8px 16px;
   border-radius: 6px;
@@ -1457,14 +1521,54 @@ select {
   padding: 48px 80px;
   background: #fff8f0;
 }
+@media screen and (max-width: 1440px) {
+  .main-wrapper .menu {
+    padding: 48px 48px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .main-wrapper .menu {
+    padding: 48px 32px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .main-wrapper .menu {
+    padding: 48px 24px;
+  }
+}
 .main-wrapper .menu__grid {
   padding: 0 32px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
+}
+@media screen and (max-width: 1440px) {
+  .main-wrapper .menu__grid {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .main-wrapper .menu__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 990px) {
+  .main-wrapper .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 540px) {
+  .main-wrapper .menu__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .main-wrapper .special-offer {
   padding: 48px 112px;
+}
+@media screen and (max-width: 1200px) {
+  .main-wrapper .special-offer {
+    padding: 48px 32px;
+  }
 }
 .main-wrapper .special-offer__container {
   background: linear-gradient(-90deg, rgb(212, 175, 55) 0%, rgb(250, 204, 21) 100%);
@@ -1482,6 +1586,7 @@ select {
   font-size: 30px;
   line-height: 36px;
   color: #8b4513;
+  text-align: center;
 }
 .main-wrapper .special-offer__container-p {
   font-family: "Inter";
@@ -1490,6 +1595,7 @@ select {
   font-size: 18px;
   line-height: 28px;
   color: #374151;
+  text-align: center;
 }
 .main-wrapper .special-offer__container .contact-button {
   display: flex;
