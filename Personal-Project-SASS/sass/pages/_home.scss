@@ -2,24 +2,51 @@
 .hero-section__wrapper {
     margin-top: 64px;
     @include flex(center, center);
-    height: 600px;
+    padding: 102px 80px;
     background: linear-gradient(90deg, #ffe5d4 0%, #fff8f0 100%);
+
+    @media screen and (max-width: 1400px) {
+        padding: 102px 0;
+    }
+    @media screen and (max-width: 700px) {
+        padding: 0 0 12px 0;
+    }
+
     .hero-section__container {
         max-width: 1280px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0 32px;
+        @media screen and (max-width: 1015px) {
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        @media screen and (max-width: 700px) {
+            padding: 0 14px;
+        }
+
         .hero-section__left-container {
             display: flex;
             flex-direction: column;
             gap: 24px;
+            @media screen and (max-width: 1015px) {
+                width: 100%;
+            }
             .hero-section__header {
                 max-width: 441px;
                 width: 100%;
                 font-family: $font-fairy;
                 @include font-style(normal, 700, 60px, 60px);
                 color: $brown;
+                @media screen and (max-width: 1024px) {
+                    @include font-style(normal, 700, 48px, 60px);
+                }
+                @media screen and (max-width: 1015px) {
+                    max-width: 1000px;
+                    width: 100%;
+                }
             }
             .hero-section__description {
                 max-width: 572px;
@@ -27,6 +54,10 @@
                 font-family: $font-inter;
                 @include font-style(normal, 400, 20px, 32px);
                 color: $grey;
+                @media screen and (max-width: 1015px) {
+                    max-width: 1000px;
+                    width: 100%;
+                }
             }
             .shop__now-view__menu {
                 display: flex;
@@ -63,24 +94,59 @@
 
         .hero-section__right-container {
             max-width: 584px;
-            width: 100%;
             border-radius: 8px;
+
+            @media screen and (max-width: 1200px) {
+                @include flex(flex-end, center);
+                margin-left: 32px;
+                height: 100%;
+            }
+            @media screen and (max-width: 1015px) {
+                max-width: 1000px;
+                width: 100%;
+                margin-left: 0;
+            }
             img {
                 border-radius: 8px;
                 box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+                @media screen and (max-width: 1400px) {
+                    max-width: 456px;
+                    height: 356px;
+                }
+                @media screen and (max-width: 1015px) {
+                    max-width: 1000px;
+                    width: 100%;
+                }
+                @media screen and (max-width: 800px) {
+                    height: auto;
+                }
             }
         }
     }
 }
 
 .our-categories__wrapper {
-    @include flex(center, center);
+    // @include flex(center, center);
     padding: 64px 80px;
+    @media screen and (max-width: 1300px) {
+        padding: 64px 32px;
+    }
+    @media screen and (max-width: 850px) {
+        padding: 64px 12px;
+    }
+
     .our-categories__container {
         display: flex;
         flex-direction: column;
         gap: 48px;
+        @media screen and (max-width: 600px) {
+            justify-content: center;
+            align-items: center;
+            padding: 64px 12px;
+        }
         .our-categories__header-content {
+            width: 90%;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             gap: 16px;
@@ -99,9 +165,14 @@
 
         .categories-grid__container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 32px;
-
+            @media screen and (max-width: 950px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+            }
             .grid-item {
                 display: flex;
                 flex-direction: column;
@@ -118,6 +189,12 @@
                     &:hover {
                         background-size: 120%;
                         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+                    }
+                    @media screen and (max-width: 950px) {
+                        max-width: 400px;
+                    }
+                    @media screen and (max-width: 650px) {
+                        max-width: 260px;
                     }
                 }
 
@@ -148,6 +225,15 @@
         rgba(212, 175, 55, 1) 0%,
         rgba(250, 204, 21, 1) 100%
     );
+    @media screen and (max-width: 1400px) {
+        padding: 64px 32px;
+    }
+    @media screen and (max-width: 900px) {
+        padding: 64px 24px;
+    }
+    @media screen and (max-width: 500px) {
+        padding: 64px 12px;
+    }
     .special-offer__container {
         max-width: 1215px;
         width: 100%;
@@ -158,20 +244,26 @@
         flex-direction: column;
         box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1);
         gap: 16px;
+        @media screen and (max-width: 400px) {
+            padding: 24px;
+        }
         .special-offer__header {
             font-family: $font-fairy;
             @include font-style(normal, 700, 36px, 40px);
             color: $brown;
+            text-align: center;
         }
         .special-offer__h4 {
             font-family: $font-inter;
             @include font-style(normal, 400, 24px, 32px);
             color: $grey;
+            text-align: center;
         }
         .special-offer__p {
             font-family: $font-inter;
             @include font-style(normal, 400, 18px, 28px);
             color: $grey;
+            text-align: center;
         }
         .special-offer__claim-button {
             @include flex(center, center);
@@ -191,6 +283,9 @@
 .featured-pastries__wrapper {
     width: 100%;
     padding: 64px 80px;
+    @media screen and (max-width: 1200px) {
+        padding: 64px 0;
+    }
     @include flex(center, center);
     .featured-pastries__container {
         padding: 0 32px;
@@ -206,18 +301,30 @@
                 font-family: $font-fairy;
                 @include font-style(normal, 700, 36px, 40px);
                 color: $brown;
+                @media screen and (max-width: 360px) {
+                    @include font-style(normal, 700, 24px, 32px);
+                }
             }
             .header-component__p {
                 font-family: $font-inter;
                 @include font-style(normal, 400, 20px, 28px);
                 color: $grey;
                 letter-spacing: 0.5px;
+                @media screen and (max-width: 360px) {
+                    @include font-style(normal, 400, 16px, 32px);
+                }
             }
         }
         .featured-pastries__grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 32px;
+            @media screen and (max-width: 900px) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @media screen and (max-width: 650px) {
+                grid-template-columns: 1fr;
+            }
             .featured-pastries__grid-item {
                 box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
                 .image-wrapper {
@@ -279,6 +386,12 @@
     background: $lt-brown;
     @include flex(center, center);
     padding: 64px 80px;
+    @media screen and (max-width: 1030px) {
+        padding: 64px 32px;
+    }
+    @media screen and (max-width: 810px) {
+        padding: 64px 24px;
+    }
     .customers-feedback__container {
         @include flex(center, center);
         flex-direction: column;
@@ -292,6 +405,9 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 32px;
+            @media screen and (max-width: 700px) {
+                grid-template-columns: 1fr ;
+            }
             .customers-feedback__grid-item {
                 max-width: 384px;
                 width: 100%;
