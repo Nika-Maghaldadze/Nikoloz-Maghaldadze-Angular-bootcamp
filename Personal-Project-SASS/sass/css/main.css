@@ -482,13 +482,18 @@ select {
   justify-content: center;
   align-items: center;
 }
+.quantity div button:nth-child(1):hover {
+  background: #f3f4f6;
+}
 .quantity div button:nth-child(3) {
   width: 35px;
   height: 41px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-
+.quantity div button:nth-child(3):hover {
+  background: #f3f4f6;
+}
 .add-to-cart .cart-btn {
   width: 100%;
   background-color: #8b4513;
@@ -1571,4 +1576,6 @@ select {
 }
 .recommended__container .menu__grid-item:hover img {
   transform: scale(1);
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

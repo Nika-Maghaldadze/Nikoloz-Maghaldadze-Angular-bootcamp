@@ -136,9 +136,9 @@
     border-radius: 6px;
 
     font-family: $font-inter;
-    @include font-style(normal,600,16px,24px);
+    @include font-style(normal, 600, 16px, 24px);
     color: $white;
-    &:hover{
+    &:hover {
         opacity: 0.9;
     }
 }
