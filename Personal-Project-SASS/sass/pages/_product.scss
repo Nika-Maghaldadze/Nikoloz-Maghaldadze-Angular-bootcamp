@@ -43,9 +43,13 @@
             }
             .images {
                 @include flex(space-between, center);
+                img.active {
+                    border: solid 2px $brown;
+                }
                 img {
                     border-radius: 8px;
                 }
+                
             }
         }
 
@@ -243,6 +247,35 @@
                             @include font-style(normal, 400, 14px, 20px);
                             color: #4b5563;
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.recommended {
+    background: $lt-brown;
+    padding: 64px 80px;
+    &__container {
+        display: grid;
+        place-items: center;
+        gap: 32px;
+
+        .recommended-header {
+            font-family: $font-fairy;
+            @include font-style(normal, 700, 30px, 36px);
+            color: $brown;
+        }
+        .menu__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            &-item {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                &:hover {
+                    img {
+                        transform: scale(1);
                     }
                 }
             }

@@ -1302,6 +1302,9 @@ select {
   justify-content: space-between;
   align-items: center;
 }
+.product__container .container__left .images img.active {
+  border: solid 2px #8b4513;
+}
 .product__container .container__left .images img {
   border-radius: 8px;
 }
@@ -1539,4 +1542,33 @@ select {
   font-size: 14px;
   line-height: 20px;
   color: #4b5563;
+}
+
+.recommended {
+  background: #fff8f0;
+  padding: 64px 80px;
+}
+.recommended__container {
+  display: grid;
+  place-items: center;
+  gap: 32px;
+}
+.recommended__container .recommended-header {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #8b4513;
+}
+.recommended__container .menu__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.recommended__container .menu__grid-item {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.recommended__container .menu__grid-item:hover img {
+  transform: scale(1);
 }/*# sourceMappingURL=main.css.map */
