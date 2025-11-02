@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/main.css" />
+        <title>Personal project SASS</title>
+    </head>
+    <body>
+        <iframe
+            class="iframe-header"
+            src="./layouts/header.html"
+            title="site header"
+            scrolling="no"
+            frameborder="0"
+            >></iframe
+        >
+        <main class="main-content__wrapper">
+            <section class="hero-section__wrapper">
+                <div class="hero-section__container">
+                    <div class="hero-section__left-container">
+                        <h1 class="hero-section__header">
+                            Artisan Pastries Made with Love
+                        </h1>
+                        <p class="hero-section__description">
+                            Discover our handcrafted pastries, made fresh daily
+                            with the finest ingredients. From flaky croissants
+                            to decadent éclairs, every bite is pure bliss.
+                        </p>
+                        <div class="shop__now-view__menu">
+                            <a href="./pages/our-pastries.html">
+                                <button class="shop-now__button">Shop Now</button>
+                            </a>
+                            <button class="view-menu__button">View Menu</button>
+                        </div>
+                    </div>
+                    <div class="hero-section__right-container">
+                        <img
+                            src="./images/photos/foodforsale.png"
+                            alt="beautiful artisan pastries display case with croissants, eclairs, and macarons in warm bakery lighting"
+                        />
+                    </div>
+                </div>
+            </section>
+            <section class="our-categories__wrapper">
+                <div class="our-categories__container">
+                    <div class="our-categories__header-content">
+                        <h3 class="our-categories__h3">Our Categories</h3>
+                        <p class="our-categories__p">
+                            Explore our delicious selection
+                        </p>
+                    </div>
+                    <div class="categories-grid__container">
+                        <div class="grid-item">
+                            <div
+                                class="grid-image"
+                                style="
+                                    background-image: url('./images/photos/croissants.png');
+                                "
+                                alt="fresh golden croissants on wooden board bakery style photography"
+                            ></div>
+                            <h5 class="grid-header">Croissants</h5>
+                            <p class="grid-p">
+                                Buttery, flaky, and irresistible
+                            </p>
+                        </div>
+
+                        <div class="grid-item">
+                            <div
+                                class="grid-image"
+                                style="
+                                    background-image: url('./images/photos/chocolateEclairs.png');
+                                "
+                                alt="Classic French choux pastry"
+                            ></div>
+                            <h5 class="grid-header">Éclairs</h5>
+                            <p class="grid-p">Classic French choux pastry</p>
+                        </div>
+
+                        <div class="grid-item">
+                            <div
+                                class="grid-image"
+                                style="
+                                    background-image: url('./images/photos/macarons.png');
+                                "
+                                alt="Delicate almond meringue cookies"
+                            ></div>
+                            <h5 class="grid-header">Macarons</h5>
+                            <p class="grid-p">
+                                Delicate almond meringue cookies
+                            </p>
+                        </div>
+
+                        <div class="grid-item">
+                            <div
+                                class="grid-image"
+                                style="
+                                    background-image: url('./images/photos/tartsWithBerries.png');
+                                "
+                                alt="Fresh fruit and creamy custard"
+                            ></div>
+                            <h5 class="grid-header">Tarts</h5>
+                            <p class="grid-p">Fresh fruit and creamy custard</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="special-offer__wrapper">
+                <div class="special-offer__container">
+                    <h3 class="special-offer__header">Special Offer</h3>
+                    <h4 class="special-offer__h4">
+                        Buy 2 Dozen Pastries, Get 20% Off!
+                    </h4>
+                    <p class="special-offer__p">
+                        Perfect for parties, meetings, or treating yourself.
+                        Valid until end of month.
+                    </p>
+                    <button class="special-offer__claim-button">
+                        Claim Offer
+                    </button>
+                </div>
+            </section>
+            <section class="featured-pastries__wrapper">
+                <div class="featured-pastries__container">
+                    <div class="header-component">
+                        <h3 class="header-component__header">
+                            Featured Pastries
+                        </h3>
+                        <p class="header-component__p">
+                            Our most popular creations
+                        </p>
+                    </div>
+                    <div class="featured-pastries__grid">
+                        <div class="featured-pastries__grid-item">
+                            <div class="image-wrapper">
+                                <img
+                                    class="featured-pastries__grid-item-img"
+                                    src="./images/photos/chocolate-croissant.png"
+                                    alt="chocolate croissant pain au chocolat golden brown flaky pastry"
+                                />
+                            </div>
+                            <div class="label-tag">
+                                <h4 class="featured-pastries__grid-item-name">
+                                    Pain au Chocolat
+                                </h4>
+                                <p class="featured-pastries__grid-item-p">
+                                    Buttery croissant dough wrapped around rich
+                                    dark chocolate
+                                </p>
+                                <div class="price-container">
+                                    <h2 class="price-container__item-price">
+                                        $3.50
+                                    </h2>
+                                    <button class="price-container__add-btn">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-pastries__grid-item">
+                            <div class="image-wrapper">
+                                <img
+                                    class="featured-pastries__grid-item-img"
+                                    src="./images/photos/strawberry danish pastry.png"
+                                    alt="strawberry danish pastry with glaze and fresh strawberries"
+                                />
+                            </div>
+                            <div class="label-tag">
+                                <h4 class="featured-pastries__grid-item-name">
+                                    Strawberry Danish
+                                </h4>
+                                <p class="featured-pastries__grid-item-p">
+                                    Flaky pastry with cream cheese and fresh
+                                    strawberries
+                                </p>
+                                <div class="price-container">
+                                    <h2 class="price-container__item-price">
+                                        $4.25
+                                    </h2>
+                                    <button class="price-container__add-btn">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-pastries__grid-item">
+                            <div class="image-wrapper">
+                                <img
+                                    class="featured-pastries__grid-item-img"
+                                    src="./images/photos/vanilla eclair.png"
+                                    alt="vanilla eclair with chocolate glaze elegant french pastry"
+                                />
+                            </div>
+                            <div class="label-tag">
+                                <h4 class="featured-pastries__grid-item-name">
+                                    Vanilla Éclair
+                                </h4>
+                                <p class="featured-pastries__grid-item-p">
+                                    Choux pastry filled with vanilla cream and
+                                    chocolate glaze
+                                </p>
+                                <div class="price-container">
+                                    <h2 class="price-container__item-price">
+                                        $4.75
+                                    </h2>
+                                    <button class="price-container__add-btn">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="customers-feedback__wrapper">
+                <div class="customers-feedback__container">
+                    <h2 class="customers-feedback__header">
+                        What Our Customers Say
+                    </h2>
+                    <div class="customers-feedback__grid">
+                        <div class="customers-feedback__grid-item">
+                            <div class="user-wrapper">
+                                <img
+                                    class="user-photo"
+                                    src="./images/photos/customers/sarah.png"
+                                    alt="Sarah Johnson"
+                                />
+                                <div class="name-rating">
+                                    <h5 class="customer-name">Sarah Johnson</h5>
+                                    <div class="stars">
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="customer-feedback">
+                                "The best pastries in town! Every bite is pure
+                                heaven. My family absolutely loves their
+                                croissants."
+                            </p>
+                        </div>
+                        <div class="customers-feedback__grid-item">
+                            <div class="user-wrapper">
+                                <img
+                                    class="user-photo"
+                                    src="./images/photos/customers/mike.png"
+                                    alt="Sarah Johnson"
+                                />
+                                <div class="name-rating">
+                                    <h5 class="customer-name">Mike Chen</h5>
+                                    <div class="stars">
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="customer-feedback">
+                                "Exceptional quality and service. The éclairs
+                                are to die for! I order from here weekly."
+                            </p>
+                        </div>
+                        <div class="customers-feedback__grid-item">
+                            <div class="user-wrapper">
+                                <img
+                                    class="user-photo"
+                                    src="./images/photos/customers/Emily.png"
+                                    alt="Sarah Johnson"
+                                />
+                                <div class="name-rating">
+                                    <h5 class="customer-name">Emily Davis</h5>
+                                    <div class="stars">
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                        <img
+                                            src="./images/logos/variant=1.svg"
+                                            alt="star"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="customer-feedback">
+                                "Fresh, delicious, and beautifully presented.
+                                Perfect for special occasions and everyday
+                                treats!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <iframe
+            title="site footer"
+            scrolling="no"
+            frameborder="0"
+            class="iframe-footer"
+            src="./layouts/footer.html"
+        ></iframe>
+    </body>
+</html>

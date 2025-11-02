@@ -1,0 +1,108 @@
+//menu grid items on pastries page
+.menu {
+    &__grid {
+        &-item {
+            position: relative;
+            max-width: 280px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+            .label-tag.popular {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                background: $yellow;
+                padding: 4px 8px;
+                font-family: $font-inter;
+                @include font-style(normal, 600, 12px, 16px);
+                color: $white;
+                border-radius: 6px;
+                z-index: 3;
+                &.new {
+                    background: #ef4444;
+                }
+            }
+            img {
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+            }
+            .details-container {
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                overflow: hidden;
+                .dessert-name {
+                    font-family: $font-fairy;
+                    @include font-style(normal, 600, 20px, 28px);
+                    color: $brown;
+                }
+                .dessert-description {
+                    font-family: $font-inter;
+                    @include font-style(normal, 400, 14px, 20px);
+                    color: $grey;
+                    letter-spacing: 0.2px;
+                }
+                .price-details {
+                    @include flex(space-between, center);
+                    .price {
+                        font-family: $font-inter;
+                        @include font-style(normal, 700, 24px, 32px);
+                        color: $brown;
+                    }
+                    .add-button {
+                        display: flex;
+                        align-items: center;
+                        padding: 8px 16px;
+                        gap: 8px;
+                        background: $brown;
+                        border-radius: 6px;
+                        font-family: $font-inter;
+                        @include font-style(normal, 400, 16px, 24px);
+                        color: $white;
+                    }
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+.user-review {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    padding-bottom: 25px;
+    border-bottom: solid 1px $border;
+    .review-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .name-time {
+            @include flex(space-between, center);
+            .customer-name {
+                font-family: $font-inter;
+                @include font-style(normal, 600, 16px, 24px);
+                color: $brown;
+            }
+            .time {
+                font-family: $font-inter;
+                @include font-style(normal, 400, 14px, 20px);
+                color: $list-text-grey;
+            }
+        }
+        .comment {
+            font-family: $font-inter;
+            @include font-style(normal, 400, 16px, 24px);
+            color: $grey;
+        }
+    }
+}
