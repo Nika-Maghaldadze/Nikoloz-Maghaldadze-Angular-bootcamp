@@ -20,6 +20,7 @@
                 font-family: $font-fairy;
                 @include font-style(normal, 700, 60px, 60px);
                 color: $brown;
+                text-align: center;
             }
             .our-pastries__container-paragraph {
                 font-family: $font-inter;
@@ -34,21 +35,54 @@
         padding: 32px 112px 33px 112px;
         border-bottom: solid 1px $border;
         @include flex(space-between, center);
+        @media screen and (max-width: 1200px) {
+            padding: 32px 32px 33px 32px;
+        }
+        @media screen and (max-width: 1000px) {
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: 600px) {
+            padding: 32px 16px 16px 32px;
+        }
         &__group {
             display: flex;
             align-items: center;
+
+            &.wrap {
+                @media screen and (max-width: 1400px) {
+                    flex-wrap: wrap;
+                }
+            }
+
             &-buttons {
                 max-width: 444.83px;
                 width: 100%;
                 display: flex;
                 gap: 16px;
+                @media screen and (max-width: 1400px) {
+                    margin-top: 20px;
+                }
+                @media screen and (max-width: 1150px) {
+                    justify-content: flex-end;
+                }
+                @media screen and (max-width: 1000px) {
+                    justify-content: flex-start;
+                }
                 .filters__group {
                     gap: 8px;
+                    @media screen and (max-width: 410px) {
+                            flex-wrap: wrap;
+                        }
                     .filters__label {
                         font-family: $font-inter;
                         @include font-style(normal, 500, 14px, 20px);
                         color: $brown;
                         white-space: nowrap;
+                        @media screen and (max-width: 445px) {
+                            &.short{
+                                white-space: break-spaces;
+                            }
+                        }
                     }
 
                     .filter-select {
@@ -64,6 +98,7 @@
                         font-family: $font-inter;
                         @include font-style(normal, 400, 14px, 17px);
                         color: $black;
+                        
                     }
                 }
             }
@@ -79,6 +114,10 @@
             margin-left: 24px;
             display: flex;
             gap: 8px;
+            @media screen and (max-width: 780px) {
+                margin-left: 0;
+                flex-wrap: wrap;
+            }
             .filter-btn {
                 padding: 8px 16px;
                 border-radius: 6px;
@@ -89,7 +128,7 @@
                 &.active {
                     background: $brown;
                     color: $white;
-                    &:hover{
+                    &:hover {
                         opacity: 0.9;
                     }
                 }
@@ -105,16 +144,40 @@
     .menu {
         padding: 48px 80px;
         background: $menu-background;
+        @media screen and (max-width: 1440px) {
+            padding: 48px 48px;
+        }
+        @media screen and (max-width: 1050px) {
+            padding: 48px 32px;
+        }
+        @media screen and (max-width: 990px) {
+            padding: 48px 24px;
+        }
         &__grid {
             padding: 0 32px;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 32px;
+            @media screen and (max-width: 1440px) {
+                padding: 0;
+            }
+            @media screen and (max-width: 1440px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media screen and (max-width: 990px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media screen and (max-width: 540px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     }
 
     .special-offer {
         padding: 48px 112px;
+        @media screen and (max-width: 1200px) {
+            padding: 48px 32px;
+        }
         &__container {
             background: linear-gradient(
                 -90deg,
@@ -131,11 +194,13 @@
                 font-family: $font-fairy;
                 @include font-style(normal, 700, 30px, 36px);
                 color: $brown;
+                text-align: center;
             }
             &-p {
                 font-family: $font-inter;
                 @include font-style(normal, 400, 18px, 28px);
                 color: $grey;
+                text-align: center;
             }
             .contact-button {
                 @include flex(center, center);
@@ -145,7 +210,7 @@
                 font-family: $font-inter;
                 @include font-style(normal, 600, 16px, 24px);
                 color: $white;
-                &:hover{
+                &:hover {
                     opacity: 0.9;
                 }
             }

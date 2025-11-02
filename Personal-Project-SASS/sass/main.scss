@@ -7,17 +7,14 @@
 
 // 2. Base styles
 @import "base/reset";
-@import "base/base";
+@import "./base/base";
 
 // 3. Layout
 @import "layout/header";
 @import "layout/footer";
-@import "layout/grid";
-
 // 4. Components
 @import "components/buttons";
 @import "components/cards";
-@import "components/modal";
 
 // 5. Pages
 @import "pages/home";
