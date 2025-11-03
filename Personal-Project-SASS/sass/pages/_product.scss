@@ -3,6 +3,12 @@
     padding: 16px 112px;
     border-top: solid 1px $border;
     border-bottom: solid 1px $border;
+    @media screen and (max-width: 1300px) {
+        padding: 16px 32px;
+    }
+    @media screen and (max-width: 1300px) {
+        padding: 16px 12px;
+    }
     &__container {
         max-width: 1216px;
         width: 100%;
@@ -26,15 +32,38 @@
 .product {
     padding: 48px 112px;
     @include flex(center, center);
+    @media screen and (max-width: 1300px) {
+        padding: 48px 32px;
+    }
+    @media screen and (max-width: 1300px) {
+        padding: 48px 12px;
+    }
     &__container {
         display: flex;
         gap: 48px;
+        @media screen and (max-width: 980px) {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
         .container__left {
             max-width: 584px;
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 16px;
+            @media screen and (max-width: 1200px) {
+                max-width: 456px;
+                .image img {
+                    width: 100%;
+                }
+            }
+            @media screen and (max-width: 980px) {
+                max-width: 100%;
+                .image img {
+                    width: 100%;
+                }
+            }
             .image {
                 border-radius: 8px;
                 img {
@@ -43,13 +72,33 @@
             }
             .images {
                 @include flex(space-between, center);
+                @media screen and (max-width: 1200px) {
+                    max-width: 456px;
+                    img {
+                        max-width: 100px;
+                        width: 100%;
+                    }
+                }
+                @media screen and (max-width: 980px) {
+                    max-width: 100%;
+                    img {
+                       max-width:200px;
+                    }
+                }
+                @media screen and (max-width: 660px) {
+                    img {
+                       max-width:100px;
+                    }
+                }
+                @media screen and (max-width: 450px){
+                    flex-wrap: wrap;
+                }
                 img.active {
                     border: solid 2px $brown;
                 }
                 img {
                     border-radius: 8px;
                 }
-                
             }
         }
 
@@ -60,6 +109,9 @@
             flex-direction: column;
             gap: 24px;
             justify-content: flex-start;
+            @media screen and (max-width: 980px){
+                max-width: 100%;
+            }
             .product-name {
                 display: flex;
                 flex-direction: column;
@@ -119,6 +171,10 @@
                 .detail {
                     display: flex;
                     gap: 8px;
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
                     p {
                         font-family: $font-inter;
                         @include font-style(normal, 400, 14px, 20px);
@@ -133,6 +189,12 @@
 .about {
     background: $menu-background;
     padding: 48px 112px;
+    @media screen and (max-width: 1300px) {
+        padding: 48px 32px;
+    }
+    @media screen and (max-width: 500px) {
+        padding: 48px 14px;
+    }
     .about__container {
         display: flex;
         flex-direction: column;
@@ -148,6 +210,16 @@
                 @include font-style(normal, 400, 16px, 24px);
                 color: $list-text-grey;
                 cursor: pointer;
+                @media screen and (max-width: 1300px) {
+                    padding: 16px 16px;
+                }
+                @media screen and (max-width: 500px) {
+                    font-size: 12px;
+                }
+                @media screen and (max-width: 400px) {
+                    font-size: 10px;
+                    padding: 16px 8px;
+                }
                 &.active {
                     border-bottom: solid 2px $brown;
                     color: $brown;
@@ -177,11 +249,20 @@
 }
 .customer-reviews {
     padding: 48px 80px;
+    @media screen and (max-width: 1300px) {
+        padding: 48px 32px;
+    }
+    @media screen and (max-width: 600px) {
+        padding: 48px 14px;
+    }
     .customer-reviews__contaioner {
         padding: 0 32px;
         display: flex;
         flex-direction: column;
         gap: 32px;
+        @media screen and (max-width: 600px) {
+            padding: 48px 8px;
+        }
         .contaioner-header {
             font-family: $font-fairy;
             @include font-style(normal, 700, 30px, 36px);
@@ -190,6 +271,9 @@
         .detailed-review {
             display: flex;
             gap: 32px;
+            @media screen and (max-width: 840px) {
+                flex-wrap: wrap;
+            }
             .reviews-details {
                 max-width: 384px;
                 width: 100%;
@@ -199,6 +283,14 @@
                 gap: 16px;
                 padding: 24px 0 24px 24px;
                 background: $menu-background;
+                @media screen and (max-width: 1100px) {
+                    padding: 24px 6px 24px 6px;
+                }
+                @media screen and (max-width: 840px) {
+                    max-width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
                 .statistics {
                     text-align: center;
                     .total-rating {
@@ -251,12 +343,24 @@
                 }
             }
         }
+
+        .reviews-with-users {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
     }
 }
 
 .recommended {
     background: $lt-brown;
     padding: 64px 80px;
+    @media screen and (max-width: 1300px) {
+        padding: 48px 32px;
+    }
+    @media screen and (max-width: 700px) {
+        padding: 48px 14px;
+    }
     &__container {
         display: grid;
         place-items: center;
@@ -271,12 +375,22 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 32px;
+            @media screen and (max-width: 980px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media screen and (max-width: 980px) {
+                grid-template-columns: 1fr;
+            }
             &-item {
                 box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-                &:hover {
-                    img {
-                        transform: scale(1);
-                    }
+                @media screen and (max-width: 1350px) {
+                    max-width: 216px;
+                }
+                @media screen and (max-width: 980px) {
+                    max-width: 100%;
+                }
+                img {
+                    width: 100%;
                 }
             }
         }
