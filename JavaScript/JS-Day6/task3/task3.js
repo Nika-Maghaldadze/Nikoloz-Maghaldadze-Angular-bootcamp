@@ -39,3 +39,7 @@ class Manager extends Employee {
     return `${super.toString()}|BAND=${this.#band}|BONUS=${this.bonus().toFixed(2)}`;
   }
 }
+
+
+const mgr = new Manager("Ana", 4000, "M2");
+console.log("Employee:", mgr.toString());

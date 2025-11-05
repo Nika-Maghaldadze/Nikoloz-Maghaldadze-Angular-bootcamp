@@ -57,3 +57,9 @@ class SavingsAccount extends BankAccount {
     return this.getBalance();
   }
 }
+
+const s = new SavingsAccount("TBC100", 1000, 0.06);
+s.deposit(200);
+s.withdraw(100);
+s.applyMonthlyInterest();
+console.log(" BankAccount:", s.printStatement());

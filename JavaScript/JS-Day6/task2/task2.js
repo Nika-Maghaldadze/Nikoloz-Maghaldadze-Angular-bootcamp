@@ -37,3 +37,8 @@ class Cart {
     return `SUB=${subtotal.toFixed(2)};DISC=${discount.toFixed(2)};VAT=${vat.toFixed(2)};TOTAL=${total.toFixed(2)}`;
   }
 }
+
+const cart = new Cart();
+cart.add(new Product("A1", 10), 2);
+cart.add(new Product("B2", 20), 1);
+console.log("Cart:", cart.total({ discountPct: 10, vatPct: 5 }));

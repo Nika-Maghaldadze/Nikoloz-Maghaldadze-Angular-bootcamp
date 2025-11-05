@@ -1,25 +1,28 @@
 class Flight {
-  #code;
-  #seats;
-  #booked = new Set();
-
+  #code; #seats; #booked;
   constructor(code, seats) {
-    if (typeof code !== "string" || !code.trim() || !Number.isInteger(seats) || seats < 1)
+    if (!code || typeof code !== "string" || !Number.isInteger(seats) || seats <= 0)
       throw new Error("INVALID_FLIGHT");
     this.#code = code;
     this.#seats = seats;
+    this.#booked = [];
   }
-
   book(name) {
-    if (this.#booked.size >= this.#seats) throw new Error("FULL");
-    if (this.#booked.has(name)) throw new Error("DUPLICATE");
-    this.#booked.add(name);
+    if (this.#booked.length >= this.#seats) throw new Error("FULL");
+    if (this.#booked.includes(name)) throw new Error("DUPLICATE");
+    this.#booked.push(name);
   }
-
   cancel(name) {
-    if (!this.#booked.delete(name)) throw new Error("NOT_FOUND");
+    const idx = this.#booked.indexOf(name);
+    if (idx < 0) throw new Error("NOT_FOUND");
+    this.#booked.splice(idx, 1);
   }
-
   list() { return [...this.#booked]; }
-  available() { return this.#seats - this.#booked.size; }
+  available() { return this.#seats - this.#booked.length; }
 }
+
+
+const flight = new Flight("TBS123", 2);
+flight.book("Ana");
+flight.book("Luka");
+console.log("Flight Available:", flight.available());
