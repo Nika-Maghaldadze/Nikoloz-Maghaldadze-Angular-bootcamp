@@ -1,6 +1,6 @@
 import { db } from "../repositories/baseRepository.js";
 
-export function validateSubjectInput(input, { existingId = null } = {}) {
+export function validateSubject(input, { existingId = null } = {}) {
     const errors = [];
     const value = {};
 

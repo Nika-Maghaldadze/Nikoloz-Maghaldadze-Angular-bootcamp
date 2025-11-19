@@ -1,4 +1,4 @@
-export function validateStudentInput(input = {}) {
+export function validateStudent(input = {}) {
     const errors = [];
     const value = {};
 

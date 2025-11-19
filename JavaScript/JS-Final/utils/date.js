@@ -1,4 +1,4 @@
-function parseISO(dateStr) {
+export function parseISO(dateStr) {
     if (typeof dateStr !== "string") return NaN;
     const time = Date.parse(dateStr);
     return isNaN(time) ? NaN : time;

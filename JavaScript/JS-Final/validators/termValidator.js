@@ -1,7 +1,7 @@
 import { parseISO } from "../utils/date.js";
 import { db } from "../repositories/baseRepository.js";
 
-export function validateTermInput(input, { existingId = null } = {}) {
+export function validateTerm(input, { existingId = null } = {}) {
     const errors = [];
     const value = {};
 
