@@ -1,0 +1,22 @@
+{
+  "boards": [
+    {
+      "id": "board_micyenfo_9vqreh",
+      "name": "fdsbaudf",
+      "lists": [],
+      "cards": []
+    },
+    {
+      "id": "board_micyis52_ns2vp1",
+      "name": "Nika",
+      "lists": [
+        {
+          "id": "list_micyk0my_te0gyq",
+          "name": "Nika",
+          "cardOrder": []
+        }
+      ],
+      "cards": []
+    }
+  ]
+}
