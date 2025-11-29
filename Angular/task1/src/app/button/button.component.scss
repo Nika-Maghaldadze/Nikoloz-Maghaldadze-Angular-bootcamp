@@ -1,0 +1,133 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as m;
+
+button {
+  border: none;
+  border-radius: 8px;
+  line-height: 100%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  &:focus {
+    outline: 2px solid darkgray;
+  }
+  &.primary {
+    @include m.primary;
+  }
+  &.success {
+    @include m.success;
+  }
+  &.secondary {
+    @include m.secondary;
+  }
+  &.danger {
+    @include m.danger;
+  }
+  &.warning {
+    @include m.warning;
+  }
+  &.primary-hover {
+    background-color: $primary-hover;
+  }
+
+  &.secondary-hover {
+    background-color: $secondary-hover;
+  }
+
+  &.success-hover {
+    background-color: $success-hover;
+  }
+
+  &.warning-hover {
+    background-color: $warning-hover;
+  }
+
+  &.danger-hover {
+    background-color: $danger-hover;
+  }
+  &.primary-active {
+    background-color: $primary-active;
+  }
+
+  &.secondary-active {
+    background-color: $secondary-active;
+  }
+
+  &.success-active {
+    background-color: $success-active;
+  }
+
+  &.warning-active {
+    background-color: $warning-active;
+  }
+
+  &.danger-active {
+    background-color: $danger-active;
+  }
+
+  &.small {
+    padding: 8px 8px 8px 12px;
+    font-size: 14px;
+  }
+  &.medium {
+    padding: 12px 14.94px 14px 20px;
+    font-size: 16px;
+  }
+  &.large {
+    padding: 17px 23.3px 17px 28px;
+    font-size: 18px;
+  }
+  &.x-large {
+    padding: 18px 30.92px 20px 36px;
+    font-size: 20px;
+  }
+  &.outline-primary {
+    @include m.outline-primary;
+  }
+
+  &.outline-secondary {
+    @include m.outline-secondary;
+  }
+
+  &.outline-success {
+    @include m.outline-success;
+  }
+
+  &.outline-warning {
+    @include m.outline-warning;
+  }
+
+  &.outline-danger {
+    @include m.outline-danger;
+  }
+  &.disabled,
+  &.disabled-outline {
+    cursor: not-allowed;
+  }
+  &.disabled {
+    @include m.disabled;
+  }
+
+  &.disabled-outline {
+    @include m.disabled-outline;
+  }
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  animation: spin 1.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

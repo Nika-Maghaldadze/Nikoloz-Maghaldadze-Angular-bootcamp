@@ -1,0 +1,35 @@
+<button
+  [ngClass]="[
+    disabled ? '' : type,
+    sizeClass,
+    hoverClass,
+    activeClass,
+    disabledClass
+  ]"
+  (click)="clickMe()"
+>
+
+  <ng-container *ngIf="isIcon && label.toLowerCase() !== 'loading'">
+    <img
+      [src]="'assets/' + label.toLowerCase() + '.svg'"
+      alt="{{ label }}"
+    />
+    <span *ngIf="!withoutIcons.includes(label.toLowerCase())">
+      {{ label | titlecase }}
+    </span>
+  </ng-container>
+
+  <ng-container *ngIf="!isIcon && !withoutIcons.includes(label.toLowerCase())">
+    {{ label | titlecase }}
+  </ng-container>
+
+  <ng-container *ngIf="label.toLowerCase() === 'loading'">
+    <img
+      [src]="'assets/loading.svg'"
+      alt="Loading"
+      class="spinner"
+    />
+    {{label | titlecase}}
+  </ng-container>
+
+</button>

@@ -1,0 +1,41 @@
+<div class="container">
+  <main>
+    <article>
+      <p>
+        Comprehensive button components with various states, sizes, and vibrant
+        color schemes
+      </p>
+    </article>
+
+    <div *ngFor="let category of buttons">
+      <section>
+
+        <div class="section-heading">
+          <div [ngClass]="category.type"></div>
+          <h2>{{ category.type | titlecase }} Buttons</h2>
+        </div>
+
+        <div *ngFor="let group of category.groups" class="sizes">
+          <p>{{ group.title | titlecase }}</p>
+
+          <div class="row">
+            <app-button
+              *ngFor="let item of group.items"
+              [label]="item.label"
+              [disabled]="item.disabled"
+              [type]="item.type"
+              [size]="item.size"
+              (clicked)="handleClick(category.type, item.label)"
+            >
+            </app-button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Button Design System - 2025 ✨</p>
+  </footer>
+</div>

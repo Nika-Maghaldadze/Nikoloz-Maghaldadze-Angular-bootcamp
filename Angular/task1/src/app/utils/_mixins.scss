@@ -1,0 +1,121 @@
+@use "./variables" as *;
+
+@mixin primary {
+  background-color: $primary-button;
+  &:hover {
+    background-color: $primary-hover;
+  }
+  &:active {
+    background-color: $primary-active;
+  }
+}
+
+@mixin secondary {
+  background-color: $secondary-button;
+
+  &:hover {
+    background-color: $secondary-hover;
+  }
+
+  &:active {
+    background-color: $secondary-active;
+  }
+}
+
+@mixin success {
+  background-color: $success-button;
+
+  &:hover {
+    background-color: $success-hover;
+  }
+
+  &:active {
+    background-color: $success-active;
+  }
+}
+
+@mixin warning {
+  background-color: $warning-button;
+
+  &:hover {
+    background-color: $warning-hover;
+  }
+
+  &:active {
+    background-color: $warning-active;
+  }
+}
+
+@mixin danger {
+  background-color: $danger-button;
+
+  &:hover {
+    background-color: $danger-hover;
+  }
+
+  &:active {
+    background-color: $danger-active;
+  }
+}
+
+@mixin outline-primary {
+  background-color: #ffffff;
+  border: 2px solid $primary-button;
+  color: $primary-button;
+  img {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(70%) saturate(2186%)
+      hue-rotate(205deg) brightness(103%) contrast(93%);
+  }
+}
+@mixin outline-secondary {
+  background-color: #ffffff;
+  border: 2px solid $secondary-button;
+  color: $secondary-button;
+  img {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(9%) saturate(1069%)
+      hue-rotate(176deg) brightness(91%) contrast(91%);
+  }
+}
+@mixin outline-success {
+  background-color: #ffffff;
+  border: 2px solid $success-button;
+  color: $success-button;
+  img {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(61%) saturate(2426%)
+      hue-rotate(117deg) brightness(90%) contrast(87%);
+  }
+}
+@mixin outline-warning {
+  background-color: #ffffff;
+  border: 2px solid $warning-button;
+  color: $warning-button;
+  img {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(84%) saturate(1271%)
+      hue-rotate(355deg) brightness(98%) contrast(96%);
+  }
+}
+@mixin outline-danger {
+  background-color: #ffffff;
+  border: 2px solid $danger-button;
+  color: $danger-button;
+  img {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(64%) saturate(1503%)
+      hue-rotate(332deg) brightness(103%) contrast(89%);
+  }
+}
+
+@mixin disabled {
+  background-color: $disabled-button;
+  color: $disabled-text;
+  &:focus {
+    outline: none;
+  }
+}
+@mixin disabled-outline {
+  border: 2px solid $disabled-button;
+  color: $disabled-text;
+  background-color: #ffffff;
+  &:focus {
+    outline: none;
+  }
+}
