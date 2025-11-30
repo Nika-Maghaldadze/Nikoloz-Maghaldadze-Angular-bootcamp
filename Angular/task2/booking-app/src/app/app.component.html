@@ -1,0 +1,59 @@
+<header class="header">
+    <div class="header-wrapper">
+        <h4 class="header-h4">
+            Choose your preferred seats and enter guest details
+        </h4>
+    </div>
+</header>
+
+<main class="main-container">
+    <div class="screen-wrapper">
+        <div class="screen-gradient"></div>
+        <h3 class="screen-header">SCREEN</h3>
+    </div>
+
+    <div class="seats-container">
+        <div class="seat-numbers-container">
+            <div *ngFor="let seat of cols" class="seat-numbers">
+                {{ seat }}
+            </div>
+        </div>
+        <div *ngFor="let row of rows" class="row">
+            <div>
+                {{ row }}
+            </div>
+
+            <div
+                *ngFor="let seat of getSeatsByRow(row)"
+                class="seat"
+                [ngClass]="seat.status"
+                (click)="onSeatClick(seat)"
+            >
+                <img src="../assets/seat.svg" alt="seat" />
+            </div>
+        </div>
+    </div>
+
+    <div class="cards-layout">
+        <div class="card">
+            <div class="seat">
+                <img src="../assets/seat.svg" alt="available seat" />
+            </div>
+            Available
+        </div>
+        <div class="card">
+            <div class="seat selected">
+                <img src="../assets/seat.svg" alt="available seat" />
+            </div>
+            Selected
+        </div>
+        <div class="card">
+            <div class="seat disabled">
+                <img src="../assets/seat.svg" alt="available seat" />
+            </div>
+            Reserved
+        </div>
+    </div>
+
+    <button (click)="onSubmit()">Click me to book!</button>
+</main>
