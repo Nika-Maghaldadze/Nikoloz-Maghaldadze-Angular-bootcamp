@@ -98,7 +98,6 @@
                 cursor: pointer;
             }
             .seat.selected {
-                // shared  ცვლადად უნდა გავიტანო რო card გავსტილო
                 filter: brightness(0) saturate(100%) invert(38%) sepia(98%)
                     saturate(551%) hue-rotate(182deg) brightness(104%)
                     contrast(96%) drop-shadow(0px 4px 6px #bfdbfe)
@@ -146,5 +145,27 @@
             opacity: 0.6;
             pointer-events: none;
         }
+    }
+}
+
+.footer {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    position: relative;
+    bottom: 0;
+    margin-top: 86px;
+    padding: 33px 0 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px #e2e8f0;
+    .footer-text {
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #475569;
     }
 }

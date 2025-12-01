@@ -14,14 +14,11 @@
 
     <div class="seats-container">
         <div class="seat-numbers-container">
-            <div *ngFor="let seat of cols" class="seat-numbers">
-                {{ seat }}
-            </div>
+            <div *ngFor="let seat of cols" class="seat-numbers">{{ seat }}</div>
         </div>
+
         <div *ngFor="let row of rows" class="row">
-            <div>
-                {{ row }}
-            </div>
+            <div>{{ row }}</div>
 
             <div
                 *ngFor="let seat of getSeatsByRow(row)"
@@ -29,31 +26,18 @@
                 [ngClass]="seat.status"
                 (click)="onSeatClick(seat)"
             >
-                <img src="../assets/seat.svg" alt="seat" />
+                <img src="../assets/seat.svg" />
             </div>
         </div>
     </div>
 
-    <div class="cards-layout">
-        <div class="card">
-            <div class="seat">
-                <img src="../assets/seat.svg" alt="available seat" />
-            </div>
-            Available
-        </div>
-        <div class="card">
-            <div class="seat selected">
-                <img src="../assets/seat.svg" alt="available seat" />
-            </div>
-            Selected
-        </div>
-        <div class="card">
-            <div class="seat disabled">
-                <img src="../assets/seat.svg" alt="available seat" />
-            </div>
-            Reserved
-        </div>
-    </div>
-
-    <button (click)="onSubmit()">Click me to book!</button>
+    <app-booking-form
+        *ngIf="selectedSeats.length > 0"
+        [selectedSeats]="selectedSeats"
+        (submitAllForms)="onSubmitAllForms()"
+    ></app-booking-form>
 </main>
+
+<footer class="footer">
+    <p class="footer-text">Movie Seat Selection System - 2025</p>
+</footer>
