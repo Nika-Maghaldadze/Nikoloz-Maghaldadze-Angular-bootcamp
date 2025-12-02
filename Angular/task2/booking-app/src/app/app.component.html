@@ -30,6 +30,26 @@
             </div>
         </div>
     </div>
+    <div class="cards-layout">
+        <div class="card">
+            <div class="seat">
+                <img src="../assets/seat.svg" alt="available seat" />
+            </div>
+            Available
+        </div>
+        <div class="card">
+            <div class="seat selected">
+                <img src="../assets/seat.svg" alt="available seat" />
+            </div>
+            Selected
+        </div>
+        <div class="card">
+            <div class="seat disabled">
+                <img src="../assets/seat.svg" alt="available seat" />
+            </div>
+            Reserved
+        </div>
+    </div>
 
     <app-booking-form
         *ngIf="selectedSeats.length > 0"
