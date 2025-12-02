@@ -1,0 +1,60 @@
+<div class="booking-wrapper">
+    <h2 class="guest-details">Guest Details</h2>
+    <div *ngFor="let seat of selectedSeats" class="seat-form-card">
+        <h2 class="form-header">
+            <img src="../../assets/seat.svg" alt="seat icon" />
+            Seat {{ seat.code }}
+        </h2>
+
+        <form
+            *ngIf="forms[seat.code]"
+            [formGroup]="forms[seat.code]"
+            class="seat-form"
+        >
+            <div class="input-wrapper">
+                <label for="firstName">First Name</label>
+                <input type="text" formControlName="firstName" id="firstName" />
+                <div
+                    class="error"
+                    *ngIf="
+                        showErrors &&
+                        forms[seat.code].controls['firstName'].invalid
+                    "
+                >
+                    First name is required.
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="lastName">Last Name</label>
+                <input type="text" formControlName="lastName" id="lastName" />
+                <div
+                    class="error"
+                    *ngIf="
+                        showErrors &&
+                        forms[seat.code].controls['lastName'].invalid
+                    "
+                >
+                    Last name is required.
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="age">Age</label>
+                <input type="number" formControlName="age" id="age" />
+                <div
+                    class="error"
+                    *ngIf="
+                        showErrors && forms[seat.code].controls['age'].invalid
+                    "
+                >
+                    Age must be between 1 and 100.
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <button class="submit-button" (click)="onSubmit()">
+        <img src="../assets/save.svg" alt="save icon" />Save Guest Details
+    </button>
+</div>

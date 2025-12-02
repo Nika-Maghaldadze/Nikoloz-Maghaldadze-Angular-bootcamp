@@ -1,0 +1,171 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 144px;
+    background: linear-gradient(
+        -90deg,
+        rgba(30, 58, 138, 1) 0%,
+        rgba(22, 40, 89, 1) 49%,
+        rgba(15, 23, 42, 1) 100%
+    );
+    .header-wrapper {
+        width: 1152px;
+        height: 80px;
+        position: relative;
+        .header-h4 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-family: "Inter";
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            color: #bfdbfe;
+        }
+    }
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    .screen-wrapper {
+        max-width: 1088px;
+        height: 56px;
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        .screen-gradient {
+            width: 384px;
+            height: 24px;
+            background: linear-gradient(90deg, #cbd5e1 0%, #94a3b8 100%);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+                0px 10px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 9999px;
+        }
+        .screen-header {
+            font-family: "Inter";
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: 0.7px;
+            color: #475569;
+        }
+    }
+
+    .seats-container {
+        max-width: 1088px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 20px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1),
+            0px 20px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        padding: 41px 208px;
+        .seat-numbers-container {
+            grid-template-columns: repeat(8, 1fr);
+            display: grid;
+            grid-column-start: 2;
+            grid-column-end: 9;
+            place-items: center;
+            .seat-numbers {
+                text-align: center;
+            }
+        }
+        .row {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-column-start: 1;
+            grid-column-end: 9;
+            place-items: center;
+            .seat {
+                width: 48px;
+                height: 48px;
+                display: grid;
+                place-items: center;
+                cursor: pointer;
+            }
+            .seat.selected {
+                filter: brightness(0) saturate(100%) invert(38%) sepia(98%)
+                    saturate(551%) hue-rotate(182deg) brightness(104%)
+                    contrast(96%) drop-shadow(0px 4px 6px #bfdbfe)
+                    drop-shadow(0px 10px 15px #bfdbfe);
+            }
+
+            .seat.booked {
+                cursor: not-allowed;
+                opacity: 0.6;
+                pointer-events: none;
+            }
+        }
+        button {
+            width: 400px;
+            height: 70px;
+        }
+    }
+}
+
+.cards-layout {
+    display: flex;
+    gap: 48px;
+    .card {
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
+            0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 8px 16px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #334155;
+        cursor: pointer;
+        .selected {
+            // shared  ცვლადად უნდა გავიტანო რო card გავსტილო
+            filter: brightness(0) saturate(100%) invert(38%) sepia(98%)
+                saturate(551%) hue-rotate(182deg) brightness(104%) contrast(96%);
+        }
+        .disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    position: relative;
+    bottom: 0;
+    margin-top: 86px;
+    padding: 33px 0 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px #e2e8f0;
+    .footer-text {
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #475569;
+    }
+}
