@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <ng-container *ngFor="let field of fields">
+    <div *ngIf="field.type === 'radio'" class="field-block">
+      <label>{{ field.label }}</label>
+      <div class="radio-row">
+        <label *ngFor="let opt of field.options">
+          <input 
+            type="radio"
+            [value]="opt.value"
+            [formControlName]="field.key">
+          {{ opt.label }}
+        </label>
+      </div>
+    </div>
+
+    <div *ngIf="field.type !== 'radio'" class="field-block">
+      <label>{{ field.label }}</label>
+
+      <input
+        [type]="field.type"
+        [placeholder]="field.placeholder"
+        [formControlName]="field.key"
+      />
+      
+
+      <p class="error" *ngIf="errors[field.key]">{{ errors[field.key] }}</p>
+
+      <ng-container *ngIf="field.passwordRules">
+
+        <div class="strength-bar">
+          <div
+            class="strength-fill"
+            [style.width.%]="strength * 25"
+            [class.red]="strength <= 1"
+            [class.orange]="strength === 2"
+            [class.green]="strength >= 3"
+          ></div>
+        </div>
+
+        <p class="strength-label">{{ strengthLabel }}</p>
+
+        <ul class="rules">
+          <li [class.ok]="minLength(form.get('password')?.value)">At least 8 characters</li>
+          <li [class.ok]="hasUppercase(form.get('password')?.value)">One uppercase letter</li>
+          <li [class.ok]="hasNumber(form.get('password')?.value)">One number</li>
+          <li [class.ok]="hasSpecial(form.get('password')?.value)">One special character</li>
+        </ul>
+
+      </ng-container>
+    </div>
+
+  </ng-container>
+
+  <button type="submit" [disabled]="form.invalid">
+    Create Account
+  </button>
+</form>
