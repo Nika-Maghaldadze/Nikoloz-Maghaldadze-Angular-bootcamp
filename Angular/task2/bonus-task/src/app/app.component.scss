@@ -22,4 +22,22 @@
             color: #475569;
         }
     }
+    .line{
+        background-color: #f1f5f9;
+        opacity: 0.1;
+        margin-top: 24px;
+    }
+    .bottom-text {
+        margin-top: 24px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #64748b;
+        .blue-text {
+            color: #3b82f6;
+        }
+    }
 }
