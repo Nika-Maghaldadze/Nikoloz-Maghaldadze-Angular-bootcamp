@@ -1,0 +1,20 @@
+<div class="skips-root">
+    <h3 class="panel-title">Skip History</h3>
+
+    <div *ngIf="skips.length; else empty">
+        <ul class="skip-list">
+            <li *ngFor="let s of skips">
+                <span class="skip-delta">
+                    {{ formatDelta(s.deltaMs) }}
+                </span>
+                <button type="button" class="undo-btn" (click)="onUndo(s.id)">
+                    Undo
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #empty>
+        <p class="empty-text">No skips yet.</p>
+    </ng-template>
+</div>

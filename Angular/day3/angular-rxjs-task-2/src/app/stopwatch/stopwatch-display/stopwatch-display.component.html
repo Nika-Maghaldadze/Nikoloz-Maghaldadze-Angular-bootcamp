@@ -1,0 +1,14 @@
+<div class="display-card">
+    <div class="main-time">
+        {{ formatTime(elapsedMs) }}
+    </div>
+
+    <div class="status-row">
+        <span class="status-pill" [class.running]="running">
+            ● {{ running ? "Running" : "Paused" }}
+        </span>
+        <span class="status-pill">
+            Speed: <strong>{{ speed }}x</strong>
+        </span>
+    </div>
+</div>
