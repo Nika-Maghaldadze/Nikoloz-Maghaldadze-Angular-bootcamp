@@ -1,0 +1,31 @@
+<div class="results-container" *ngIf="movies.length; else noData">
+  <div
+    class="result-item"
+    *ngFor="let movie of movies"
+    (click)="onMovieClick(movie)"
+  >
+    <div class="result-main">
+      <h3
+        class="result-title"
+        [innerHTML]="highlightTerm(movie.title, query)"
+      ></h3>
+
+      <p class="result-meta">
+        {{ movie.year }} • {{ movie.genre }} • {{ movie.director }}
+      </p>
+    </div>
+
+    <div class="result-pill">View</div>
+  </div>
+
+</div>
+
+<ng-template #noData>
+  <p class="no-results" *ngIf="query.length >= 2">
+    No results for <strong>{{ query }}</strong>.
+  </p>
+
+  <p class="no-results" *ngIf="query.length < 2">
+    Type at least <strong>2 characters</strong> to start searching.
+  </p>
+</ng-template>

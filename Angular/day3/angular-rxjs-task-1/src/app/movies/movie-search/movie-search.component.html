@@ -1,0 +1,62 @@
+<div class="typeahead-container">
+  <header class="typeahead-header">
+    <h1 class="typeahead-title">Movie Search</h1>
+  </header>
+  <div class="input-wrapper">
+    <label class="search-label" for="movie-search">
+      Search Movies
+      <span class="search-hint">(min 2 characters)</span>
+    </label>
+    <div class="search-input-shell">
+      <span class="search-icon">🔍</span>
+      <input
+        id="movie-search"
+        type="text"
+        [formControl]="searchControl"
+        placeholder="Try: matrix, nolan, sci-fi, shawshank..."
+        autocomplete="off"
+      />
+      <button
+        *ngIf="searchControl.value"
+        type="button"
+        class="clear-button"
+        (click)="searchControl.setValue('')"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="validation-info">
+      <span
+        class="pill"
+        [class.pill-ok]="(searchControl.value.length || 0) >= 2"
+        [class.pill-bad]="(searchControl.value.length || 0) > 0 && (searchControl.value.length || 0) < 2"
+      >
+        {{ (searchControl.value.length || 0) }}/2 chars
+      </span>
+    </div>
+  </div>
+  <div class="loading" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <span>Searching...</span>
+  </div>
+  <div *ngIf="errorMessage" class="error-banner">
+    {{ errorMessage }}
+  </div>
+  <section class="results-section">
+    <app-movie-results
+      [movies]="results"
+      [query]="searchControl.value || ''"
+      (movieSelected)="onResultSelected($event)"
+    >
+    </app-movie-results>
+  </section>
+  <section class="selection-banner" *ngIf="selectedMovie">
+    <p>
+      Selected:
+      <strong>{{ selectedMovie.title }}</strong>
+      ({{ selectedMovie.year }} • {{ selectedMovie.genre }})
+    </p>
+    <img [src]="selectedMovie.url" alt="{{selectedMovie.title}}"/>
+  </section>
+</div>

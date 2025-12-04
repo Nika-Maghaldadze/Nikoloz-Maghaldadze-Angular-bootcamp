@@ -1,0 +1,76 @@
+@use '../../shared/styles/variables' as v;
+@use '../../shared/styles/mixins' as m;
+@use '../../shared/styles/helpers' as h;
+
+.typeahead-container {
+  max-width: 680px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: v.$radius-lg;
+  font-family: v.$font-main;
+  background: linear-gradient(145deg, #1e293b, #0f172a 60%, #020617);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: v.$shadow-strong;
+}
+
+.search-input-shell {
+  @include m.input-shell;
+  &:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  }
+  .clear-button{
+    color: #2fc6e0;
+    background: none;
+  }
+}
+
+.search-input-shell input {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: v.$text-light;
+  font-family: v.$font-main;
+  font-size: 1rem;
+  
+}
+
+.search-input-shell input::placeholder {
+  color: rgba(148, 163, 184, 0.55);
+  opacity: 1;
+}
+
+.validation-info{
+    margin-top: 24px
+}
+
+.loading {
+  @extend %flex-row;
+  gap: 0.55rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(148, 163, 184, 0.3);
+  border-top-color: #3b82f6;
+  animation: spin 0.7s linear infinite;
+}
+
+.selection-banner{
+  img{
+    width: 100%;
+    aspect-ratio: 1/1.5;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
