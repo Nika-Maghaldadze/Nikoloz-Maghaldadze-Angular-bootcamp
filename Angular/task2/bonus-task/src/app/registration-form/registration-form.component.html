@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
 
   <ng-container *ngFor="let field of fields">
     <div *ngIf="field.type === 'radio'" class="field-block">
