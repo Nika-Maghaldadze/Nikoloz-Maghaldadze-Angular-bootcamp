@@ -1,0 +1,25 @@
+@use "./variables" as v;
+
+@mixin card {
+    background: v.$card-bg;
+    border: 1px solid v.$border-light;
+    border-radius: v.$radius-md;
+    box-shadow: v.$shadow-strong;
+}
+
+@mixin hover-lift {
+    transition: all v.$transition-fast;
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+@mixin input-shell {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0.55rem 1rem;
+    border-radius: v.$radius-md;
+    border: 1px solid v.$border-light;
+    background: rgba(30, 41, 59, 0.9);
+    transition: border v.$transition-fast, box-shadow v.$transition-fast;
+}

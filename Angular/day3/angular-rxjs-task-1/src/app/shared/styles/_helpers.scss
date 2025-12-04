@@ -1,0 +1,15 @@
+%flex-row {
+  display: flex;
+  align-items: center;
+}
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+%pill {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}

@@ -1,0 +1,99 @@
+<div class="stopwatch-shell" *ngIf="vm as m">
+    <header class="stopwatch-header">
+        <h1 class="title">Reactive Stopwatch</h1>
+    </header>
+
+    <section class="display-section">
+        <app-stopwatch-display
+            [elapsedMs]="m.elapsedMs"
+            [running]="m.running"
+            [speed]="m.speed"
+        ></app-stopwatch-display>
+    </section>
+
+    <section class="controls-section">
+        <div class="primary-controls">
+            <button
+                type="button"
+                class="btn btn-primary"
+                (click)="onToggleStartPause()"
+            >
+                {{ isRunning ? "Pause" : "Start" }}
+            </button>
+
+            <button type="button" class="btn btn-secondary" (click)="onReset()">
+                Reset (R)
+            </button>
+
+            <button type="button" class="btn btn-accent" (click)="onLap()">
+                Lap (L)
+            </button>
+        </div>
+
+        <div class="skip-controls">
+            <span class="section-label">Skip</span>
+            <button type="button" class="btn-pill" (click)="onSkip(-5)">
+                -5s (←)
+            </button>
+            <button type="button" class="btn-pill" (click)="onSkip(5)">
+                +5s (→)
+            </button>
+
+            <div class="custom-skip">
+                <input
+                    type="number"
+                    min="1"
+                    max="60"
+                    [formControl]="customSkipControl"
+                    placeholder="Custom s"
+                />
+                <button
+                    type="button"
+                    class="btn-pill"
+                    (click)="applyCustomSkip(-1)"
+                >
+                    -Custom
+                </button>
+                <button
+                    type="button"
+                    class="btn-pill"
+                    (click)="applyCustomSkip(1)"
+                >
+                    +Custom
+                </button>
+            </div>
+        </div>
+
+        <div class="speed-controls">
+            <span class="section-label">Speed</span>
+            <button
+                *ngFor="let s of speedOptions"
+                type="button"
+                class="btn-pill"
+                [class.btn-pill-active]="m.speed === s"
+                (click)="onSpeedClick(s)"
+            >
+                {{ s }}x
+            </button>
+        </div>
+    </section>
+
+    <section class="lists-section">
+        <app-stopwatch-laps class="panel" [laps]="m.laps"></app-stopwatch-laps>
+
+        <app-stopwatch-skip-history
+            class="panel"
+            [skips]="m.skips"
+            (undoSkip)="onUndoSkip($event)"
+        ></app-stopwatch-skip-history>
+    </section>
+
+    <footer class="hint-footer">
+        <p>
+            Shortcuts:
+            <strong>Space</strong> start/pause, <strong>R</strong> reset,
+            <strong>L</strong> lap, <strong>← / →</strong> skip,
+            <strong>1–5</strong> speed.
+        </p>
+    </footer>
+</div>

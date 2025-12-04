@@ -1,0 +1,16 @@
+<div class="laps-root">
+    <h3 class="panel-title">Laps</h3>
+
+    <div *ngIf="laps.length; else empty">
+        <ul class="lap-list">
+            <li *ngFor="let lap of laps; let i = index">
+                <span class="lap-label">Lap {{ laps.length - i }}</span>
+                <span class="lap-time">{{ formatTime(lap.timeMs) }}</span>
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #empty>
+        <p class="empty-text">No laps recorded yet.</p>
+    </ng-template>
+</div>

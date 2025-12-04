@@ -1,0 +1,55 @@
+@use "../../shared/styles/variables" as v;
+@use "../../shared/styles/mixins" as *;
+@use "../../shared/styles/helpers" as *;
+
+.results-container {
+  @extend %flex-col;
+  gap: 0.9rem;
+}
+
+.result-item {
+  @include card;
+  @extend %flex-row;
+  justify-content: space-between;
+
+  padding: 0.9rem 1.1rem;
+  cursor: pointer;
+
+  @include hover-lift;
+
+  &:hover {
+    background: v.$card-bg-hover;
+  }
+}
+
+.result-main {
+  @extend %flex-col;
+  gap: 0.25rem;
+}
+
+.result-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: v.$text-light;
+
+  mark {
+    background: #fde047;
+    color: #172554;
+    padding: 0 3px;
+    border-radius: 0.3rem;
+  }
+}
+
+.result-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: v.$text-medium;
+  opacity: 0.75;
+}
+
+.result-pill {
+  @extend %pill;
+  border: 1px solid v.$border-light;
+  color: v.$text-light;
+}
