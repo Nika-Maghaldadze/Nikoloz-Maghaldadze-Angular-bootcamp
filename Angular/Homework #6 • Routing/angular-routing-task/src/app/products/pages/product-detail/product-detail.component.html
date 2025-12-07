@@ -1,0 +1,17 @@
+<section class="product-detail" *ngIf="product$ | async as product; else notFound">
+  <h2>{{ product.name }}</h2>
+  <p class="price">{{ product.price | currency }}</p>
+  <p>Category: {{ product.category }}</p>
+  <p>{{ product.description }}</p>
+
+  <button (click)="addToCart(product)">Add to Cart</button>
+
+  <div class="back">
+    <a routerLink="/products">Back to products</a>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <p>Product not found.</p>
+  <a routerLink="/products">Back to products</a>
+</ng-template>
