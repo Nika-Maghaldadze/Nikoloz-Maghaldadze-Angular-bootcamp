@@ -1,0 +1,62 @@
+<section class="products">
+    <h2>Products</h2>
+
+    <form [formGroup]="filterForm" class="filters">
+        <input
+            type="text"
+            placeholder="Search by name"
+            formControlName="search"
+        />
+
+        <select formControlName="category">
+            <option value="">All categories</option>
+            <option *ngFor="let cat of categories" [value]="cat">
+                {{ cat }}
+            </option>
+        </select>
+
+        <input
+            type="number"
+            placeholder="Min price"
+            formControlName="minPrice"
+            min="0"
+        />
+        <input
+            type="number"
+            placeholder="Max price"
+            formControlName="maxPrice"
+            min="0"
+        />
+
+        <select formControlName="sort">
+            <option value="">No sort</option>
+            <option value="price-asc">Price ↑</option>
+            <option value="price-desc">Price ↓</option>
+        </select>
+    </form>
+
+    <div
+        class="product-list"
+        *ngIf="filteredProducts$ | async as products; else loading"
+    >
+        <div class="product-card" *ngFor="let product of products">
+            <img [src]="product.imageUrl" [alt]="product.name" />
+
+            <h3>{{ product.name }}</h3>
+            <p class="price">{{ product.price | currency }}</p>
+            <p class="category">Category: {{ product.category }}</p>
+            <p class="desc">{{ product.description }}</p>
+
+            <div class="actions">
+                <a [routerLink]="['/products', product.id]">Details</a>
+                <button (click)="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div *ngIf="products.length === 0">No products match your filters.</div>
+    </div>
+
+    <ng-template #loading>
+        <p>Loading products...</p>
+    </ng-template>
+</section>

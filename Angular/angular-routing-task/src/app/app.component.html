@@ -1,0 +1,23 @@
+<header class="app-header">
+  <div class="logo">Tech Shop</div>
+
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a routerLink="/checkout" routerLinkActive="active">Checkout</a>
+  </nav>
+
+  <div class="auth">
+    <ng-container *ngIf="(isLoggedIn$ | async); else loginLink">
+      <button (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #loginLink>
+      <a routerLink="/login">Login</a>
+    </ng-template>
+  </div>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>
