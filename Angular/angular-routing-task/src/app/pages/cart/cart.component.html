@@ -1,0 +1,41 @@
+<section class="cart">
+  <h2>Your Cart</h2>
+
+  <div *ngIf="(cartItems$ | async)?.length === 0">
+    Cart is empty.
+  </div>
+
+  <table *ngIf="(cartItems$ | async) as items" class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price | currency }}</td>
+        <td>
+          <button (click)="decrease(item)">-</button>
+          <span>{{ item.qty }}</span>
+          <button (click)="increase(item)">+</button>
+        </td>
+        <td>{{ item.price * item.qty | currency }}</td>
+        <td>
+          <button (click)="remove(item)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="cart-total" *ngIf="(total$ | async) as total">
+    <h3>Total: {{ total | currency }}</h3>
+    <a routerLink="/checkout" class="btn-checkout" [class.disabled]="total === 0">
+      Go to Checkout
+    </a>
+  </div>
+</section>

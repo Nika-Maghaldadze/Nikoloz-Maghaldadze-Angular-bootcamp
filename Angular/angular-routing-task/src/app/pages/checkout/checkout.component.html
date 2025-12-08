@@ -1,0 +1,73 @@
+<section class="checkout">
+    <h2>Checkout</h2>
+
+    <div *ngIf="orderPlaced" class="success">
+        Order placed successfully! Cart has been cleared.
+    </div>
+
+    <div *ngIf="!orderPlaced">
+        <p *ngIf="total$ | async as total">Total: {{ total | currency }}</p>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <label>
+                Full Name
+                <input type="text" formControlName="fullName" />
+            </label>
+            <div
+                class="error"
+                *ngIf="
+                    form.get('fullName')?.touched &&
+                    form.get('fullName')?.invalid
+                "
+            >
+                Full name is required
+            </div>
+
+            <label>
+                Address
+                <input type="text" formControlName="address" />
+            </label>
+            <div
+                class="error"
+                *ngIf="
+                    form.get('address')?.touched && form.get('address')?.invalid
+                "
+            >
+                Address is required
+            </div>
+
+            <label>
+                City
+                <input type="text" formControlName="city" />
+            </label>
+            <div
+                class="error"
+                *ngIf="form.get('city')?.touched && form.get('city')?.invalid"
+            >
+                City is required
+            </div>
+
+            <label>
+                ZIP
+                <input type="text" formControlName="zip" />
+            </label>
+            <div
+                class="error"
+                *ngIf="form.get('zip')?.touched && form.get('zip')?.invalid"
+            >
+                ZIP is required
+            </div>
+
+            <div class="error" *ngIf="(hasItems$ | async) === false">
+                You cannot place an order with an empty cart.
+            </div>
+
+            <button
+                type="submit"
+                [disabled]="form.invalid || (hasItems$ | async) === false"
+            >
+                Place Order
+            </button>
+        </form>
+    </div>
+</section>
