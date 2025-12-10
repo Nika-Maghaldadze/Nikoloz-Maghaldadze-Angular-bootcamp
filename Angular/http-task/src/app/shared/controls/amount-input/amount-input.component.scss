@@ -1,0 +1,26 @@
+.amount-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__field {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 4px 8px;
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 6px 4px;
+    }
+
+    .amount-input__currency {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-left: 8px;
+    }
+  }
+}
