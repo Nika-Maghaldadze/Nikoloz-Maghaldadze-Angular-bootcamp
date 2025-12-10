@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { AmountInputComponent } from './shared/controls/amount-input/amount-input.component';
+import { AccountSelectComponent } from './shared/controls/account-select/account-select.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AmountInputComponent,
+    AccountSelectComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+

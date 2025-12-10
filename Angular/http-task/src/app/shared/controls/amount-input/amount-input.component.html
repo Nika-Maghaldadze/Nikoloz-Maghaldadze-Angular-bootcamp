@@ -1,0 +1,13 @@
+<div class="amount-input">
+  <label>{{ label }}</label>
+  <div class="amount-input__field">
+    <input
+      type="number"
+      [value]="value ?? ''"
+      [disabled]="disabled"
+      (input)="onInput($any($event.target).value)"
+      (blur)="markAsTouched()"
+    />
+    <span class="amount-input__currency" *ngIf="currency">{{ currency }}</span>
+  </div>
+</div>

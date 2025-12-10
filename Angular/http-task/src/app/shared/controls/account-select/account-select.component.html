@@ -1,0 +1,21 @@
+<div class="account-select">
+    <label>{{ label }}</label>
+    <select
+        [value]="value"
+        (change)="onSelect($any($event.target).value)"
+        (blur)="markAsTouched()"
+    >
+        <option [value]="null" disabled>Choose account</option>
+
+        <option
+            *ngFor="let acc of accounts; trackBy: trackById"
+            [value]="acc.id"
+            [disabled]="
+                acc.disabledForReceiver || acc.disabledBecauseSameAccount
+            "
+            [attr.title]="acc.tooltip || null"
+        >
+            {{ acc.ownerName }} - {{ acc.iban }} ({{ acc.currency }})
+        </option>
+    </select>
+</div>

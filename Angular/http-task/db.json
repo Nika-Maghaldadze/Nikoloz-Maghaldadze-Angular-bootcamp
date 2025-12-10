@@ -1,13 +1,54 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "sender-accounts": [
+    {
+      "id": 1,
+      "iban": "GE00BOG00000000000001",
+      "ownerName": "Nika Sender",
+      "currency": "GEL",
+      "balance": 1500,
+      "isSender": true
+    },
+    {
+      "id": 2,
+      "iban": "GE00BOG00000000000002",
+      "ownerName": "USD Sender",
+      "currency": "USD",
+      "balance": 800,
+      "isSender": true
+    }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  "receiver-accounts": [
+    {
+      "id": 3,
+      "iban": "GE00BOG00000000000003",
+      "ownerName": "Nika GEL Receiver",
+      "currency": "GEL",
+      "balance": 500,
+      "isSender": false
+    },
+    {
+      "id": 4,
+      "iban": "GE00BOG00000000000004",
+      "ownerName": "EUR Receiver",
+      "currency": "EUR",
+      "balance": 1200,
+      "isSender": false
+    },
+    {
+      "id": 5,
+      "iban": "GE00BOG00000000000005",
+      "ownerName": "USD Receiver",
+      "currency": "USD",
+      "balance": 900,
+      "isSender": false
+    }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "fx-rates": [
+    { "id": 1, "from": "GEL", "to": "USD", "rate": 0.35 },
+    { "id": 2, "from": "USD", "to": "GEL", "rate": 2.85 },
+    { "id": 3, "from": "GEL", "to": "EUR", "rate": 0.30 },
+    { "id": 4, "from": "EUR", "to": "GEL", "rate": 3.20 },
+    { "id": 5, "from": "USD", "to": "EUR", "rate": 0.9 },
+    { "id": 6, "from": "EUR", "to": "USD", "rate": 1.1 }
+  ]
 }
