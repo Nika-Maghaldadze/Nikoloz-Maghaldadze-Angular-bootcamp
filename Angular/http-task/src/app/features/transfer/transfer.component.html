@@ -1,0 +1,79 @@
+<div class="transfer-page" *ngIf="vm$ | async as vm">
+    <h1>Account to Account Conversion</h1>
+
+    <form class="transfer-card" [formGroup]="form" (ngSubmit)="onConvert(vm)">
+        <div class="accounts-row">
+            <div class="account-column">
+                <h2>Account 1 (From)</h2>
+
+                <app-account-select
+                    label="From account"
+                    placeholder="Choose sender account"
+                    [accounts]="vm.senderAccounts"
+                    formControlName="fromAccountId"
+                ></app-account-select>
+
+                <app-amount-input
+                    label="Amount from"
+                    [currency]="vm.fromAccount?.currency || null"
+                    [max]="vm.fromAccount ? vm.fromAccount.balance : null"
+                    formControlName="fromAmount"
+                ></app-amount-input>
+
+                <p class="balance" *ngIf="vm.fromAccount">
+                    Balance:
+                    {{ vm.fromAccount.balance }}
+                    {{ vm.fromAccount.currency }}
+                </p>
+            </div>
+            <div class="swap-column">
+                <button type="button" (click)="onSwapAccounts()">⇄</button>
+            </div>
+            <div class="account-column">
+                <h2>Account 2 (To)</h2>
+
+                <app-account-select
+                    label="To account"
+                    placeholder="Choose receiver account"
+                    [accounts]="vm.receiverAccounts"
+                    formControlName="toAccountId"
+                ></app-account-select>
+
+                <app-amount-input
+                    label="Amount to"
+                    [currency]="vm.toAccount?.currency || null"
+                    formControlName="toAmount"
+                ></app-amount-input>
+
+                <p class="balance" *ngIf="vm.toAccount">
+                    Balance:
+                    {{ vm.toAccount.balance }}
+                    {{ vm.toAccount.currency }}
+                </p>
+            </div>
+        </div>
+        <div class="info-row">
+            <div
+                class="rate"
+                *ngIf="vm.fxRate !== null && vm.fromAccount && vm.toAccount"
+            >
+                Rate: 1 {{ vm.fromAccount.currency }} = {{ vm.fxRate }}
+                {{ vm.toAccount.currency }}
+            </div>
+
+            <div
+                class="error"
+                *ngIf="errorMessage$ | async as error"
+                [class.visible]="!!error"
+            >
+                {{ error }}
+            </div>
+            <div class="success" *ngIf="successMessage$ | async as msg">
+                {{ msg }}
+            </div>
+        </div>
+        <div class="actions-row">
+            <button type="submit" [disabled]="!vm.canConvert">Convert</button>
+        </div>
+    </form>
+</div>

@@ -36,10 +36,9 @@ export class AmountInputComponent
 
     private readonly destroy$ = new Subject<void>();
     private readonly inputChange$ = new Subject<number | null>();
-
-    value: number | null = null;
-    disabled = false;
-    touched = false;
+    public value: number | null = null;
+    public disabled = false;
+    public touched = false;
 
     private onChange: (value: number | null) => void = () => {};
     private onTouched: () => void = () => {};
