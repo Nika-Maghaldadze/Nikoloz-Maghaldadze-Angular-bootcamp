@@ -1,10 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'formatTime' })
+@Pipe({
+  name: 'formatTime',
+
+  //სანამ ეს არ დავწერე არ იმუშავა
+  standalone:false
+})
 export class FormatTimePipe implements PipeTransform {
   transform(ms: number): string {
-    const total = Math.max(0, Math.floor(ms));
-    const totalSeconds = Math.floor(total / 1000);
+    const totalMs = Math.max(0, Math.floor(ms));
+    const totalSeconds = Math.floor(totalMs / 1000);
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;

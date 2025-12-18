@@ -1,83 +1,271 @@
-import { Injectable, computed, signal } from '@angular/core';
-import { Difficulty, Dragon, GameConfig, GameStatus, Obstacle } from '../../../shared/models/game.model';
+import { Injectable, effect } from '@angular/core';
+import { DragonRunnerStore } from './dragon-runner.store';
+import { StorageService } from '../../../core/services/storage.service';
+import { Difficulty, Obstacle } from '../../../shared/models/game.model';
 
 @Injectable({ providedIn: 'any' })
-export class DragonRunnerStore {
-  public timerInputSec = signal<number>(30);
-  public difficulty = signal<Difficulty>('normal');
-  public worldW = signal<number>(900);
-  public worldH = signal<number>(280);
-  public groundH = signal<number>(48);
-  public status = signal<GameStatus>('ready');
-  public config = signal<GameConfig>(this.makeConfig(this.timerInputSec(), this.difficulty()));
-  public dragon = signal<Dragon>(this.makeDragon());
-  public obstacles = signal<Obstacle[]>([]);
-  public nextObstacleId = 1;
-  public elapsedMs = signal<number>(0);
-  public timeLeftMs = signal<number>(this.config().durationSec * 1000);
-  public speed = signal<number>(this.config().baseSpeed);
-  public score = signal<number>(0);
-  public highScore = signal<number>(0);
-  public obstaclesDodged = signal<number>(0);
-  public scoreInt = computed(() => Math.floor(this.score()));
-  public timeLeftSec = computed(() => Math.max(0, Math.ceil(this.timeLeftMs() / 1000)));
-  public speedLabel = computed(() => `${this.speed().toFixed(1)} px/s`);
-  public timeSurvivedSec = computed(() => (this.elapsedMs() / 1000).toFixed(2));
+export class DragonRunnerEngineService {
+  private readonly HIGH_SCORE_KEY = 'dragonRunnerHighScore';
+  private readonly persistHighScore = true;
+  private rafId: number | null = null;
+  private lastTs = 0;
+  private spawnCountdownMs = 0;
+  private difficultyInitialized = false;
+  private timerInitialized = false;
 
-  public hud = computed(() => ({
-    score: this.scoreInt(),
-    highScore: this.highScore(),
-    timeLeftMs: this.timeLeftMs(),
-    timeLeftSec: this.timeLeftSec(),
-    speed: this.speedLabel(),
-    dodged: this.obstaclesDodged(),
-  }));
+  constructor(public readonly store: DragonRunnerStore, private readonly storage: StorageService) {
+    if (this.persistHighScore) {
+      this.store.highScore.set(this.storage.getNumber(this.HIGH_SCORE_KEY, 0));
+    }
 
-  get isReady() { return this.status() === 'ready'; }
-  get isRunning() { return this.status() === 'running'; }
-  get isPaused() { return this.status() === 'paused'; }
-  get isOver() { return this.status() === 'over'; }
+    effect(() => {
+      const v = this.store.timerInputSec();
+      const safe = Math.max(5, Math.min(300, Math.floor(Number(v) || 30)));
+      if (safe !== v) this.store.timerInputSec.set(safe);
+    });
 
-  resetGame(): void {
-    this.status.set('ready');
-    this.dragon.set(this.makeDragon());
-    this.obstacles.set([]);
-    this.nextObstacleId = 1;
-    this.elapsedMs.set(0);
-    this.timeLeftMs.set(this.config().durationSec * 1000);
-    this.speed.set(this.config().baseSpeed);
-    this.score.set(0);
-    this.obstaclesDodged.set(0);
-  }
-  rebuildConfig(): void {
-    this.config.set(this.makeConfig(this.timerInputSec(), this.difficulty()));
-    this.timeLeftMs.set(this.config().durationSec * 1000);
-    this.speed.set(this.config().baseSpeed);
+    effect(() => {
+      this.store.timerInputSec();
+
+      if (!this.timerInitialized) {
+        this.timerInitialized = true;
+        this.resetSpawnCountdown();
+        return;
+      }
+
+      this.fullRestart();
+    });
+
+    effect(() => {
+      if (!this.difficultyInitialized) {
+        this.difficultyInitialized = true;
+        return;
+      }
+
+      this.fullRestart();
+    });
+
+    effect(() => {
+      if (!this.persistHighScore) return;
+      this.storage.setNumber(this.HIGH_SCORE_KEY, this.store.highScore());
+    });
   }
 
-  private makeConfig(durationSec: number, difficulty: Difficulty): GameConfig {
-    const base: Omit<GameConfig, 'durationSec' | 'difficulty'> = {
-      gravity: -2200,
-      jumpVelocity: 900,
-      baseSpeed: 320,
-      speedRampPerSec: 18,
-      spawnMinMs: 900,
-      spawnMaxMs: 1600,
-      scorePerSec: 20,
-      distanceScoreFactor: 0.02,
-      bonusPerObstacle: 15,
+  startOrJump(): void {
+    if (this.store.isReady) return this.start();
+    if (this.store.isRunning) return this.jump();
+    if (this.store.isOver) return this.fullRestart();
+  }
+
+  start(): void {
+    if (this.store.isRunning) return;
+    if (this.store.isPaused) return this.resume();
+    if (this.store.isOver) return this.fullRestart();
+
+    this.store.status.set('running');
+    this.loopStart();
+  }
+
+  pauseOrResume(): void {
+    if (this.store.isRunning) this.pause();
+    else if (this.store.isPaused) this.resume();
+  }
+
+  pause(): void {
+    if (!this.store.isRunning) return;
+    this.store.status.set('paused');
+    this.loopStop();
+  }
+
+  resume(): void {
+    if (!this.store.isPaused) return;
+    this.store.status.set('running');
+    this.loopStart();
+  }
+
+  fullRestart(): void {
+    this.loopStop();
+    this.store.rebuildConfig();
+    this.store.resetGame();
+    this.resetSpawnCountdown();
+  }
+
+  jump(): void {
+    if (!this.store.isRunning) return;
+    const d = this.store.dragon();
+    if (d.isJumping) return;
+
+    this.store.dragon.set({
+      ...d,
+      isDucking: false,
+      h: 44,
+      y: 0,
+      vy: this.store.config().jumpVelocity,
+      isJumping: true,
+    });
+  }
+
+  duck(pressed: boolean): void {
+    if (!this.store.isRunning) return;
+    const d = this.store.dragon();
+    if (d.isJumping) return;
+
+    if (pressed) {
+      this.store.dragon.set({ ...d, isDucking: true, h: 26, y: -10 });
+    } else {
+      this.store.dragon.set({ ...d, isDucking: false, h: 44, y: 0 });
+    }
+  }
+
+  onDifficultyChange(value: string): void {
+    this.store.difficulty.set(value as Difficulty);
+  }
+
+  trackByObstacleId(_: number, o: Obstacle): number {
+    return o.id;
+  }
+
+  private loopStart(): void {
+    this.lastTs = performance.now();
+
+    const step = (ts: number) => {
+      if (!this.store.isRunning) return;
+      const dt = Math.min(50, ts - this.lastTs);
+      this.lastTs = ts;
+      this.update(dt);
+      this.rafId = requestAnimationFrame(step);
     };
 
-    if (difficulty === 'easy') {
-      return { durationSec, difficulty, ...base, baseSpeed: 280, speedRampPerSec: 12, spawnMinMs: 1100, spawnMaxMs: 1900, bonusPerObstacle: 12 };
-    }
-    if (difficulty === 'hard') {
-      return { durationSec, difficulty, ...base, baseSpeed: 360, speedRampPerSec: 28, spawnMinMs: 650, spawnMaxMs: 1200, bonusPerObstacle: 20 };
-    }
-    return { durationSec, difficulty, ...base };
+    this.rafId = requestAnimationFrame(step);
   }
 
-  private makeDragon(): Dragon {
-    return { x: 120, y: 0, w: 44, h: 44, vy: 0, isJumping: false, isDucking: false };
+  private loopStop(): void {
+    if (this.rafId != null) cancelAnimationFrame(this.rafId);
+    this.rafId = null;
+    this.lastTs = 0;
+  }
+
+  private update(dtMs: number): void {
+    const cfg = this.store.config();
+    const dtSec = dtMs / 1000;
+    this.store.elapsedMs.update((v) => v + dtMs);
+    this.store.timeLeftMs.update((v) => v - dtMs);
+
+    if (this.store.timeLeftMs() <= 0) {
+      this.gameOver();
+      return;
+    }
+    this.store.speed.update((v) => v + cfg.speedRampPerSec * dtSec);
+    this.store.score.update((v) => v + cfg.scorePerSec * dtSec);
+    this.store.score.update((v) => v + this.store.speed() * dtSec * cfg.distanceScoreFactor);
+    this.updateDragon(dtMs);
+    this.handleSpawning(dtMs);
+    this.updateObstacles(dtMs);
+
+    if (this.checkCollision()) {
+      this.gameOver();
+      return;
+    }
+    const scoreInt = Math.floor(this.store.score());
+    if (scoreInt > this.store.highScore()) {
+      this.store.highScore.set(scoreInt);
+    }
+  }
+
+  private gameOver(): void {
+    this.store.status.set('over');
+    this.loopStop();
+    this.store.score.set(Math.floor(this.store.score()));
+  }
+
+  private resetSpawnCountdown(): void {
+    const cfg = this.store.config();
+    this.spawnCountdownMs = this.randomInt(cfg.spawnMinMs, cfg.spawnMaxMs);
+  }
+
+  private handleSpawning(dtMs: number): void {
+    this.spawnCountdownMs -= dtMs;
+    if (this.spawnCountdownMs > 0) return;
+    this.spawnObstacle();
+    this.resetSpawnCountdown();
+  }
+
+  private spawnObstacle(): void {
+    const startX = this.store.worldW() + 20;
+    const w = this.randomInt(18, 34);
+    const h = this.randomInt(26, 60);
+
+    this.store.obstacles.update((arr) => [
+      ...arr,
+      { id: this.store.nextObstacleId++, x: startX, y: 0, w, h, passed: false },
+    ]);
+  }
+
+  private updateObstacles(dtMs: number): void {
+    const cfg = this.store.config();
+    const dtSec = dtMs / 1000;
+    const speed = this.store.speed();
+    const dragonX = this.store.dragon().x;
+
+    let bonus = 0;
+    let count = 0;
+
+    const updated = this.store
+      .obstacles()
+      .map((o) => {
+        const x = o.x - speed * dtSec;
+        let passed = o.passed;
+        if (!passed && x + o.w < dragonX) {
+          passed = true;
+          bonus += cfg.bonusPerObstacle;
+          count += 1;
+        }
+        return { ...o, x, passed };
+      })
+      .filter((o) => o.x + o.w > -60);
+
+    if (count) this.store.obstaclesDodged.update((v) => v + count);
+    if (bonus) this.store.score.update((v) => v + bonus);
+    this.store.obstacles.set(updated);
+  }
+
+  private updateDragon(dtMs: number): void {
+    const cfg = this.store.config();
+    const d = this.store.dragon();
+    if (!d.isJumping) return;
+    const dtSec = dtMs / 1000;
+    let vy = d.vy + cfg.gravity * dtSec;
+    let y = d.y + vy * dtSec;
+
+    if (y <= 0) {
+      y = 0;
+      vy = 0;
+      this.store.dragon.set({ ...d, y, vy, isJumping: false });
+    } else {
+      this.store.dragon.set({ ...d, y, vy });
+    }
+  }
+
+  private checkCollision(): boolean {
+    const d = this.store.dragon();
+    const ground = this.store.groundH();
+    const dLeft = d.x;
+    const dRight = d.x + d.w;
+    const dBottom = ground + d.y;
+    const dTop = dBottom + d.h;
+
+    for (const o of this.store.obstacles()) {
+      const oLeft = o.x;
+      const oRight = o.x + o.w;
+      const oBottom = ground + o.y;
+      const oTop = oBottom + o.h;
+      const separated = dRight <= oLeft || dLeft >= oRight || dTop <= oBottom || dBottom >= oTop;
+
+      if (!separated) return true;
+    }
+    return false;
+  }
+  private randomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }

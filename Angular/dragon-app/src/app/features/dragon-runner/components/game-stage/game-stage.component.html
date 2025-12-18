@@ -1,1 +1,46 @@
-<p>game-stage works!</p>
+<section class="game">
+  <div class="stage" [class.paused]="store.isPaused" [class.over]="store.isOver">
+    <div class="ground"></div>
+
+    <img
+      class="dragon"
+      [class.duck]="store.dragon().isDucking"
+      [style.left.px]="store.dragon().x"
+      [style.bottom.px]="store.groundH() + store.dragon().y"
+      [style.width.px]="store.dragon().w"
+      [style.height.px]="store.dragon().h"
+      src="assets/images/rex.svg"
+      alt="dragon"
+    />
+
+    <div
+      class="obstacle"
+      *ngFor="let o of store.obstacles(); trackBy: engine.trackByObstacleId"
+      [style.left.px]="o.x"
+      [style.bottom.px]="store.groundH() + o.y"
+      [style.width.px]="o.w"
+      [style.height.px]="o.h"
+    ></div>
+
+    <div class="overlay" *ngIf="store.isReady">
+      <h2>Dragon Runner</h2>
+      <p>Press <b>Jump</b> to start</p>
+    </div>
+
+    <div class="overlay" *ngIf="store.isPaused">
+      <h2>Paused</h2>
+      <p>No score or time progresses while paused</p>
+    </div>
+
+    <div class="overlay" *ngIf="store.isOver">
+      <h2>Game Over</h2>
+      <p>
+        Final Score: <b>{{ store.hud().score }}</b>
+      </p>
+      <p>
+        Time Survived: <b>{{ store.timeSurvivedSec() }}s</b>
+      </p>
+      <button class="btn primary" (click)="engine.fullRestart()">Restart</button>
+    </div>
+  </div>
+</section>
