@@ -1,0 +1,10 @@
+<header class="hud">
+  <div class="hud-item"><span>Score</span><b>{{ store.hud().score }}</b></div>
+  <div class="hud-item"><span>High</span><b>{{ store.hud().highScore }}</b></div>
+  <div class="hud-item">
+    <span>Time</span>
+    <b>{{ store.timeLeftMs() | formatTime }}</b>
+  </div>
+  <div class="hud-item"><span>Speed</span><b>{{ store.hud().speed }}</b></div>
+  <div class="hud-item"><span>Dodged</span><b>{{ store.hud().dodged }}</b></div>
+</header>
