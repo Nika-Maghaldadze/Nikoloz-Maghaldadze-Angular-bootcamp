@@ -2,9 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'formatTime',
-
-  //სანამ ეს არ დავწერე არ იმუშავა
-  standalone:false
+  standalone: true,
 })
 export class FormatTimePipe implements PipeTransform {
   transform(ms: number): string {
