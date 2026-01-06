@@ -13,34 +13,41 @@
       alt="dragon"
     />
 
-    <div
-      class="obstacle"
-      *ngFor="let o of store.obstacles(); trackBy: engine.trackByObstacleId"
-      [style.left.px]="o.x"
-      [style.bottom.px]="store.groundH() + o.y"
-      [style.width.px]="o.w"
-      [style.height.px]="o.h"
-    ></div>
+    @for (o of store.obstacles(); track o.id) {
+      <div
+        class="obstacle"
+        [style.left.px]="o.x"
+        [style.bottom.px]="store.groundH() + o.y"
+        [style.width.px]="o.w"
+        [style.height.px]="o.h"
+      ></div>
+    }
 
-    <div class="overlay" *ngIf="store.isReady">
-      <h2>Dragon Runner</h2>
-      <p>Press <b>Jump</b> to start</p>
-    </div>
+    @if (store.isReady) {
+      <div class="overlay">
+        <h2>Dragon Runner</h2>
+        <p>Press <b>Jump</b> to start</p>
+      </div>
+    }
 
-    <div class="overlay" *ngIf="store.isPaused">
-      <h2>Paused</h2>
-      <p>No score or time progresses while paused</p>
-    </div>
+    @if (store.isPaused) {
+      <div class="overlay">
+        <h2>Paused</h2>
+        <p>No score or time progresses while paused</p>
+      </div>
+    }
 
-    <div class="overlay" *ngIf="store.isOver">
-      <h2>Game Over</h2>
-      <p>
-        Final Score: <b>{{ store.hud().score }}</b>
-      </p>
-      <p>
-        Time Survived: <b>{{ store.timeSurvivedSec() }}s</b>
-      </p>
-      <button class="btn primary" (click)="engine.fullRestart()">Restart</button>
-    </div>
+    @if (store.isOver) {
+      <div class="overlay">
+        <h2>Game Over</h2>
+        <p>
+          Final Score: <b>{{ store.hud().score }}</b>
+        </p>
+        <p>
+          Time Survived: <b>{{ store.timeSurvivedSec() }}s</b>
+        </p>
+        <button class="btn primary" (click)="engine.fullRestart()">Restart</button>
+      </div>
+    }
   </div>
 </section>
