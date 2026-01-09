@@ -1,11 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
+export class AppComponent {
   protected readonly title = signal('dragon-app');
 }
