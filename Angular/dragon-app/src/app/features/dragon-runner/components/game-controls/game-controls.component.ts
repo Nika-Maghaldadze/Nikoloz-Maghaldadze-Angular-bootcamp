@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
-import { Field, form } from '@angular/forms/signals';
+import { form } from '@angular/forms/signals';
 
 import { Difficulty } from '../../../../shared/models/game.model';
 import { DragonRunnerEngineService } from '../../services/dragon-runner-engine.service';
@@ -13,7 +13,7 @@ interface ControlsModel {
 @Component({
   selector: 'app-game-controls',
   standalone: true,
-  imports: [Field],
+  imports: [],
   templateUrl: './game-controls.component.html',
   styleUrl: './game-controls.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
