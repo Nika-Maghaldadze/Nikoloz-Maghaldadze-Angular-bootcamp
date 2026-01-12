@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Which works with NgRx?",
+      "type": "single",
+      "points": 10,
+      "choices": [
+        { "id": "c1", "text": "Redux-like state management", "isCorrect": true },
+        { "id": "c2", "text": "jQuery selectors", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Select Angular features:",
+      "type": "multiple",
+      "points": 20,
+      "choices": [
+        { "id": "c1", "text": "Dependency Injection", "isCorrect": true },
+        { "id": "c2", "text": "Signals", "isCorrect": true },
+        { "id": "c3", "text": "Virtual DOM", "isCorrect": false }
+      ]
+    }
+  ]
+}
