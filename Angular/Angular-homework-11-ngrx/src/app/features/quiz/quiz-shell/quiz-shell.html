@@ -1,0 +1,24 @@
+<div class="page">
+  <div class="card">
+    <app-progress-bar [value]="(progress$ | async) ?? 0"></app-progress-bar>
+
+    @if (loading$ | async) {
+    <p class="muted">Loading quiz…</p>
+    } @else if (error$ | async; as err) {
+    <p class="error">Failed to load quiz: {{ err }}</p>
+    } @else { @if (view$ | async; as view) { @if (view === 'INTRO') {
+    <app-intro [savedUser]="user$ | async" (submitUser)="onUserSubmit($event)"> </app-intro>
+    } @if (view === 'QUESTION') {
+    <app-question-card
+      [question]="currentQuestion$ | async"
+      [existingAnswer]="currentAnswer$ | async"
+      (goBack)="onPrev()"
+      (submitAnswer)="onAnswer($event)"
+    >
+    </app-question-card>
+    } @if (view === 'RESULTS') {
+    <app-results [user]="user$ | async" [score]="(score$ | async) ?? 0" (restart)="onRestart()">
+    </app-results>
+    } } }
+  </div>
+</div>

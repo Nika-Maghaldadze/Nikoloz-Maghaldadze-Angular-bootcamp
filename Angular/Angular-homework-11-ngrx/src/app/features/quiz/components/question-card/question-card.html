@@ -1,25 +1,27 @@
-@if (!question) {
-<p class="muted">No question found.</p>
+@if (!question()) {
+<p class="muted">No question.</p>
 } @else {
-<h3>{{ question.text }}</h3>
-<p class="muted">Points: {{ question.points }}</p>
+<h3>{{ question()!.text }}</h3>
+<p class="muted">Points: {{ question()!.points }}</p>
 
-@if (question.type === 'single') {
-<div class="choices" role="radiogroup" [attr.aria-label]="question.text">
-  @for (choice of question.choices; track choice.id) {
+@if (question()!.type === 'single') {
+<div class="choices" role="radiogroup" [attr.aria-label]="question()!.text">
+  @for (choice of question()!.choices; track choice.id) {
   <label class="choice">
-    <input type="radio" [value]="choice.id" [formControl]="singleCtrl" />
+    <input type="radio" [name]="question()!.id"
+    [value]="choice.id" [checked]="singleValue() === choice.id" (change)="setSingle(choice.id)"
+    />
     <span>{{ choice.text }}</span>
   </label>
   }
 </div>
 } @else {
-<div class="choices" [attr.aria-label]="question.text">
-  @for (choice of question.choices; track choice.id) {
+<div class="choices" [attr.aria-label]="question()!.text">
+  @for (choice of question()!.choices; track choice.id) {
   <label class="choice">
     <input
       type="checkbox"
-      [checked]="multiValue.includes(choice.id)"
+      [checked]="multiValue().includes(choice.id)"
       (change)="toggleMulti(choice.id)"
     />
     <span>{{ choice.text }}</span>
@@ -30,6 +32,6 @@
 
 <div class="actions">
   <app-button variant="ghost" (click)="goBack.emit()">Back</app-button>
-  <app-button variant="primary" [disabled]="!canSubmit" (click)="submit()">Next</app-button>
+  <app-button variant="primary" [disabled]="!canSubmit()" (click)="submit()">Next</app-button>
 </div>
 }

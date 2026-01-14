@@ -1,0 +1,20 @@
+<h2>Results</h2>
+
+@if (!user()) {
+<p class="muted">No user data.</p>
+} @else {
+<p>
+  Name: <b>{{ user()!.name }}</b>
+</p>
+<p>
+  Email: <b>{{ user()!.email }}</b>
+</p>
+}
+
+<p class="score">
+  Your score: <b>{{ score() }}</b>
+</p>
+
+<div class="actions">
+  <app-button variant="primary" (click)="restart.emit()">Restart</app-button>
+</div>

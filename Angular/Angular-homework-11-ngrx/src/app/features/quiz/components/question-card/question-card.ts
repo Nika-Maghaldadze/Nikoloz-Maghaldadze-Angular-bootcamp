@@ -1,72 +1,82 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
+  computed,
+  effect,
+  input,
+  output,
+  signal,
 } from '@angular/core';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+
 import { AnswerValue, Question } from '../../../../core/models/quiz.model';
+import { ButtonComponent } from '../../../../shared/button/button';
 
 @Component({
   selector: 'app-question-card',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ButtonComponent],
   templateUrl: './question-card.html',
-  styleUrls: ['./question-card.scss'],
+  styleUrl: './question-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuestionCardComponent implements OnChanges {
-  @Input({ required: true }) question: Question | null = null;
-  @Input() existingAnswer: AnswerValue | null = null;
+export class QuestionCardComponent {
+  question = input<Question | null>(null);
+  existingAnswer = input<AnswerValue | null>(null);
+  goBack = output<void>();
+  submitAnswer = output<{ questionId: string; answer: AnswerValue }>();
 
-  @Output() goBack = new EventEmitter<void>();
-  @Output() submitAnswer = new EventEmitter<{ questionId: string; answer: AnswerValue }>();
+  private single = signal<string | null>(null);
+  private multi = signal<string[]>([]);
 
-  singleCtrl = new FormControl<string>('', {
-    nonNullable: true,
-    validators: [Validators.required],
+  singleValue = computed(() => this.single());
+  multiValue = computed(() => this.multi());
+
+  canSubmit = computed(() => {
+    const q = this.question();
+    if (!q) return false;
+
+    if (q.type === 'single') return !!this.single();
+    return this.multi().length > 0;
   });
-  multiValue: string[] = [];
 
-  ngOnChanges(): void {
-    if (!this.question) return;
+  constructor() {
+    effect(() => {
+      const q = this.question();
+      const a = this.existingAnswer();
+      if (!q) return;
 
-    if (this.question.type === 'single') {
-      const v = typeof this.existingAnswer === 'string' ? this.existingAnswer : '';
-      this.singleCtrl.setValue(v);
-      this.singleCtrl.markAsPristine();
-    } else {
-      const v = Array.isArray(this.existingAnswer) ? this.existingAnswer : [];
-      this.multiValue = [...v];
-    }
+      if (q.type === 'single') {
+        this.single.set(typeof a === 'string' ? a : null);
+        this.multi.set([]);
+      } else {
+        this.multi.set(Array.isArray(a) ? [...a] : []);
+        this.single.set(null);
+      }
+    });
   }
 
-  toggleMulti(choiceId: string) {
-    if (!this.question || this.question.type !== 'multiple') return;
-    this.multiValue = this.multiValue.includes(choiceId)
-      ? this.multiValue.filter((x) => x !== choiceId)
-      : [...this.multiValue, choiceId];
+  setSingle(id: string) {
+    this.single.set(id);
   }
 
-  get canSubmit(): boolean {
-    if (!this.question) return false;
-    if (this.question.type === 'single') return this.singleCtrl.valid;
-    return this.multiValue.length > 0;
+  toggleMulti(id: string) {
+    const current = this.multi();
+    this.multi.set(current.includes(id) ? current.filter((x) => x !== id) : [...current, id]);
   }
 
   submit() {
-    if (!this.question) return;
+    const q = this.question();
+    if (!q) return;
 
-    if (this.question.type === 'single') {
-      this.singleCtrl.markAsTouched();
-      if (this.singleCtrl.invalid) return;
-      this.submitAnswer.emit({ questionId: this.question.id, answer: this.singleCtrl.value });
+    if (q.type === 'single') {
+      const v = this.single();
+      if (!v) return;
+      this.submitAnswer.emit({ questionId: q.id, answer: v });
       return;
     }
 
-    if (this.multiValue.length === 0) return;
-    this.submitAnswer.emit({ questionId: this.question.id, answer: [...this.multiValue] });
+    const v = this.multi();
+    if (!v.length) return;
+    this.submitAnswer.emit({ questionId: q.id, answer: [...v] });
   }
 }

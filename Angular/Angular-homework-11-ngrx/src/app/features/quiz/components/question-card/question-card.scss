@@ -1,0 +1,22 @@
+.muted {
+  color: #666;
+}
+.choices {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.choice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #e7e7e7;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+.actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

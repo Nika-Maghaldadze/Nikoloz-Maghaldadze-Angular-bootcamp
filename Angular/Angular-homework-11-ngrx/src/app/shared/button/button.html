@@ -1,9 +1,9 @@
 <button
   class="btn"
-  [class.primary]="variant === 'primary'"
-  [class.ghost]="variant === 'ghost'"
-  [disabled]="disabled"
-  type="button"
+  [class.primary]="isPrimary()"
+  [class.ghost]="isGhost()"
+  [disabled]="disabled()"
+  [attr.type]="type()"
 >
   <ng-content />
 </button>
