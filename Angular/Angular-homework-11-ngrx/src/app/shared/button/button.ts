@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'app-button',
   templateUrl: './button.html',
   styleUrl: './button.scss',
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent  {
