@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../../../core/models/quiz.model';
-import { ButtonComponent } from '../../../../shared/button/button';
 
 type IntroErrors = {
   name?: string;
@@ -19,7 +18,7 @@ type IntroErrors = {
 @Component({
   selector: 'app-intro',
   standalone: true,
-  imports: [FormsModule, ButtonComponent],
+  imports: [FormsModule],
   templateUrl: './intro.html',
   styleUrls: ['./intro.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

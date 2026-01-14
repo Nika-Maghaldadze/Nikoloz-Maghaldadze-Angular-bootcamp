@@ -8,12 +8,11 @@ import {
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AnswerValue, Question } from '../../../../core/models/quiz.model';
-import { ButtonComponent } from '../../../../shared/button/button';
 
 @Component({
   selector: 'app-question-card',
   standalone: true,
-  imports: [ReactiveFormsModule, ButtonComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './question-card.html',
   styleUrls: ['./question-card.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
