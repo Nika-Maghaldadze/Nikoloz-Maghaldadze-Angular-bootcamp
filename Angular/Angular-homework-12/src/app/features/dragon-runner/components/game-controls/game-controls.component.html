@@ -1,0 +1,56 @@
+<footer class="controls">
+  <div class="controls-row">
+    <button class="btn primary" (click)="engine.startOrJump()">
+      @if (store.isReady) {
+        Start / Jump
+      } @else if (!store.isOver) {
+        Jump
+      } @else {
+        Restart
+      }
+    </button>
+
+    <button
+      class="btn"
+      (mousedown)="engine.duck(true)"
+      (mouseup)="engine.duck(false)"
+      (mouseleave)="engine.duck(false)"
+      (touchstart)="engine.duck(true); $event.preventDefault()"
+      (touchend)="engine.duck(false); $event.preventDefault()"
+      [disabled]="!store.isRunning"
+    >
+      Duck (hold)
+    </button>
+
+    <button class="btn" (click)="engine.pauseOrResume()" [disabled]="!store.isRunning && !store.isPaused">
+      @if (store.isPaused) { Resume } @else { Pause }
+    </button>
+
+    <button class="btn" (click)="engine.fullRestart()">Restart</button>
+  </div>
+
+  <div class="controls-row">
+    <label class="control">
+      Timer (sec)
+      <input
+        type="number"
+        step="1"
+        inputmode="numeric"
+        [field]="controlsForm.timerSec"
+      />
+    </label>
+
+    <label class="control">
+      Difficulty
+      <select [field]="controlsForm.difficulty">
+        <option value="easy">Easy</option>
+        <option value="normal">Normal</option>
+        <option value="hard">Hard</option>
+      </select>
+    </label>
+
+    <div class="hint">
+      Changing <b>Timer</b> or <b>Difficulty</b> restarts the game immediately
+    </div>
+  </div>
+</footer>
