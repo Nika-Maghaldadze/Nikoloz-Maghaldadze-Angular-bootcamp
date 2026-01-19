@@ -1,5 +1,13 @@
-import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
-import { form } from '@angular/forms/signals';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  signal,
+  untracked,
+} from '@angular/core';
+
+import { form, FormField } from '@angular/forms/signals';
 
 import { Difficulty } from '../../../../shared/models/game.model';
 import { DragonRunnerEngineService } from '../../services/dragon-runner-engine.service';
@@ -13,7 +21,7 @@ interface ControlsModel {
 @Component({
   selector: 'app-game-controls',
   standalone: true,
-  imports: [],
+  imports: [FormField],
   templateUrl: './game-controls.component.html',
   styleUrl: './game-controls.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,6 +30,7 @@ export class GameControlsComponent {
   readonly store = inject(DragonRunnerStore);
   readonly engine = inject(DragonRunnerEngineService);
 
+  // internal view model
   private readonly model = signal<ControlsModel>({
     timerSec: this.store.timerInputSec(),
     difficulty: this.store.difficulty(),
@@ -32,8 +41,10 @@ export class GameControlsComponent {
   constructor() {
     effect(() => {
       const m = this.model();
-      if (m.timerSec !== this.store.timerInputSec()) this.store.timerInputSec.set(m.timerSec);
-      if (m.difficulty !== this.store.difficulty()) this.store.difficulty.set(m.difficulty);
+      const timer = untracked(() => this.store.timerInputSec());
+      const diff = untracked(() => this.store.difficulty());
+      if (m.timerSec !== timer) this.store.timerInputSec.set(m.timerSec);
+      if (m.difficulty !== diff) this.store.difficulty.set(m.difficulty);
     });
     effect(() => {
       const timerSec = this.store.timerInputSec();
