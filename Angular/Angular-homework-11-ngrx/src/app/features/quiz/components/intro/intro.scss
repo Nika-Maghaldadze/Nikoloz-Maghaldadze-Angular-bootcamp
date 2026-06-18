@@ -1,22 +1,74 @@
+:host {
+  display: block;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-weight: 700;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .muted {
-  color: #666;
+  color: var(--c-muted);
   margin-top: 6px;
 }
+
 .field {
   display: grid;
   gap: 6px;
-  margin-top: 14px;
-}
-input {
-  padding: 10px 12px;
-  border: 1px solid #d7d7d7;
-  border-radius: 10px;
-}
-.actions {
   margin-top: 16px;
+
+  span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--c-text);
+  }
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-sm);
+  background: var(--c-field);
+  font: inherit;
+  color: var(--c-text);
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t),
+    background var(--t);
+}
+
+input::placeholder {
+  color: #a6a8c2;
+}
+
+input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--c-primary);
+  box-shadow: var(--ring);
+  transform: translateY(-1px);
+}
+
+.actions {
+  margin-top: 22px;
   display: flex;
   justify-content: flex-end;
 }
+
 .error {
-  color: #b00020;
+  color: var(--c-danger);
+  font-size: 0.82rem;
+  font-weight: 500;
+  animation: view-enter var(--t-fast) both;
+}
+
+@media (max-width: 480px) {
+  .actions app-button {
+    display: block;
+    width: 100%;
+  }
 }

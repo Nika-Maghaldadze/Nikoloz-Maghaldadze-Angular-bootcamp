@@ -2,12 +2,12 @@
 <p class="muted">No question.</p>
 } @else {
 <h3>{{ question()!.text }}</h3>
-<p class="muted">Points: {{ question()!.points }}</p>
+<span class="points">{{ question()!.points }} pts</span>
 
 @if (question()!.type === 'single') {
 <div class="choices" role="radiogroup" [attr.aria-label]="question()!.text">
   @for (choice of question()!.choices; track choice.id) {
-  <label class="choice">
+  <label class="choice" [class.selected]="singleValue() === choice.id">
     <input type="radio" [name]="question()!.id"
     [value]="choice.id" [checked]="singleValue() === choice.id" (change)="setSingle(choice.id)"
     />
@@ -16,9 +16,9 @@
   }
 </div>
 } @else {
-<div class="choices" [attr.aria-label]="question()!.text">
+<div class="choices" role="group" [attr.aria-label]="question()!.text">
   @for (choice of question()!.choices; track choice.id) {
-  <label class="choice">
+  <label class="choice" [class.selected]="multiValue().includes(choice.id)">
     <input
       type="checkbox"
       [checked]="multiValue().includes(choice.id)"

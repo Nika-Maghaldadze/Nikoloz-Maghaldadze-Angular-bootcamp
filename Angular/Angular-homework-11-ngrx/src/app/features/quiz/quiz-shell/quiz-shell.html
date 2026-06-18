@@ -1,24 +1,23 @@
 <div class="page">
   <div class="card">
-    <app-progress-bar [value]="(progress$ | async) ?? 0"></app-progress-bar>
+    @if (vm$ | async; as vm) {
+    <app-progress-bar [value]="vm.progress"></app-progress-bar>
 
-    @if (loading$ | async) {
-    <p class="muted">Loading quiz…</p>
-    } @else if (error$ | async; as err) {
-    <p class="error">Failed to load quiz: {{ err }}</p>
-    } @else { @if (view$ | async; as view) { @if (view === 'INTRO') {
-    <app-intro [savedUser]="user$ | async" (submitUser)="onUserSubmit($event)"> </app-intro>
-    } @if (view === 'QUESTION') {
+    @if (vm.loading) {
+    <div class="loading"><span class="spinner"></span> Loading quiz…</div>
+    } @else if (vm.error) {
+    <p class="error">Failed to load quiz: {{ vm.error }}</p>
+    } @else if (vm.view === 'INTRO') {
+    <app-intro [savedUser]="vm.user" (submitUser)="onUserSubmit($event)"></app-intro>
+    } @else if (vm.view === 'QUESTION') {
     <app-question-card
-      [question]="currentQuestion$ | async"
-      [existingAnswer]="currentAnswer$ | async"
+      [question]="vm.question"
+      [existingAnswer]="vm.answer"
       (goBack)="onPrev()"
       (submitAnswer)="onAnswer($event)"
-    >
-    </app-question-card>
-    } @if (view === 'RESULTS') {
-    <app-results [user]="user$ | async" [score]="(score$ | async) ?? 0" (restart)="onRestart()">
-    </app-results>
-    } } }
+    ></app-question-card>
+    } @else if (vm.view === 'RESULTS') {
+    <app-results [user]="vm.user" [score]="vm.score" (restart)="onRestart()"></app-results>
+    } }
   </div>
 </div>

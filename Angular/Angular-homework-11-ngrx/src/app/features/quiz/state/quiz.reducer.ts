@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { createFeature, createReducer, on } from '@ngrx/store';
 import { QuizActions } from './quiz.actions';
 import { AnswerValue, Question, User } from '../../../core/models/quiz.model';
 
@@ -16,14 +16,21 @@ export const initialState: QuizState = {
   questions: [],
   answers: {},
   step: 0,
-  loading: true,
+  loading: false,
   error: null,
 };
 
 export const quizReducer = createReducer(
   initialState,
 
-  on(QuizActions.init, (s) => ({ ...s, loading: true })),
+  on(QuizActions.init, (s) => ({ ...s, loading: true, error: null })),
+
+  on(QuizActions.hydrate, (s, { progress }) => ({
+    ...s,
+    user: progress.user,
+    answers: progress.answers,
+    step: progress.step,
+  })),
 
   on(QuizActions.loadQuestionsSuccess, (s, { questions }) => ({
     ...s,
@@ -47,5 +54,20 @@ export const quizReducer = createReducer(
   on(QuizActions.nextStep, (s) => ({ ...s, step: s.step + 1 })),
   on(QuizActions.prevStep, (s) => ({ ...s, step: Math.max(0, s.step - 1) })),
 
-  on(QuizActions.restart, () => initialState)
+  // Reset only the user's progress; keep the already-loaded questions so the
+  // quiz returns to the intro immediately instead of re-fetching/spinning.
+  on(QuizActions.restart, (s) => ({
+    ...s,
+    user: null,
+    answers: {},
+    step: 0,
+    error: null,
+  }))
 );
+
+// Single source of truth for the feature key: generates the base state slice
+// selectors (selectUser, selectQuestions, …) consumed by quiz.selectors.ts.
+export const quizFeature = createFeature({
+  name: 'quiz',
+  reducer: quizReducer,
+});

@@ -1,11 +1,32 @@
 .track {
-  height: 6px;
-  border-radius: 999px;
-  background: #ececec;
+  position: relative;
+  height: 10px;
+  border-radius: var(--r-pill);
+  background: rgba(109, 94, 252, 0.14);
   overflow: hidden;
 }
+
 .fill {
+  position: relative;
   height: 100%;
-  background: #1f6feb;
-  transition: width 160ms ease;
+  border-radius: inherit;
+  background: var(--grad-brand);
+  transition: width var(--t);
+  overflow: hidden;
+}
+
+/* Sheen sweeping across the filled portion. */
+.fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-120%);
+  animation: shimmer 2s ease-in-out infinite;
 }

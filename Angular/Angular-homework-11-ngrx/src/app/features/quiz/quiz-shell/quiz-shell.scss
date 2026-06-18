@@ -1,22 +1,56 @@
 .page {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
-  padding: 24px;
-  background: #fafafa;
+  padding: clamp(12px, 4vw, 32px);
+  background: var(--grad-page) fixed;
 }
+
 .card {
-  width: min(720px, 100%);
-  background: white;
-  border: 1px solid #e9e9e9;
-  border-radius: 16px;
-  padding: 20px;
+  width: min(680px, 100%);
+  background: var(--c-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  padding: clamp(20px, 5vw, 40px);
+  animation: float-in var(--t) both;
 }
-.muted {
-  color: #666;
-  margin-top: 14px;
+
+/* Each swapped-in view animates as it appears. */
+app-intro,
+app-question-card,
+app-results {
+  display: block;
+  margin-top: 18px;
+  animation: view-enter var(--t) both;
 }
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: var(--c-muted);
+  font-weight: 500;
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid rgba(109, 94, 252, 0.25);
+  border-top-color: var(--c-primary);
+  animation: spin 700ms linear infinite;
+}
+
 .error {
-  color: #b00020;
-  margin-top: 14px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: rgba(255, 77, 109, 0.1);
+  border: 1px solid rgba(255, 77, 109, 0.35);
+  color: var(--c-danger);
+  font-weight: 500;
 }

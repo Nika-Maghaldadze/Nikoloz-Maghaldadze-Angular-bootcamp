@@ -1,20 +1,23 @@
-<h2>Results</h2>
+<div class="celebrate">🎉</div>
+<h2>Nice work!</h2>
 
-@if (!user()) {
-<p class="muted">No user data.</p>
+@if (user()) {
+<div class="user-card">
+  <div class="avatar">{{ user()!.name.charAt(0) || '?' }}</div>
+  <div class="meta">
+    <b>{{ user()!.name }}</b>
+    <span class="muted">{{ user()!.email }}</span>
+  </div>
+</div>
 } @else {
-<p>
-  Name: <b>{{ user()!.name }}</b>
-</p>
-<p>
-  Email: <b>{{ user()!.email }}</b>
-</p>
+<p class="muted">No user data.</p>
 }
 
-<p class="score">
-  Your score: <b>{{ score() }}</b>
-</p>
+<div class="score">
+  <span class="label">Your score</span>
+  <span class="value">{{ displayScore() }}</span>
+</div>
 
 <div class="actions">
-  <app-button variant="primary" (click)="restart.emit()">Restart</app-button>
+  <app-button variant="primary" (click)="restart.emit()">Play again</app-button>
 </div>
