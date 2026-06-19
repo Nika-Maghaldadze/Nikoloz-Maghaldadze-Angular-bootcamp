@@ -1,0 +1,162 @@
+:host {
+  display: block;
+}
+
+.login {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px 40px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-panel);
+  padding: 38px 36px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-ge-serif);
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+
+.lede {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+input {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-btn);
+  padding: 13px 16px;
+  transition: border-color 0.15s;
+
+  &::placeholder {
+    color: var(--ink-mute);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--ink);
+  }
+}
+
+.field-error {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--no-tx);
+}
+
+.form-error {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--no-tx);
+  background: var(--no-bg);
+  border: 1px solid var(--no-soft);
+  border-radius: var(--r-btn);
+  padding: 12px 14px;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--paper);
+  border: none;
+  border-radius: var(--r-btn);
+  padding: 15px 28px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: filter 0.15s;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.15);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .arrow {
+    font-size: 17px;
+  }
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 22px;
+  cursor: pointer;
+  transition: color 0.15s;
+
+  &:hover {
+    color: var(--ink);
+  }
+}
+
+@media (max-width: 720px) {
+  .login {
+    padding: 48px 20px 64px;
+  }
+
+  .card {
+    padding: 30px 24px;
+  }
+}

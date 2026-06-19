@@ -1,0 +1,55 @@
+<main class="review">
+  <button class="back" type="button" (click)="store.go('results')">
+    <span class="arrow">←</span> შედეგებზე დაბრუნება
+  </button>
+
+  <div class="eyebrow">{{ store.resultQuizTitle() }}</div>
+  <h1 class="title">პასუხების გადახედვა</h1>
+
+  <div class="list">
+    @for (item of store.reviewItems(); track item.qNumber) {
+      <article class="item">
+        <div class="item-top">
+          <span class="item-num">{{ item.qNumber }}</span>
+          <span
+            class="item-tag"
+            [style.color]="item.tagColor"
+            [style.background]="item.tagBg"
+          >
+            {{ item.tag }}
+          </span>
+        </div>
+        <h3 class="item-question">{{ item.question }}</h3>
+
+        <div class="rows">
+          <div class="row">
+            <span class="row-label">შენი პასუხი</span>
+            <span class="row-letter" [style.color]="item.yourColor">{{ item.yourLetter }}</span>
+            <span class="row-text" [style.color]="item.yourColor">{{ item.yourText }}</span>
+          </div>
+          @if (item.showCorrect) {
+            <div class="row">
+              <span class="row-label">სწორი პასუხი</span>
+              <span class="row-letter row-letter--ok">{{ item.correctLetter }}</span>
+              <span class="row-text row-text--ok">{{ item.correctText }}</span>
+            </div>
+          }
+        </div>
+      </article>
+    }
+  </div>
+
+  <div class="actions">
+    <button
+      class="btn btn--primary"
+      type="button"
+      [style.background]="store.accent()"
+      (click)="store.startQuiz()"
+    >
+      თავიდან დაწყება
+    </button>
+    <button class="btn btn--outline" type="button" (click)="store.go('home')">
+      კურსზე დაბრუნება
+    </button>
+  </div>
+</main>

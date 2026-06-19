@@ -1,36 +1,62 @@
-/* Global styles, design tokens, and base layer for the quiz UI. */
+/* Global styles, design tokens, and base layer for the Lyceum quiz UI. */
 
 :root {
-  /* Colors */
-  --c-primary: #6d5efc;
-  --c-primary-strong: #5b4bd6;
-  --c-accent: #ff5d8f;
-  --c-success: #22c79b;
-  --c-danger: #ff4d6d;
-  --c-text: #222545;
-  --c-muted: #6b7090;
-  --c-card: rgba(255, 255, 255, 0.86);
-  --c-border: #e7e7f4;
-  --c-field: #f4f4fb;
+  /* Surfaces */
+  --paper: #faf9f6; /* app background (warm off-white) */
+  --surface: #ffffff; /* cards, panels */
+  --surface-alt: #fbfaf7; /* locked / "coming soon" cards */
 
-  /* Gradients */
-  --grad-brand: linear-gradient(135deg, #6d5efc, #ff5d8f);
-  --grad-page: linear-gradient(135deg, #8a5cff 0%, #c66bff 40%, #ff7eb3 75%, #6a82fb 100%);
+  /* Ink (text) */
+  --ink: #1f1e1b; /* primary text, dark hero */
+  --ink-soft: #6b6862; /* secondary text */
+  --ink-mute: #9a968d; /* tertiary text, mono labels */
+
+  /* Lines / fills */
+  --line: #e4e1d9; /* borders */
+  --line-2: #e8e5dd; /* card borders */
+  --line-soft: #eeebe3; /* inner dividers */
+  --line-soft-2: #f0eee7;
+  --fill: #f3f1ea; /* subtle chips / letter badges */
+
+  /* Hero (dark) internals */
+  --hero-chip-bg: #2a2925;
+  --hero-btn-bg: #332f2a;
+  --hero-border: #3a3934;
+  --hero-border-2: #43403a;
+
+  /* Semantic — correct (desaturated forest) */
+  --ok: #4f7a5b;
+  --ok-bg: #edf3ee;
+  --ok-tx: #2f5238;
+  --ok-tint: #f1f6f2;
+  --ok-soft: #d8e6db;
+
+  /* Semantic — wrong / timeout (terracotta) */
+  --no: #b05b47;
+  --no-bg: #f8eeea;
+  --no-tx: #8f4636;
+  --no-tint: #faf1ed;
+  --no-soft: #efd9d1;
+
+  /* Accent (themeable; recolors progress, rings, primary buttons, "you" row) */
+  --accent: #1f1e1b;
+
+  /* Type stacks */
+  --font-ui: 'IBM Plex Sans', 'Noto Sans Georgian', sans-serif;
+  --font-serif: 'Noto Serif Georgian', 'Newsreader', serif;
+  --font-display: 'Newsreader', serif;
+  --font-ge-serif: 'Noto Serif Georgian', 'Newsreader', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 
   /* Radii */
-  --r-sm: 10px;
-  --r-md: 16px;
-  --r-lg: 24px;
-  --r-pill: 999px;
+  --r-card: 16px;
+  --r-panel: 18px;
+  --r-btn: 12px;
+  --r-chip: 8px;
+  --r-pill: 20px;
 
-  /* Shadows */
-  --shadow-card: 0 20px 50px -20px rgba(80, 60, 160, 0.45);
-  --shadow-btn: 0 10px 22px -10px rgba(109, 94, 252, 0.7);
-  --ring: 0 0 0 4px rgba(109, 94, 252, 0.25);
-
-  /* Motion */
-  --t: 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  --t-fast: 140ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Shadow */
+  --shadow-card: 0 12px 28px rgba(31, 30, 27, 0.08);
 }
 
 *,
@@ -42,64 +68,25 @@
 html,
 body {
   margin: 0;
+  padding: 0;
   min-height: 100%;
 }
 
 body {
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color: var(--c-text);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Shared keyframes (referenced by components). */
-@keyframes view-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+button {
+  font-family: inherit;
 }
 
-@keyframes float-in {
-  from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  45% {
-    transform: scale(1.025);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes shimmer {
-  from {
-    transform: translateX(-120%);
-  }
-  to {
-    transform: translateX(320%);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+::selection {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 @media (prefers-reduced-motion: reduce) {

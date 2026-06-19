@@ -1,0 +1,54 @@
+<main class="login">
+  <div class="card">
+    <div class="eyebrow">ანგარიში</div>
+    <h1 class="title">შესვლა</h1>
+    <p class="lede">შეიყვანე სახელი და ელ. ფოსტა, რომ დაიწყო ქვიზი და მოხვდე ლიდერბორდში.</p>
+
+    <form (ngSubmit)="submit()">
+      <label class="field">
+        <span class="field-label">სახელი</span>
+        <input
+          type="text"
+          name="name"
+          [ngModel]="name()"
+          (ngModelChange)="name.set($event)"
+          placeholder="შენი სახელი"
+          autocomplete="name"
+        />
+        @if (touched() && nameError()) {
+          <small class="field-error">{{ nameError() }}</small>
+        }
+      </label>
+
+      <label class="field">
+        <span class="field-label">ელ. ფოსტა</span>
+        <input
+          type="email"
+          name="email"
+          [ngModel]="email()"
+          (ngModelChange)="email.set($event)"
+          placeholder="you@example.com"
+          autocomplete="email"
+        />
+        @if (touched() && emailError()) {
+          <small class="field-error">{{ emailError() }}</small>
+        }
+      </label>
+
+      @if (auth.error()) {
+        <div class="form-error">{{ auth.error() }}</div>
+      }
+
+      <button
+        class="submit"
+        type="submit"
+        [style.background]="store.accent()"
+        [disabled]="auth.loading()"
+      >
+        {{ auth.loading() ? 'შესვლა…' : 'შესვლა' }} <span class="arrow">→</span>
+      </button>
+    </form>
+
+    <button class="back" type="button" (click)="store.go('home')">← უკან კურსზე</button>
+  </div>
+</main>

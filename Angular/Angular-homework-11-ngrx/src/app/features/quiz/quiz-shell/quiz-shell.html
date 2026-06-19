@@ -1,23 +1,69 @@
-<div class="page">
-  <div class="card">
-    @if (vm$ | async; as vm) {
-    <app-progress-bar [value]="vm.progress"></app-progress-bar>
+<div class="shell" [style.--accent]="store.accent()">
+  <nav class="nav">
+    <button class="brand" type="button" (click)="store.go('home')">
+      <span class="wordmark">Angular</span>
+      <span class="brand-tag">ქვიზი</span>
+    </button>
 
-    @if (vm.loading) {
-    <div class="loading"><span class="spinner"></span> Loading quiz…</div>
-    } @else if (vm.error) {
-    <p class="error">Failed to load quiz: {{ vm.error }}</p>
-    } @else if (vm.view === 'INTRO') {
-    <app-intro [savedUser]="vm.user" (submitUser)="onUserSubmit($event)"></app-intro>
-    } @else if (vm.view === 'QUESTION') {
-    <app-question-card
-      [question]="vm.question"
-      [existingAnswer]="vm.answer"
-      (goBack)="onPrev()"
-      (submitAnswer)="onAnswer($event)"
-    ></app-question-card>
-    } @else if (vm.view === 'RESULTS') {
-    <app-results [user]="vm.user" [score]="vm.score" (restart)="onRestart()"></app-results>
-    } }
-  </div>
+    <div class="nav-right">
+      <button
+        class="nav-link"
+        type="button"
+        [class.active]="store.screen() === 'home'"
+        (click)="store.go('home')"
+      >
+        კურსი
+      </button>
+      <button
+        class="nav-link"
+        type="button"
+        [class.active]="store.screen() === 'leaderboard'"
+        (click)="store.go('leaderboard')"
+      >
+        ლიდერბორდი
+      </button>
+      <span class="nav-divider"></span>
+
+      @if (auth.currentUser(); as user) {
+        <span class="nav-user">{{ user.name }}</span>
+        <span class="avatar">{{ user.name.charAt(0) || '?' }}</span>
+        <button class="nav-link" type="button" (click)="logout()">გასვლა</button>
+      } @else {
+        <button
+          class="nav-link"
+          type="button"
+          [class.active]="store.screen() === 'login'"
+          (click)="store.go('login')"
+        >
+          შესვლა
+        </button>
+      }
+    </div>
+  </nav>
+
+  @if (store.screen() === 'login') {
+    <app-login />
+  } @else if (store.loading()) {
+    <div class="state">იტვირთება…</div>
+  } @else if (store.error()) {
+    <div class="state state--error">{{ store.error() }}</div>
+  } @else {
+    @switch (store.screen()) {
+      @case ('home') {
+        <app-home />
+      }
+      @case ('quiz') {
+        <app-question />
+      }
+      @case ('results') {
+        <app-results />
+      }
+      @case ('review') {
+        <app-review />
+      }
+      @case ('leaderboard') {
+        <app-leaderboard />
+      }
+    }
+  }
 </div>

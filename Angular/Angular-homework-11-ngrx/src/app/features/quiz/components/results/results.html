@@ -1,23 +1,51 @@
-<div class="celebrate">🎉</div>
-<h2>Nice work!</h2>
+<main class="results">
+  <div class="eyebrow">{{ store.resultQuizTitle() }}</div>
+  <h1 class="title">{{ store.resultTitle() }}</h1>
 
-@if (user()) {
-<div class="user-card">
-  <div class="avatar">{{ user()!.name.charAt(0) || '?' }}</div>
-  <div class="meta">
-    <b>{{ user()!.name }}</b>
-    <span class="muted">{{ user()!.email }}</span>
+  <div class="panel">
+    <div class="ring" [style.background]="store.ringBg()">
+      <div class="ring-hole">
+        <span class="ring-pct">{{ store.scorePct() }}%</span>
+        <span class="ring-word">ქულა</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-label">სწორი პასუხები</span>
+        <span class="stat-value">{{ store.correctCount() }} / {{ store.total() }}</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">დაგროვილი ქულა</span>
+        <span class="stat-value">{{ store.pointsLabel() }}</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">დახარჯული დრო</span>
+        <span class="stat-value">{{ store.elapsedFmt() }}</span>
+      </div>
+      <div class="stat stat--last">
+        <span class="stat-label">შეფასება</span>
+        <span class="stat-rating" [style.color]="store.resultFeedbackColor()">
+          {{ store.performanceLabel() }}
+        </span>
+      </div>
+    </div>
   </div>
-</div>
-} @else {
-<p class="muted">No user data.</p>
-}
 
-<div class="score">
-  <span class="label">Your score</span>
-  <span class="value">{{ displayScore() }}</span>
-</div>
-
-<div class="actions">
-  <app-button variant="primary" (click)="restart.emit()">Play again</app-button>
-</div>
+  <div class="actions">
+    <button
+      class="btn btn--primary"
+      type="button"
+      [style.background]="store.accent()"
+      (click)="store.go('review')"
+    >
+      პასუხების გადახედვა
+    </button>
+    <button class="btn btn--outline" type="button" (click)="store.startQuiz()">
+      თავიდან დაწყება
+    </button>
+    <button class="btn btn--outline" type="button" (click)="store.go('leaderboard')">
+      ლიდერბორდი
+    </button>
+  </div>
+</main>

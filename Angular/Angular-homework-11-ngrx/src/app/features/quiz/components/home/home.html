@@ -1,0 +1,48 @@
+<main class="home">
+  <header class="intro">
+    <div class="eyebrow">სასწავლო კურსი</div>
+    <h1 class="title">ისწავლე Angular</h1>
+    <p class="lede">
+      მოკლე, ფოკუსირებული ქვიზი ცოდნის შესამოწმებლად — თითო კითხვაზე 10 წამი. დაიწყე და აღმოაჩინე
+      შენი სუსტი წერტილები.
+    </p>
+  </header>
+
+  <button class="hero" type="button" (click)="store.requestStart()">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="hero-meta-top">
+          <span class="hero-subject">{{ store.meta.subject }}</span>
+          <span class="hero-difficulty">{{ store.meta.difficulty }}</span>
+        </div>
+        <h2 class="hero-title">{{ store.meta.title }}</h2>
+        <p class="hero-desc">{{ store.meta.desc }}</p>
+        <div class="chips">
+          @for (chip of store.meta.topics; track chip) {
+            <span class="chip">{{ chip }}</span>
+          }
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-stats">
+          {{ qCount() }} კითხვა<br />10 წმ თითო<br />{{ maxPoints() }} ქულა
+        </div>
+        <span class="hero-cta">დაწყება <span class="arrow">→</span></span>
+      </div>
+    </div>
+  </button>
+
+  <div class="section-label">სხვა თემები</div>
+  <div class="coming-grid">
+    @for (card of store.comingSoon; track card.title) {
+      <div class="coming-card">
+        <div class="coming-top">
+          <span class="coming-subject">{{ card.subject }}</span>
+          <span class="coming-badge">მალე</span>
+        </div>
+        <h3 class="coming-title">{{ card.title }}</h3>
+        <p class="coming-desc">{{ card.desc }}</p>
+      </div>
+    }
+  </div>
+</main>

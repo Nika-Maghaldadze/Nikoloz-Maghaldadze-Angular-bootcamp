@@ -1,54 +1,39 @@
-import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
-import { Store } from '@ngrx/store';
 
-import { QuizActions } from '../state/quiz.actions';
-import { selectQuizViewModel } from '../state/quiz.selectors';
-
-import { ProgressBarComponent } from '../../../shared/progress-bar/progress-bar';
-import { IntroComponent } from '../components/intro/intro';
-import { QuestionCardComponent } from '../components/question-card/question-card';
+import { QuizEngineStore } from '../state/quiz-engine.store';
+import { AuthService } from '../../../core/services/auth.service';
+import { LoginComponent } from '../components/login/login';
+import { HomeComponent } from '../components/home/home';
+import { QuestionComponent } from '../components/question/question';
 import { ResultsComponent } from '../components/results/results';
-import { AnswerValue, User } from '../../../core/models/quiz.model';
+import { ReviewComponent } from '../components/review/review';
+import { LeaderboardComponent } from '../components/leaderboard/leaderboard';
 
 @Component({
   selector: 'app-quiz-shell',
   standalone: true,
   imports: [
-    AsyncPipe,
-    ProgressBarComponent,
-    IntroComponent,
-    QuestionCardComponent,
+    LoginComponent,
+    HomeComponent,
+    QuestionComponent,
     ResultsComponent,
+    ReviewComponent,
+    LeaderboardComponent,
   ],
   templateUrl: './quiz-shell.html',
   styleUrl: './quiz-shell.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizShellComponent implements OnInit {
-  private readonly store = inject(Store);
-
-  vm$ = this.store.select(selectQuizViewModel);
+  readonly store = inject(QuizEngineStore);
+  readonly auth = inject(AuthService);
 
   ngOnInit(): void {
-    this.store.dispatch(QuizActions.init());
+    this.store.load();
   }
 
-  onUserSubmit(user: User) {
-    this.store.dispatch(QuizActions.setUser({ user }));
-    this.store.dispatch(QuizActions.nextStep());
-  }
-
-  onAnswer(payload: { questionId: string; answer: AnswerValue }) {
-    this.store.dispatch(QuizActions.answerQuestion(payload));
-    this.store.dispatch(QuizActions.nextStep());
-  }
-
-  onPrev() {
-    this.store.dispatch(QuizActions.prevStep());
-  }
-
-  onRestart() {
-    this.store.dispatch(QuizActions.restart());
+  logout(): void {
+    this.auth.logout();
+    this.store.go('home');
   }
 }

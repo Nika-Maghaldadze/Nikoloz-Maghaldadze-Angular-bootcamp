@@ -1,0 +1,139 @@
+:host {
+  display: block;
+}
+
+.leaderboard {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 40px 80px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: var(--font-ge-serif);
+  font-size: 44px;
+  line-height: 1.06;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 0 0 36px;
+}
+
+.board {
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-panel);
+  overflow: hidden;
+}
+
+.board-state {
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-panel);
+  padding: 40px 26px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink-mute);
+  text-align: center;
+}
+
+.board-state--error {
+  color: var(--no);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 26px;
+  border-bottom: 1px solid var(--line-soft-2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.rank {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  width: 28px;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ge-serif);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.who {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  margin-top: 2px;
+}
+
+.score {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.btn--outline {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-btn);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--ink);
+  }
+}
+
+@media (max-width: 720px) {
+  .leaderboard {
+    padding: 40px 20px 64px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}

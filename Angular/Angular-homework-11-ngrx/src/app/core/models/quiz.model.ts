@@ -14,18 +14,8 @@ export interface Question {
   points: number;
 }
 
-export interface User {
-  name: string;
-  email: string;
-}
+/** The views the quiz switches between (single-page, no routing). */
+export type Screen = 'login' | 'home' | 'quiz' | 'results' | 'review' | 'leaderboard';
 
-export type AnswerValue = string | string[];
-
-export type QuizView = 'INTRO' | 'QUESTION' | 'RESULTS';
-
-/** The slice of quiz state worth persisting/restoring across reloads. */
-export interface QuizProgress {
-  user: User | null;
-  answers: Record<string, AnswerValue>;
-  step: number;
-}
+/** Accent presets offered by the design (recolors progress/rings/primary buttons). */
+export type Accent = '#1F1E1B' | '#3B5C45' | '#2E3F6E' | '#6E2F39';

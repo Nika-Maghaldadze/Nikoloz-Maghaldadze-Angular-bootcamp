@@ -1,0 +1,74 @@
+{
+  "questions": [
+    { "id": "q1", "text": "რისთვის გამოიყენება Angular?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q1a", "text": "Backend სერვისების შესაქმნელად", "isCorrect": false },
+        { "id": "q1b", "text": "Single Page Application-ების შესაქმნელად", "isCorrect": true },
+        { "id": "q1c", "text": "მხოლოდ HTML გვერდებისთვის", "isCorrect": false },
+        { "id": "q1d", "text": "ოპერაციული სისტემებისთვის", "isCorrect": false }
+      ] },
+    { "id": "q2", "text": "რომელ ენაზეა დაწერილი Angular?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q2a", "text": "JavaScript", "isCorrect": false },
+        { "id": "q2b", "text": "TypeScript", "isCorrect": true },
+        { "id": "q2c", "text": "Python", "isCorrect": false },
+        { "id": "q2d", "text": "Java", "isCorrect": false }
+      ] },
+    { "id": "q3", "text": "რას აკეთებს Dependency Injection Angular-ში?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q3a", "text": "HTML-ის გენერაციას", "isCorrect": false },
+        { "id": "q3b", "text": "დამოკიდებულებების მართვას", "isCorrect": true },
+        { "id": "q3c", "text": "Routing-ის მართვას", "isCorrect": false },
+        { "id": "q3d", "text": "სტილების ჩატვირთვას", "isCorrect": false }
+      ] },
+    { "id": "q4", "text": "Angular-ის რომელი ელემენტი აღწერს view-ს და მის ლოგიკას?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q4a", "text": "Component", "isCorrect": true },
+        { "id": "q4b", "text": "Pipe", "isCorrect": false },
+        { "id": "q4c", "text": "Guard", "isCorrect": false },
+        { "id": "q4d", "text": "Resolver", "isCorrect": false }
+      ] },
+    { "id": "q5", "text": "NgRx-ში რა ინახავს აპლიკაციის state-ს ერთ ცენტრალურ ადგილას?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q5a", "text": "Store", "isCorrect": true },
+        { "id": "q5b", "text": "Component", "isCorrect": false },
+        { "id": "q5c", "text": "Template", "isCorrect": false },
+        { "id": "q5d", "text": "Module", "isCorrect": false }
+      ] },
+    { "id": "q6", "text": "NgRx-ში რა აღწერს მომხდარ მოვლენას (event-ს)?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q6a", "text": "Reducer", "isCorrect": false },
+        { "id": "q6b", "text": "Action", "isCorrect": true },
+        { "id": "q6c", "text": "Selector", "isCorrect": false },
+        { "id": "q6d", "text": "Effect", "isCorrect": false }
+      ] },
+    { "id": "q7", "text": "NgRx-ში რა გამოიყენება state-დან მონაცემების ამოსაღებად?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q7a", "text": "Selector", "isCorrect": true },
+        { "id": "q7b", "text": "Action", "isCorrect": false },
+        { "id": "q7c", "text": "Directive", "isCorrect": false },
+        { "id": "q7d", "text": "Service", "isCorrect": false }
+      ] },
+    { "id": "q8", "text": "რა არის Angular Signals-ის მთავარი დანიშნულება?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q8a", "text": "State-ის რეაქტიული მართვა", "isCorrect": true },
+        { "id": "q8b", "text": "HTTP მოთხოვნების გაგზავნა", "isCorrect": false },
+        { "id": "q8c", "text": "Routing-ის კონფიგურაცია", "isCorrect": false },
+        { "id": "q8d", "text": "ფორმების ვალიდაცია", "isCorrect": false }
+      ] },
+    { "id": "q9", "text": "რას აკეთებს Angular Router?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q9a", "text": "State-ის შენახვას", "isCorrect": false },
+        { "id": "q9b", "text": "ნავიგაციას სხვადასხვა view-ებს შორის", "isCorrect": true },
+        { "id": "q9c", "text": "HTTP მოთხოვნების გაგზავნას", "isCorrect": false },
+        { "id": "q9d", "text": "CSS-ის დამუშავებას", "isCorrect": false }
+      ] },
+    { "id": "q10", "text": "Angular-ში რომელი Change Detection სტრატეგია აუმჯობესებს წარმადობას?", "type": "single", "points": 10,
+      "choices": [
+        { "id": "q10a", "text": "Default", "isCorrect": false },
+        { "id": "q10b", "text": "OnPush", "isCorrect": true },
+        { "id": "q10c", "text": "Reactive", "isCorrect": false },
+        { "id": "q10d", "text": "Manual", "isCorrect": false }
+      ] }
+  ]
+}

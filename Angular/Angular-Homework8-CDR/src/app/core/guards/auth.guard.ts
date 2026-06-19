@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(): Observable<boolean | UrlTree> {
-    return this.auth.isAuthenticated$.pipe(
+    return this.auth.isAuthenticated$.pipe( 
       map(isAuth => {
         if (isAuth) {
           return true;

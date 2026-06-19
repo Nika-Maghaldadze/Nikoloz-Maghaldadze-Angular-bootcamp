@@ -1,0 +1,256 @@
+:host {
+  display: block;
+}
+
+.quiz {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 36px 40px 80px;
+}
+
+/* ---- Top bar ---- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: color 0.15s;
+
+  &:hover {
+    color: var(--ink);
+  }
+
+  .arrow {
+    font-size: 16px;
+  }
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.subject {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.countdown {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-face {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---- Progress ---- */
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.track {
+  flex: 1;
+  height: 4px;
+  background: var(--line-2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.counter {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-mute);
+  white-space: nowrap;
+}
+
+.counter-now {
+  color: var(--ink);
+}
+
+/* ---- Question ---- */
+.question {
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.005em;
+  margin: 0 0 32px;
+  max-width: 690px;
+}
+
+/* ---- Options ---- */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--r-btn);
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+button.option:hover {
+  border-color: var(--ink);
+  background: #fffefb;
+}
+
+.option--result {
+  cursor: default;
+}
+
+.letter {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-soft);
+}
+
+.option--result .letter {
+  border: none;
+}
+
+.option-text {
+  flex: 1;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.mark {
+  flex: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ---- Feedback ---- */
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 26px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+}
+
+.feedback-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-mark {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.feedback-label {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.feedback-points {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ---- Next ---- */
+.next-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--paper);
+  border: none;
+  border-radius: var(--r-btn);
+  padding: 15px 28px;
+  cursor: pointer;
+  transition: filter 0.15s;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+
+  .arrow {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 720px) {
+  .quiz {
+    padding: 28px 20px 64px;
+  }
+
+  .question {
+    font-size: 24px;
+  }
+}

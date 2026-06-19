@@ -1,0 +1,79 @@
+<main class="quiz">
+  <div class="topbar">
+    <button class="back" type="button" (click)="store.go('home')">
+      <span class="arrow">←</span> კურსი
+    </button>
+    <div class="topbar-right">
+      <span class="subject">{{ store.meta.subject }}</span>
+      @if (store.showTimer()) {
+        <div class="countdown" [style.background]="store.countRing()">
+          <div class="countdown-face" [style.color]="store.countColor()">{{ store.qSeconds() }}</div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="progress-row">
+    <div class="track">
+      <div
+        class="fill"
+        [style.width.%]="store.progressPct()"
+        [style.background]="store.accent()"
+      ></div>
+    </div>
+    <span class="counter">
+      <span class="counter-now">{{ store.qNumber() }}</span> / {{ store.qTotalLabel() }}
+    </span>
+  </div>
+
+  <h2 class="question" [style.fontFamily]="store.questionFont()">{{ store.current()?.text }}</h2>
+
+  @if (!store.answered()) {
+    <div class="options">
+      @for (opt of store.options(); track $index; let i = $index) {
+        <button class="option" type="button" (click)="store.selectOption(i)">
+          <span class="letter">{{ opt.letter }}</span>
+          <span class="option-text">{{ opt.text }}</span>
+        </button>
+      }
+    </div>
+  } @else {
+    <div class="options">
+      @for (opt of store.resultOptions(); track $index) {
+        <div
+          class="option option--result"
+          [style.border-color]="opt.border"
+          [style.background]="opt.bg"
+        >
+          <span class="letter" [style.background]="opt.letterBg" [style.color]="opt.letterColor">
+            {{ opt.letter }}
+          </span>
+          <span class="option-text" [style.color]="opt.color">{{ opt.text }}</span>
+          <span class="mark" [style.color]="opt.markColor">{{ opt.mark }}</span>
+        </div>
+      }
+    </div>
+
+    <div
+      class="feedback"
+      [style.background]="store.feedback().explainBg"
+      [style.border-color]="store.feedback().explainBorder"
+    >
+      <div class="feedback-left">
+        <span class="feedback-mark" [style.color]="store.feedback().color">
+          {{ store.feedback().mark }}
+        </span>
+        <span class="feedback-label" [style.color]="store.feedback().color">
+          {{ store.feedback().label }}
+        </span>
+      </div>
+      <span class="feedback-points">{{ store.pointsEarnedLabel() }}</span>
+    </div>
+
+    <div class="next-row">
+      <button class="next" type="button" [style.background]="store.accent()" (click)="store.next()">
+        {{ store.nextLabel() }} <span class="arrow">→</span>
+      </button>
+    </div>
+  }
+</main>
