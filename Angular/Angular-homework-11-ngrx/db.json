@@ -334,9 +334,17 @@
       "name": "Nika Maghaldadze",
       "email": "nikamaghaldadze13@gmail.com",
       "bestScore": 100,
-      "bestTimeMs": 30800,
-      "lastPlayedAt": "2026-06-19T11:43:12.927Z",
+      "bestTimeMs": 26200,
+      "lastPlayedAt": "2026-06-19T12:13:25.987Z",
       "id": "X1pse-j"
+    },
+    {
+      "name": "nikushaaa",
+      "email": "nikusha123@gmail.com",
+      "bestScore": 70,
+      "bestTimeMs": 12000,
+      "lastPlayedAt": "2026-06-19T12:14:08.417Z",
+      "id": "JnR-DhU"
     }
   ]
 }
