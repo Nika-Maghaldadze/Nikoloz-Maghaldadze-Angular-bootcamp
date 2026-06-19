@@ -2,18 +2,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "გვეშველება რამე?",
-      "type": "single",
-      "points": 10,
-      "choices": [
-        { "id": "q2a", "text": "არა", "isCorrect": true },
-        { "id": "q2b", "text": "კი", "isCorrect": false },
-        { "id": "q2c", "text": "არვიცი", "isCorrect": false },
-        { "id": "q2d", "text": "შემდეგი", "isCorrect": false }
-      ]
-    },
-    {
-      "id": "q2",
       "text": "რისთვის გამოიყენება Angular?",
       "type": "single",
       "points": 10,
@@ -25,7 +13,7 @@
       ]
     },
     {
-      "id": "q3",
+      "id": "q2",
       "text": "რომელ ენაზეა დაწერილი Angular?",
       "type": "single",
       "points": 10,
@@ -37,63 +25,75 @@
       ]
     },
     {
-      "id": "q4",
-      "text": "რომლებია Angular-ის ძირითადი სამშენებლო ბლოკები?",
-      "type": "multiple",
-      "points": 20,
-      "choices": [
-        { "id": "q3a", "text": "Component", "isCorrect": true },
-        { "id": "q3b", "text": "Directive", "isCorrect": true },
-        { "id": "q3c", "text": "Controller", "isCorrect": false },
-        { "id": "q3d", "text": "Service", "isCorrect": true }
-      ]
-    },
-    {
-      "id": "q5",
+      "id": "q3",
       "text": "რას აკეთებს Dependency Injection Angular-ში?",
       "type": "single",
       "points": 10,
       "choices": [
-        { "id": "q4a", "text": "HTML-ის გენერაციას", "isCorrect": false },
-        { "id": "q4b", "text": "დამოკიდებულებების მართვას", "isCorrect": true },
-        { "id": "q4c", "text": "Routing-ის მართვას", "isCorrect": false },
-        { "id": "q4d", "text": "სტილების ჩატვირთვას", "isCorrect": false }
+        { "id": "q3a", "text": "HTML-ის გენერაციას", "isCorrect": false },
+        { "id": "q3b", "text": "დამოკიდებულებების მართვას", "isCorrect": true },
+        { "id": "q3c", "text": "Routing-ის მართვას", "isCorrect": false },
+        { "id": "q3d", "text": "სტილების ჩატვირთვას", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Angular-ის რომელი ელემენტი აღწერს view-ს და მის ლოგიკას?",
+      "type": "single",
+      "points": 10,
+      "choices": [
+        { "id": "q4a", "text": "Component", "isCorrect": true },
+        { "id": "q4b", "text": "Pipe", "isCorrect": false },
+        { "id": "q4c", "text": "Guard", "isCorrect": false },
+        { "id": "q4d", "text": "Resolver", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "NgRx-ში რა ინახავს აპლიკაციის state-ს ერთ ცენტრალურ ადგილას?",
+      "type": "single",
+      "points": 10,
+      "choices": [
+        { "id": "q5a", "text": "Store", "isCorrect": true },
+        { "id": "q5b", "text": "Component", "isCorrect": false },
+        { "id": "q5c", "text": "Template", "isCorrect": false },
+        { "id": "q5d", "text": "Module", "isCorrect": false }
       ]
     },
     {
       "id": "q6",
-      "text": "რომელი NgRx ელემენტები გამოიყენება state-ის სამართავად?",
-      "type": "multiple",
-      "points": 20,
+      "text": "NgRx-ში რა აღწერს მომხდარ მოვლენას (event-ს)?",
+      "type": "single",
+      "points": 10,
       "choices": [
-        { "id": "q5a", "text": "Actions", "isCorrect": true },
-        { "id": "q5b", "text": "Reducers", "isCorrect": true },
-        { "id": "q5c", "text": "Selectors", "isCorrect": true },
-        { "id": "q5d", "text": "Components", "isCorrect": false }
+        { "id": "q6a", "text": "Reducer", "isCorrect": false },
+        { "id": "q6b", "text": "Action", "isCorrect": true },
+        { "id": "q6c", "text": "Selector", "isCorrect": false },
+        { "id": "q6d", "text": "Effect", "isCorrect": false }
       ]
     },
     {
       "id": "q7",
-      "text": "რა არის Angular Signals-ის მთავარი დანიშნულება?",
+      "text": "NgRx-ში რა გამოიყენება state-დან მონაცემების ამოსაღებად?",
       "type": "single",
       "points": 10,
       "choices": [
-        { "id": "q6a", "text": "State-ის რეაქტიული მართვა", "isCorrect": true },
-        { "id": "q6b", "text": "HTTP მოთხოვნების გაგზავნა", "isCorrect": false },
-        { "id": "q6c", "text": "Routing-ის კონფიგურაცია", "isCorrect": false },
-        { "id": "q6d", "text": "ფორმების ვალიდაცია", "isCorrect": false }
+        { "id": "q7a", "text": "Selector", "isCorrect": true },
+        { "id": "q7b", "text": "Action", "isCorrect": false },
+        { "id": "q7c", "text": "Directive", "isCorrect": false },
+        { "id": "q7d", "text": "Service", "isCorrect": false }
       ]
     },
     {
       "id": "q8",
-      "text": "რომელი Change Detection სტრატეგიები არსებობს Angular-ში?",
-      "type": "multiple",
-      "points": 20,
+      "text": "რა არის Angular Signals-ის მთავარი დანიშნულება?",
+      "type": "single",
+      "points": 10,
       "choices": [
-        { "id": "q7a", "text": "Default", "isCorrect": true },
-        { "id": "q7b", "text": "OnPush", "isCorrect": true },
-        { "id": "q7c", "text": "Reactive", "isCorrect": false },
-        { "id": "q7d", "text": "Manual", "isCorrect": false }
+        { "id": "q8a", "text": "State-ის რეაქტიული მართვა", "isCorrect": true },
+        { "id": "q8b", "text": "HTTP მოთხოვნების გაგზავნა", "isCorrect": false },
+        { "id": "q8c", "text": "Routing-ის კონფიგურაცია", "isCorrect": false },
+        { "id": "q8d", "text": "ფორმების ვალიდაცია", "isCorrect": false }
       ]
     },
     {
@@ -102,10 +102,22 @@
       "type": "single",
       "points": 10,
       "choices": [
-        { "id": "q8a", "text": "State-ის შენახვას", "isCorrect": false },
-        { "id": "q8b", "text": "ნავიგაციას სხვადასხვა view-ებს შორის", "isCorrect": true },
-        { "id": "q8c", "text": "HTTP მოთხოვნების გაგზავნას", "isCorrect": false },
-        { "id": "q8d", "text": "CSS-ის დამუშავებას", "isCorrect": false }
+        { "id": "q9a", "text": "State-ის შენახვას", "isCorrect": false },
+        { "id": "q9b", "text": "ნავიგაციას სხვადასხვა view-ებს შორის", "isCorrect": true },
+        { "id": "q9c", "text": "HTTP მოთხოვნების გაგზავნას", "isCorrect": false },
+        { "id": "q9d", "text": "CSS-ის დამუშავებას", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "Angular-ში რომელი Change Detection სტრატეგია აუმჯობესებს წარმადობას?",
+      "type": "single",
+      "points": 10,
+      "choices": [
+        { "id": "q10a", "text": "Default", "isCorrect": false },
+        { "id": "q10b", "text": "OnPush", "isCorrect": true },
+        { "id": "q10c", "text": "Reactive", "isCorrect": false },
+        { "id": "q10d", "text": "Manual", "isCorrect": false }
       ]
     }
   ]
