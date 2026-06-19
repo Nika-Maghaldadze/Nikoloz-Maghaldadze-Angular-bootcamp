@@ -33,7 +33,7 @@ export class LoginComponent {
     this.auth.login(this.name().trim(), this.email().trim()).subscribe({
       next: () => this.store.completeLogin(),
       error: () => {
-        /* message surfaced via auth.error() */
+        /* Error handling */
       },
     });
   }

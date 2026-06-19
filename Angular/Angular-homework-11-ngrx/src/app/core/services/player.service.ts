@@ -10,17 +10,14 @@ export class PlayerService {
   private http = inject(HttpClient);
   private readonly base = `${environment.apiUrl}/players`;
 
-  /** All players, for the leaderboard. */
   list(): Observable<Player[]> {
     return this.http.get<Player[]>(this.base);
   }
 
-  /** Fetch a single player by id (used to restore a session). */
   getById(id: string): Observable<Player> {
     return this.http.get<Player>(`${this.base}/${id}`);
   }
 
-  /** Find players matching an email (json-server exact-match filter). */
   findByEmail(email: string): Observable<Player[]> {
     return this.http.get<Player[]>(this.base, { params: { email } });
   }

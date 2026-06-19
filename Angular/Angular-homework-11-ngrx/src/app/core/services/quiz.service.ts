@@ -8,7 +8,6 @@ import { environment } from '../../../environments/environment';
 export class QuizService {
   private http = inject(HttpClient);
 
-  /** Loads the quiz questions from the json-server API (`db.json`). */
   getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(`${environment.apiUrl}/questions`);
   }

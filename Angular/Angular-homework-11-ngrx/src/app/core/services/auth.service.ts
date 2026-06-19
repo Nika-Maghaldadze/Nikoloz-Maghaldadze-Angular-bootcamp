@@ -6,10 +6,6 @@ import { PlayerService } from './player.service';
 
 const STORAGE_KEY = 'lyceum.userId';
 
-/**
- * Reactive user/session state. Holds the logged-in player as a signal, restores the
- * session from localStorage on startup, and performs find-or-create login by email.
- */
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly players = inject(PlayerService);
@@ -24,8 +20,6 @@ export class AuthService {
   constructor() {
     this.restore();
   }
-
-  /** Find-or-create a player by email, then set them as the current user. */
   login(name: string, email: string): Observable<Player> {
     this.loading.set(true);
     this.error.set(null);
@@ -59,7 +53,6 @@ export class AuthService {
     );
   }
 
-  /** Merge updated stats into the current user after a saved result. */
   applyResult(patch: Partial<Player>): void {
     const user = this._currentUser();
     if (!user) return;
@@ -94,7 +87,7 @@ export class AuthService {
       if (id) localStorage.setItem(STORAGE_KEY, id);
       else localStorage.removeItem(STORAGE_KEY);
     } catch {
-      /* storage unavailable — session simply won't persist */
+      /* ERROR */
     }
   }
 }

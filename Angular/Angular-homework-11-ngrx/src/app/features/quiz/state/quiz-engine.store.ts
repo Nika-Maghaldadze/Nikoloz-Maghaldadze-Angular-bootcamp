@@ -11,7 +11,6 @@ const PER_Q_MS = 10000;
 const TICK_MS = 200;
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
-/** Fixed semantic colors (kept stable regardless of accent), per the design spec. */
 const C = {
   ok: '#4F7A5B',
   okBg: '#EDF3EE',
@@ -29,7 +28,6 @@ const C = {
   letterDimColor: '#B5B1A8',
 } as const;
 
-/** Static metadata for the single featured quiz (the prototype's `QUIZ`). */
 const QUIZ_META = {
   subject: 'Angular',
   difficulty: 'საშუალო დონე',
@@ -138,7 +136,7 @@ export class QuizEngineStore {
   readonly error = signal<string | null>(null);
 
   readonly qIndex = signal(0);
-  /** Chosen choice index per question; `null` = timed out / no answer. */
+
   readonly runAnswers = signal<(number | null)[]>([]);
   readonly answered = signal(false);
   readonly selected = signal<number | null>(null);
@@ -148,17 +146,14 @@ export class QuizEngineStore {
   readonly lastScore = signal<number | null>(null);
   readonly played = signal(false);
 
-  // ---- leaderboard (fetched from json-server) ----
   readonly players = signal<Player[]>([]);
   readonly leaderboardLoading = signal(false);
   readonly leaderboardError = signal<string | null>(null);
 
-  // ---- config knobs (defaults match the design) ----
   readonly accent = signal<Accent>('#1F1E1B');
   readonly serifQuestions = signal(false);
   readonly showTimer = signal(true);
 
-  // ---- static content ----
   readonly meta = QUIZ_META;
   readonly comingSoon = COMING_SOON;
 
@@ -168,7 +163,6 @@ export class QuizEngineStore {
     this.destroyRef.onDestroy(() => this.stopTimer());
   }
 
-  // ---- derived: quiz ----
   readonly total = computed(() => this.questions().length);
   readonly current = computed<Question | null>(() => this.questions()[this.qIndex()] ?? null);
 
@@ -528,7 +522,6 @@ export class QuizEngineStore {
     }
   }
 
-  /** One 200ms tick: always accrues total time; decrements the question clock until answered. */
   private tick(): void {
     if (this.screen() !== 'quiz') return;
     this.totalMs.update((v) => v + TICK_MS);
